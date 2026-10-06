@@ -1,0 +1,82 @@
+{
+    "key": "group_sibco_sustainability_page",
+    "title": "Sustainability Page Content",
+    "local": "php",
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-sustainability.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "fields": {
+        "field_sustainability_badge": {
+            "key": "field_sustainability_badge",
+            "name": "sustainability_badge",
+            "type": "text",
+            "parent": "group_sibco_sustainability_page",
+            "label": "Section Badge",
+            "default_value": "Sustainability",
+            "menu_order": 0
+        },
+        "field_sustainability_title": {
+            "key": "field_sustainability_title",
+            "name": "sustainability_title",
+            "type": "text",
+            "parent": "group_sibco_sustainability_page",
+            "label": "Section Heading",
+            "default_value": "Naturally Sustainable. Responsibly Manufactured.",
+            "menu_order": 1
+        },
+        "field_sustainability_description": {
+            "key": "field_sustainability_description",
+            "name": "sustainability_description",
+            "type": "textarea",
+            "parent": "group_sibco_sustainability_page",
+            "label": "Section Subheading",
+            "rows": 3,
+            "default_value": "Our commitment to sustainability goes beyond using natural materials. Every aspect of our manufacturing process is designed to minimize environmental impact while delivering premium quality products.",
+            "menu_order": 2
+        },
+        "field_sustainability_pillars": {
+            "key": "field_sustainability_pillars",
+            "name": "sustainability_pillars",
+            "type": "repeater",
+            "parent": "group_sibco_sustainability_page",
+            "label": "Sustainability Pillars (4 Points)",
+            "layout": "row",
+            "button_label": "Add Pillar",
+            "menu_order": 3
+        },
+        "field_sustainability_image": {
+            "key": "field_sustainability_image",
+            "name": "sustainability_image",
+            "type": "image",
+            "parent": "group_sibco_sustainability_page",
+            "label": "Sustainability Feature Image",
+            "return_format": "array",
+            "menu_order": 4
+        },
+        "field_sustainability_badge_stat": {
+            "key": "field_sustainability_badge_stat",
+            "name": "sustainability_badge_stat",
+            "type": "text",
+            "parent": "group_sibco_sustainability_page",
+            "label": "Floating Eco Badge Stat",
+            "default_value": "100%",
+            "menu_order": 5
+        },
+        "field_sustainability_badge_text": {
+            "key": "field_sustainability_badge_text",
+            "name": "sustainability_badge_text",
+            "type": "text",
+            "parent": "group_sibco_sustainability_page",
+            "label": "Floating Eco Badge Text",
+            "default_value": "Natural &\nBiodegradable",
+            "menu_order": 6
+        }
+    }
+}

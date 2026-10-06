@@ -1,0 +1,84 @@
+{
+    "key": "group_sibco_quality_page",
+    "title": "Quality Page Content",
+    "local": "php",
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-quality.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "fields": {
+        "field_quality_badge": {
+            "key": "field_quality_badge",
+            "name": "quality_badge",
+            "type": "text",
+            "parent": "group_sibco_quality_page",
+            "label": "Section Badge",
+            "default_value": "Quality & Certifications",
+            "menu_order": 0
+        },
+        "field_quality_title": {
+            "key": "field_quality_title",
+            "name": "quality_title",
+            "type": "text",
+            "parent": "group_sibco_quality_page",
+            "label": "Section Heading",
+            "default_value": "Certified Quality for Global Markets",
+            "menu_order": 1
+        },
+        "field_quality_description": {
+            "key": "field_quality_description",
+            "name": "quality_description",
+            "type": "textarea",
+            "parent": "group_sibco_quality_page",
+            "label": "Section Subheading",
+            "rows": 2,
+            "default_value": "Every product leaving our facility meets international quality standards backed by recognized certifications.",
+            "menu_order": 2
+        },
+        "field_certifications": {
+            "key": "field_certifications",
+            "name": "certifications",
+            "type": "repeater",
+            "parent": "group_sibco_quality_page",
+            "label": "Certification Badges (4 Badges)",
+            "layout": "row",
+            "button_label": "Add Certification Badge",
+            "menu_order": 3
+        },
+        "field_quality_process_title": {
+            "key": "field_quality_process_title",
+            "name": "quality_process_title",
+            "type": "text",
+            "parent": "group_sibco_quality_page",
+            "label": "Quality Process Heading",
+            "default_value": "Quality Is Not an Act \u2014 It's a Process at Every Stage",
+            "menu_order": 4
+        },
+        "field_quality_process_text": {
+            "key": "field_quality_process_text",
+            "name": "quality_process_text",
+            "type": "wysiwyg",
+            "parent": "group_sibco_quality_page",
+            "label": "Quality Process Narrative",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "menu_order": 5
+        },
+        "field_quality_metrics": {
+            "key": "field_quality_metrics",
+            "name": "quality_metrics",
+            "type": "repeater",
+            "parent": "group_sibco_quality_page",
+            "label": "Quality Metric Counters (3 Stats)",
+            "layout": "table",
+            "button_label": "Add Metric Counter",
+            "menu_order": 6
+        }
+    }
+}

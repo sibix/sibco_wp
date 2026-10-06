@@ -1,0 +1,72 @@
+{
+    "key": "group_sibco_manufacturing_page",
+    "title": "Manufacturing Page Content",
+    "local": "php",
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-manufacturing.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "fields": {
+        "field_mfg_steps_tab": {
+            "key": "field_mfg_steps_tab",
+            "name": "",
+            "type": "tab",
+            "parent": "group_sibco_manufacturing_page",
+            "label": "4 Process Steps",
+            "menu_order": 0
+        },
+        "field_manufacturing_steps": {
+            "key": "field_manufacturing_steps",
+            "name": "manufacturing_steps",
+            "type": "repeater",
+            "parent": "group_sibco_manufacturing_page",
+            "label": "Manufacturing Steps",
+            "layout": "row",
+            "button_label": "Add Manufacturing Step",
+            "menu_order": 1
+        },
+        "field_mfg_pipeline_tab": {
+            "key": "field_mfg_pipeline_tab",
+            "name": "",
+            "type": "tab",
+            "parent": "group_sibco_manufacturing_page",
+            "label": "Pipeline Timeline & Stats",
+            "menu_order": 2
+        },
+        "field_pipeline_title": {
+            "key": "field_pipeline_title",
+            "name": "pipeline_title",
+            "type": "text",
+            "parent": "group_sibco_manufacturing_page",
+            "label": "Pipeline Timeline Title",
+            "default_value": "Complete Production Pipeline",
+            "menu_order": 3
+        },
+        "field_pipeline_steps": {
+            "key": "field_pipeline_steps",
+            "name": "pipeline_steps",
+            "type": "repeater",
+            "parent": "group_sibco_manufacturing_page",
+            "label": "Pipeline Timeline Steps",
+            "layout": "table",
+            "button_label": "Add Pipeline Step",
+            "menu_order": 4
+        },
+        "field_facility_stats": {
+            "key": "field_facility_stats",
+            "name": "facility_stats",
+            "type": "repeater",
+            "parent": "group_sibco_manufacturing_page",
+            "label": "Facility Highlights (4 Grid Stats)",
+            "layout": "table",
+            "button_label": "Add Facility Highlight",
+            "menu_order": 5
+        }
+    }
+}

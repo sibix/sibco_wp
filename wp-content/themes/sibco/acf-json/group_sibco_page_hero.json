@@ -1,0 +1,90 @@
+{
+    "key": "group_sibco_page_hero",
+    "title": "Page Hero Banner",
+    "local": "php",
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "fields": {
+        "field_hero_badge": {
+            "key": "field_hero_badge",
+            "name": "hero_badge",
+            "type": "text",
+            "parent": "group_sibco_page_hero",
+            "label": "Hero Badge / Tagline",
+            "instructions": "Small badge pill above the title, e.g. \"About SIBCO\" or \"Established 1998 \u00b7 India\"",
+            "menu_order": 0
+        },
+        "field_hero_title": {
+            "key": "field_hero_title",
+            "name": "hero_title",
+            "type": "textarea",
+            "parent": "group_sibco_page_hero",
+            "label": "Hero Heading",
+            "rows": 2,
+            "instructions": "Main bold headline displayed in the hero",
+            "menu_order": 1
+        },
+        "field_hero_description": {
+            "key": "field_hero_description",
+            "name": "hero_description",
+            "type": "textarea",
+            "parent": "group_sibco_page_hero",
+            "label": "Hero Description / Subheading",
+            "rows": 3,
+            "menu_order": 2
+        },
+        "field_hero_image": {
+            "key": "field_hero_image",
+            "name": "hero_image",
+            "type": "image",
+            "parent": "group_sibco_page_hero",
+            "label": "Hero Background Image",
+            "return_format": "array",
+            "instructions": "Optional background image. Defaults to high-resolution factory imagery.",
+            "menu_order": 3
+        },
+        "field_hero_button_text": {
+            "key": "field_hero_button_text",
+            "name": "hero_button_text",
+            "type": "text",
+            "parent": "group_sibco_page_hero",
+            "label": "Primary Button Text",
+            "default_value": "Request a Quote",
+            "menu_order": 4
+        },
+        "field_hero_button_url": {
+            "key": "field_hero_button_url",
+            "name": "hero_button_url",
+            "type": "text",
+            "parent": "group_sibco_page_hero",
+            "label": "Primary Button URL",
+            "default_value": "/contact/",
+            "menu_order": 5
+        },
+        "field_hero_button_secondary_text": {
+            "key": "field_hero_button_secondary_text",
+            "name": "hero_button_secondary_text",
+            "type": "text",
+            "parent": "group_sibco_page_hero",
+            "label": "Secondary Button Text",
+            "menu_order": 6
+        },
+        "field_hero_button_secondary_url": {
+            "key": "field_hero_button_secondary_url",
+            "name": "hero_button_secondary_url",
+            "type": "text",
+            "parent": "group_sibco_page_hero",
+            "label": "Secondary Button URL",
+            "menu_order": 7
+        }
+    }
+}

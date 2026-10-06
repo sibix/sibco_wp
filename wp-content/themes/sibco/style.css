@@ -1,0 +1,284 @@
+/*
+Theme Name: SIBCO Coir
+Theme URI: https://sibco.in
+Author: SIBCO Team
+Author URI: https://sibco.in
+Description: Premium WordPress theme for SIBCO - Premium Coir Mat Manufacturer with 26 Years of Export Excellence.
+Version: 1.0.0
+Requires at least: 6.0
+Tested up to: 6.8
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: sibco
+*/
+
+/* Core Reset & Selection */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+::selection {
+    background: #A67C2E;
+    color: #ffffff;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #FAF8F4;
+}
+::-webkit-scrollbar-thumb {
+    background: #D4C8B8;
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #A67C2E;
+}
+
+/* Animations */
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeSlideLeft {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeSlideRight {
+    from { opacity: 0; transform: translateX(-40px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes subtlePulse {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 1; }
+}
+@keyframes lineGrow {
+    from { height: 0; }
+    to { height: 100%; }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.animate-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.animate-on-scroll.delay-1 { transition-delay: 0.1s; }
+.animate-on-scroll.delay-2 { transition-delay: 0.2s; }
+.animate-on-scroll.delay-3 { transition-delay: 0.3s; }
+.animate-on-scroll.delay-4 { transition-delay: 0.4s; }
+.animate-on-scroll.delay-5 { transition-delay: 0.5s; }
+.animate-on-scroll.delay-6 { transition-delay: 0.6s; }
+
+.animate-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.animate-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.animate-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.animate-scale {
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.animate-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Hero Animations */
+.hero-loaded .hero-title {
+    animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both;
+}
+.hero-loaded .hero-sub {
+    animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+.hero-loaded .hero-ctas {
+    animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both;
+}
+.hero-loaded .hero-stats {
+    animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.9s both;
+}
+
+/* Card hover effect */
+.card-hover {
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+}
+.card-hover:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px -15px rgba(44, 40, 37, 0.12);
+}
+
+/* Product card image zoom */
+.product-card:hover .product-img {
+    transform: scale(1.05);
+}
+.product-card .product-img {
+    transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Process line animation */
+.process-line-animated {
+    animation: lineGrow 2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+
+/* Map dots animation */
+@keyframes mapPulse {
+    0%, 100% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.8); opacity: 0; }
+}
+.map-dot-ping {
+    animation: mapPulse 2s ease-in-out infinite;
+}
+
+/* Navigation Scroll State */
+.nav-scrolled {
+    background: rgba(253, 252, 250, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    box-shadow: 0 1px 30px rgba(44, 40, 37, 0.08) !important;
+}
+.nav-scrolled .nav-link {
+    color: #2C2825 !important;
+}
+.nav-scrolled .nav-link:hover {
+    color: #A67C2E !important;
+}
+.nav-scrolled .nav-logo {
+    color: #2C2825 !important;
+}
+.nav-scrolled #mobileToggle {
+    color: #2C2825 !important;
+}
+
+/* Trust bar icons */
+.trust-icon-wrap {
+    transition: all 0.3s ease;
+}
+.trust-icon-wrap:hover {
+    transform: translateY(-2px);
+}
+.trust-icon-wrap:hover .trust-icon-circle {
+    background: #A67C2E;
+}
+.trust-icon-wrap:hover .trust-icon-circle svg {
+    color: #ffffff;
+    stroke: #ffffff;
+}
+
+/* CTA button shine */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+}
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+.btn-primary:hover::after {
+    left: 100%;
+}
+
+/* Organic shapes */
+.organic-shape {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+}
+.organic-shape-2 {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+}
+
+/* Mobile menu */
+.mobile-menu {
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.mobile-menu.open {
+    transform: translateX(0);
+}
+
+/* Timeline dot */
+.timeline-dot {
+    transition: all 0.3s ease;
+}
+.timeline-step:hover .timeline-dot {
+    background: #A67C2E;
+    color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(166, 124, 46, 0.2);
+}
+
+/* Certification badge */
+.cert-badge {
+    transition: all 0.3s ease;
+}
+.cert-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px -10px rgba(166, 124, 46, 0.2);
+}
+
+/* WordPress Admin Bar Compatibility */
+body.admin-bar #mainNav {
+    top: 32px;
+}
+@media screen and (max-width: 782px) {
+    body.admin-bar #mainNav {
+        top: 46px;
+    }
+}
+
+/* Current Nav Item */
+.nav-link.current-menu-item,
+.current-menu-item > .nav-link,
+.current_page_item > .nav-link {
+    color: #A67C2E !important;
+}
+
+/* WordPress Core Layout Fallbacks */
+.alignwide {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.alignfull {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}

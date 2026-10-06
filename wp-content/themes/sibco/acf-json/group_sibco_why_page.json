@@ -1,0 +1,55 @@
+{
+    "key": "group_sibco_why_page",
+    "title": "Why SIBCO Page Content",
+    "local": "php",
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-why-sibco.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "fields": {
+        "field_why_badge": {
+            "key": "field_why_badge",
+            "name": "why_badge",
+            "type": "text",
+            "parent": "group_sibco_why_page",
+            "label": "Section Badge",
+            "default_value": "Why SIBCO",
+            "menu_order": 0
+        },
+        "field_why_title": {
+            "key": "field_why_title",
+            "name": "why_title",
+            "type": "text",
+            "parent": "group_sibco_why_page",
+            "label": "Section Heading",
+            "default_value": "Why International Buyers Choose SIBCO",
+            "menu_order": 1
+        },
+        "field_why_description": {
+            "key": "field_why_description",
+            "name": "why_description",
+            "type": "textarea",
+            "parent": "group_sibco_why_page",
+            "label": "Section Subheading",
+            "rows": 2,
+            "default_value": "Decades of expertise, certified quality, and a manufacturing process built for global export standards.",
+            "menu_order": 2
+        },
+        "field_why_cards": {
+            "key": "field_why_cards",
+            "name": "why_cards",
+            "type": "repeater",
+            "parent": "group_sibco_why_page",
+            "label": "Why Choose Feature Cards",
+            "layout": "row",
+            "button_label": "Add Feature Card",
+            "menu_order": 3
+        }
+    }
+}

@@ -1,0 +1,1501 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIBCO — Premium Coir Mat Manufacturer | 26 Years of Export Excellence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: { 50: '#FDFCFA', 100: '#FAF8F4', 200: '#F5F0EB', 300: '#EDE5DA', 400: '#E5DDD3', 500: '#D4C8B8' },
+                        coir: { 50: '#F9F5EF', 100: '#F0E8D8', 200: '#E0CFB0', 300: '#CCAE7E', 400: '#B8934E', 500: '#A67C2E', 600: '#8B6914', 700: '#6E5310', 800: '#54400D', 900: '#3D2F0A' },
+                        charcoal: { 50: '#F5F5F4', 100: '#E7E5E4', 200: '#D6D3D1', 300: '#A8A29E', 400: '#78716C', 500: '#57534E', 600: '#44403C', 700: '#2C2825', 800: '#1C1917', 900: '#0F0E0D' }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'system-ui', 'sans-serif'],
+                        serif: ['Playfair Display', 'Georgia', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        ::selection { background: #A67C2E; color: white; }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #FAF8F4; }
+        ::-webkit-scrollbar-thumb { background: #D4C8B8; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #A67C2E; }
+
+        /* Animations */
+        @keyframes fadeSlideUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeSlideLeft {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes fadeSlideRight {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        @keyframes countUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes subtlePulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+        @keyframes lineGrow {
+            from { height: 0; }
+            to { height: 100%; }
+        }
+
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .animate-on-scroll.delay-1 { transition-delay: 0.1s; }
+        .animate-on-scroll.delay-2 { transition-delay: 0.2s; }
+        .animate-on-scroll.delay-3 { transition-delay: 0.3s; }
+        .animate-on-scroll.delay-4 { transition-delay: 0.4s; }
+        .animate-on-scroll.delay-5 { transition-delay: 0.5s; }
+        .animate-on-scroll.delay-6 { transition-delay: 0.6s; }
+
+        .animate-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .animate-left.visible { opacity: 1; transform: translateX(0); }
+
+        .animate-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .animate-right.visible { opacity: 1; transform: translateX(0); }
+
+        .animate-scale {
+            opacity: 0;
+            transform: scale(0.92);
+            transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .animate-scale.visible { opacity: 1; transform: scale(1); }
+
+        /* Hero */
+        .hero-loaded .hero-title { animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s both; }
+        .hero-loaded .hero-sub { animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both; }
+        .hero-loaded .hero-ctas { animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.7s both; }
+        .hero-loaded .hero-stats { animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.9s both; }
+
+        /* Card hover */
+        .card-hover {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 60px -15px rgba(44, 40, 37, 0.12);
+        }
+
+        /* Product card image zoom */
+        .product-card:hover .product-img {
+            transform: scale(1.05);
+        }
+        .product-card .product-img {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* Process line animation */
+        .process-line-animated {
+            animation: lineGrow 2s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+        }
+
+        /* Map dots */
+        @keyframes mapPulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.8); opacity: 0; }
+        }
+        .map-dot-ping {
+            animation: mapPulse 2s ease-in-out infinite;
+        }
+
+        /* Nav scroll */
+        .nav-scrolled {
+            background: rgba(253, 252, 250, 0.95) !important;
+            backdrop-filter: blur(20px) !important;
+            box-shadow: 0 1px 30px rgba(44, 40, 37, 0.08) !important;
+        }
+        .nav-scrolled .nav-link { color: #2C2825 !important; }
+        .nav-scrolled .nav-link:hover { color: #A67C2E !important; }
+        .nav-scrolled .nav-logo { color: #2C2825 !important; }
+
+        /* Trust bar icon */
+        .trust-icon-wrap {
+            transition: all 0.3s ease;
+        }
+        .trust-icon-wrap:hover {
+            transform: translateY(-2px);
+        }
+        .trust-icon-wrap:hover .trust-icon-circle {
+            background: #A67C2E;
+        }
+        .trust-icon-wrap:hover .trust-icon-circle svg {
+            color: white;
+        }
+
+        /* CTA button shine */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 100%; height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+            transition: left 0.5s ease;
+        }
+        .btn-primary:hover::after {
+            left: 100%;
+        }
+
+        /* Organic shapes */
+        .organic-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+        .organic-shape-2 {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+
+        /* Mobile menu */
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        /* Timeline dot */
+        .timeline-dot {
+            transition: all 0.3s ease;
+        }
+        .timeline-step:hover .timeline-dot {
+            background: #A67C2E;
+            box-shadow: 0 0 0 4px rgba(166, 124, 46, 0.2);
+        }
+
+        /* Certification badge */
+        .cert-badge {
+            transition: all 0.3s ease;
+        }
+        .cert-badge:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 40px -10px rgba(166, 124, 46, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-cream-50 text-charcoal-700 font-sans antialiased overflow-x-hidden">
+
+    <!-- ============ NAVIGATION ============ -->
+    <nav id="mainNav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500" style="background: transparent;">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="nav-logo text-white font-bold text-2xl tracking-tight transition-colors duration-300">
+                    SIBCO
+                </a>
+
+                <!-- Desktop Nav -->
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#about" class="nav-link text-white/80 text-sm font-medium tracking-wide hover:text-white transition-colors duration-200">About</a>
+                    <a href="#why-sibco" class="nav-link text-white/80 text-sm font-medium tracking-wide hover:text-white transition-colors duration-200">Why SIBCO</a>
+                    <a href="#manufacturing" class="nav-link text-white/80 text-sm font-medium tracking-wide hover:text-white transition-colors duration-200">Manufacturing</a>
+                    <a href="#products" class="nav-link text-white/80 text-sm font-medium tracking-wide hover:text-white transition-colors duration-200">Products</a>
+                    <a href="#quality" class="nav-link text-white/80 text-sm font-medium tracking-wide hover:text-white transition-colors duration-200">Quality</a>
+                    <a href="#sustainability" class="nav-link text-white/80 text-sm font-medium tracking-wide hover:text-white transition-colors duration-200">Sustainability</a>
+                    <a href="#contact" class="nav-link text-white/80 text-sm font-medium tracking-wide hover:text-white transition-colors duration-200">Contact</a>
+                </div>
+
+                <!-- CTA -->
+                <div class="hidden lg:flex items-center gap-4">
+                    <a href="#contact" class="btn-primary bg-coir-500 hover:bg-coir-600 text-white text-sm font-semibold px-6 py-2.5 rounded-lg transition-colors duration-200">
+                        Request a Quote
+                    </a>
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button id="mobileToggle" class="lg:hidden nav-link text-white p-2 transition-colors duration-300" aria-label="Menu">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                        <line x1="3" y1="6" x2="21" y2="6"/>
+                        <line x1="3" y1="12" x2="21" y2="12"/>
+                        <line x1="3" y1="18" x2="21" y2="18"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-cream-50">
+        <div class="flex items-center justify-between px-6 h-20">
+            <span class="text-charcoal-700 font-bold text-2xl tracking-tight">SIBCO</span>
+            <button id="mobileClose" class="p-2 text-charcoal-700" aria-label="Close">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+                    <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>
+            </button>
+        </div>
+        <div class="px-6 py-8 flex flex-col gap-1">
+            <a href="#about" class="mobile-nav-link text-2xl font-medium text-charcoal-700 py-3 border-b border-cream-400">About</a>
+            <a href="#why-sibco" class="mobile-nav-link text-2xl font-medium text-charcoal-700 py-3 border-b border-cream-400">Why SIBCO</a>
+            <a href="#manufacturing" class="mobile-nav-link text-2xl font-medium text-charcoal-700 py-3 border-b border-cream-400">Manufacturing</a>
+            <a href="#products" class="mobile-nav-link text-2xl font-medium text-charcoal-700 py-3 border-b border-cream-400">Products</a>
+            <a href="#quality" class="mobile-nav-link text-2xl font-medium text-charcoal-700 py-3 border-b border-cream-400">Quality</a>
+            <a href="#sustainability" class="mobile-nav-link text-2xl font-medium text-charcoal-700 py-3 border-b border-cream-400">Sustainability</a>
+            <a href="#contact" class="mobile-nav-link text-2xl font-medium text-charcoal-700 py-3 border-b border-cream-400">Contact</a>
+            <a href="#contact" class="mt-8 bg-coir-500 text-white text-center text-lg font-semibold px-6 py-4 rounded-lg">Request a Quote</a>
+        </div>
+    </div>
+
+
+    <!-- ============ HERO SECTION ============ -->
+    <section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="https://picsum.photos/seed/coir-factory-floor/1920/1080.jpg" alt="SIBCO Manufacturing Facility" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-r from-charcoal-800/90 via-charcoal-800/75 to-charcoal-800/50"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-charcoal-800/60 via-transparent to-charcoal-800/30"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="hero-loaded relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-32 pb-20">
+            <div class="max-w-3xl">
+                <!-- Badge -->
+                <div class="hero-title inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-8">
+                    <span class="w-2 h-2 bg-coir-400 rounded-full"></span>
+                    <span class="text-white/80 text-xs font-medium tracking-wider uppercase">Established 1998 · India</span>
+                </div>
+
+                <!-- Headline -->
+                <h1 class="hero-title font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-600 text-white leading-[1.1] tracking-tight mb-6">
+                    26 Years of Manufacturing Premium Coir Mats for Global Markets
+                </h1>
+
+                <!-- Subheadline -->
+                <p class="hero-sub text-lg lg:text-xl text-white/70 font-light leading-relaxed max-w-2xl mb-10">
+                    Trusted manufacturing partner supplying high-quality natural coir mats to importers, distributors and private label brands across Europe and North America.
+                </p>
+
+                <!-- CTAs -->
+                <div class="hero-ctas flex flex-wrap gap-4 mb-16">
+                    <a href="#contact" class="btn-primary bg-coir-500 hover:bg-coir-600 text-white font-semibold px-8 py-4 rounded-lg text-base transition-colors duration-200 inline-flex items-center gap-2">
+                        Request a Quote
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <a href="#products" class="bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/20 text-white font-medium px-8 py-4 rounded-lg text-base transition-all duration-200 inline-flex items-center gap-2">
+                        View Product Range
+                    </a>
+                </div>
+            </div>
+
+            <!-- Trust Stats -->
+            <div class="hero-stats grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+                <div class="bg-white/8 backdrop-blur-md border border-white/10 rounded-xl p-4 text-center">
+                    <div class="text-coir-400 font-bold text-2xl mb-1">26+</div>
+                    <div class="text-white/60 text-xs font-medium tracking-wide">Years Experience</div>
+                </div>
+                <div class="bg-white/8 backdrop-blur-md border border-white/10 rounded-xl p-4 text-center">
+                    <div class="text-coir-400 font-bold text-2xl mb-1">50K</div>
+                    <div class="text-white/60 text-xs font-medium tracking-wide">Units Capacity</div>
+                </div>
+                <div class="bg-white/8 backdrop-blur-md border border-white/10 rounded-xl p-4 text-center">
+                    <div class="text-coir-400 font-bold text-2xl mb-1">100%</div>
+                    <div class="text-white/60 text-xs font-medium tracking-wide">Natural Coir</div>
+                </div>
+                <div class="bg-white/8 backdrop-blur-md border border-white/10 rounded-xl p-4 text-center">
+                    <div class="text-coir-400 font-bold text-2xl mb-1 flex items-center justify-center gap-1">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <div class="text-white/60 text-xs font-medium tracking-wide">Talite Free</div>
+                </div>
+                <div class="bg-white/8 backdrop-blur-md border border-white/10 rounded-xl p-4 text-center">
+                    <div class="text-coir-400 font-bold text-2xl mb-1 flex items-center justify-center gap-1">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    </div>
+                    <div class="text-white/60 text-xs font-medium tracking-wide">Export Focused</div>
+                </div>
+                <div class="bg-white/8 backdrop-blur-md border border-white/10 rounded-xl p-4 text-center">
+                    <div class="text-coir-400 font-bold text-2xl mb-1">Zero</div>
+                    <div class="text-white/60 text-xs font-medium tracking-wide">Quality Claims</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-60">
+            <span class="text-white text-[10px] tracking-[0.2em] uppercase font-medium">Scroll</span>
+            <div class="w-px h-8 bg-gradient-to-b from-white/60 to-transparent"></div>
+        </div>
+    </section>
+
+
+    <!-- ============ TRUST BAR ============ -->
+    <section class="bg-white border-b border-cream-400">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 py-6">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-4">
+                <!-- Item -->
+                <div class="trust-icon-wrap flex items-center gap-3 cursor-default">
+                    <div class="trust-icon-circle w-10 h-10 rounded-lg bg-cream-200 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-coir-600 transition-colors duration-300"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <span class="text-charcoal-600 text-sm font-medium">26 Years Experience</span>
+                </div>
+                <!-- Item -->
+                <div class="trust-icon-wrap flex items-center gap-3 cursor-default">
+                    <div class="trust-icon-circle w-10 h-10 rounded-lg bg-cream-200 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-coir-600 transition-colors duration-300"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <span class="text-charcoal-600 text-sm font-medium">Rubber Board Registered</span>
+                </div>
+                <!-- Item -->
+                <div class="trust-icon-wrap flex items-center gap-3 cursor-default">
+                    <div class="trust-icon-circle w-10 h-10 rounded-lg bg-cream-200 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-coir-600 transition-colors duration-300"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <span class="text-charcoal-600 text-sm font-medium">Talite Free Certified</span>
+                </div>
+                <!-- Item -->
+                <div class="trust-icon-wrap flex items-center gap-3 cursor-default">
+                    <div class="trust-icon-circle w-10 h-10 rounded-lg bg-cream-200 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-coir-600 transition-colors duration-300"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    </div>
+                    <span class="text-charcoal-600 text-sm font-medium">Export Manufacturing</span>
+                </div>
+                <!-- Item -->
+                <div class="trust-icon-wrap flex items-center gap-3 cursor-default">
+                    <div class="trust-icon-circle w-10 h-10 rounded-lg bg-cream-200 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-coir-600 transition-colors duration-300"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                    </div>
+                    <span class="text-charcoal-600 text-sm font-medium">OEM & Private Label</span>
+                </div>
+                <!-- Item -->
+                <div class="trust-icon-wrap flex items-center gap-3 cursor-default">
+                    <div class="trust-icon-circle w-10 h-10 rounded-lg bg-cream-200 flex items-center justify-center flex-shrink-0 transition-colors duration-300">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-coir-600 transition-colors duration-300"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    </div>
+                    <span class="text-charcoal-600 text-sm font-medium">Time Bound Delivery</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ ABOUT SIBCO ============ -->
+    <section id="about" class="py-24 lg:py-32 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Image -->
+                <div class="animate-left relative">
+                    <div class="relative rounded-2xl overflow-hidden">
+                        <img src="https://picsum.photos/seed/factory-exterior-premium/800/600.jpg" alt="SIBCO Manufacturing Facility" class="w-full h-[400px] lg:h-[500px] object-cover">
+                    </div>
+                    <!-- Floating stat card -->
+                    <div class="absolute -bottom-6 -right-4 lg:-right-8 bg-white rounded-xl shadow-lg shadow-charcoal-700/8 p-5 border border-cream-400">
+                        <div class="text-coir-600 font-bold text-3xl font-serif">26+</div>
+                        <div class="text-charcoal-400 text-xs font-medium tracking-wide uppercase mt-1">Years of<br>Manufacturing</div>
+                    </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -top-4 -left-4 w-20 h-20 border-2 border-coir-300/30 rounded-2xl -z-10"></div>
+                </div>
+
+                <!-- Text -->
+                <div class="animate-right">
+                    <div class="inline-flex items-center gap-2 bg-coir-50 border border-coir-200 rounded-full px-4 py-1.5 mb-6">
+                        <span class="w-1.5 h-1.5 bg-coir-500 rounded-full"></span>
+                        <span class="text-coir-700 text-xs font-semibold tracking-wider uppercase">About SIBCO</span>
+                    </div>
+
+                    <h2 class="font-serif text-3xl lg:text-4xl xl:text-5xl font-600 text-charcoal-800 leading-[1.15] tracking-tight mb-6">
+                        A Legacy of Premium Coir Manufacturing Since 1998
+                    </h2>
+
+                    <div class="space-y-4 text-charcoal-500 text-base leading-relaxed mb-8">
+                        <p>
+                            SIBCO is a premium coir mat manufacturer with a 26-year legacy of delivering exceptional quality products to international markets. Based in India's coir heartland, we combine traditional craftsmanship with modern manufacturing capabilities.
+                        </p>
+                        <p>
+                            Our state-of-the-art production facility is purpose-built for export-quality manufacturing, serving importers, distributors, retail chains, and OEM private label brands across the European Union and United States.
+                        </p>
+                        <p>
+                            We are committed to sustainable manufacturing using 100% natural coir, maintaining long-term partnerships built on trust, consistent quality, and reliable delivery.
+                        </p>
+                    </div>
+
+                    <!-- Key points -->
+                    <div class="grid grid-cols-2 gap-4 mb-10">
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-coir-50 flex items-center justify-center flex-shrink-0">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <span class="text-charcoal-600 text-sm font-medium">Export Quality Focus</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-coir-50 flex items-center justify-center flex-shrink-0">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <span class="text-charcoal-600 text-sm font-medium">Strong Production Capacity</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-coir-50 flex items-center justify-center flex-shrink-0">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <span class="text-charcoal-600 text-sm font-medium">Sustainable Materials</span>
+                        </div>
+                        <div class="flex items-center gap-3">
+                            <div class="w-8 h-8 rounded-lg bg-coir-50 flex items-center justify-center flex-shrink-0">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <span class="text-charcoal-600 text-sm font-medium">Long-Term Partnerships</span>
+                        </div>
+                    </div>
+
+                    <a href="#" class="inline-flex items-center gap-2 text-coir-600 hover:text-coir-700 font-semibold text-sm tracking-wide group transition-colors duration-200">
+                        Learn More About Us
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ WHY CHOOSE SIBCO ============ -->
+    <section id="why-sibco" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+                <div class="inline-flex items-center gap-2 bg-coir-50 border border-coir-200 rounded-full px-4 py-1.5 mb-6">
+                    <span class="w-1.5 h-1.5 bg-coir-500 rounded-full"></span>
+                    <span class="text-coir-700 text-xs font-semibold tracking-wider uppercase">Why SIBCO</span>
+                </div>
+                <h2 class="font-serif text-3xl lg:text-4xl xl:text-5xl font-600 text-charcoal-800 leading-[1.15] tracking-tight mb-5">
+                    Why International Buyers Choose SIBCO
+                </h2>
+                <p class="text-charcoal-400 text-base lg:text-lg leading-relaxed">
+                    Decades of expertise, certified quality, and a manufacturing process built for global export standards.
+                </p>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="card-hover animate-on-scroll delay-1 bg-cream-50 rounded-2xl p-8 border border-cream-400 group">
+                    <div class="w-12 h-12 rounded-xl bg-coir-50 flex items-center justify-center mb-5 group-hover:bg-coir-500 transition-colors duration-300">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white transition-colors duration-300"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-800 text-lg mb-3">26 Years Manufacturing Experience</h3>
+                    <p class="text-charcoal-400 text-sm leading-relaxed">Over two and a half decades of refined expertise in coir mat manufacturing, delivering consistent quality to global buyers year after year.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card-hover animate-on-scroll delay-2 bg-cream-50 rounded-2xl p-8 border border-cream-400 group">
+                    <div class="w-12 h-12 rounded-xl bg-coir-50 flex items-center justify-center mb-5 group-hover:bg-coir-500 transition-colors duration-300">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white transition-colors duration-300"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M7 10.5c0-1.657 2.239-3 5-3s5 1.343 5 3"/><path d="M7 14c0 1.657 2.239 3 5 3s5-1.343 5-3"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-800 text-lg mb-3">100% Natural Coir</h3>
+                    <p class="text-charcoal-400 text-sm leading-relaxed">Sourced from the finest coconut husks, our coir is completely natural, biodegradable, and sustainably harvested from Kerala's coir belt.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card-hover animate-on-scroll delay-3 bg-cream-50 rounded-2xl p-8 border border-cream-400 group">
+                    <div class="w-12 h-12 rounded-xl bg-coir-50 flex items-center justify-center mb-5 group-hover:bg-coir-500 transition-colors duration-300">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white transition-colors duration-300"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-800 text-lg mb-3">Talite Free Certified</h3>
+                    <p class="text-charcoal-400 text-sm leading-relaxed">Our products are certified talite-free, meeting stringent European import regulations and ensuring complete compliance for EU market entry.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="card-hover animate-on-scroll delay-4 bg-cream-50 rounded-2xl p-8 border border-cream-400 group">
+                    <div class="w-12 h-12 rounded-xl bg-coir-50 flex items-center justify-center mb-5 group-hover:bg-coir-500 transition-colors duration-300">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white transition-colors duration-300"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-800 text-lg mb-3">Consistent Product Quality</h3>
+                    <p class="text-charcoal-400 text-sm leading-relaxed">Rigorous quality control at every stage of production ensures that every shipment meets the exact specifications and standards expected by international buyers.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="card-hover animate-on-scroll delay-5 bg-cream-50 rounded-2xl p-8 border border-cream-400 group">
+                    <div class="w-12 h-12 rounded-xl bg-coir-50 flex items-center justify-center mb-5 group-hover:bg-coir-500 transition-colors duration-300">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white transition-colors duration-300"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 8 14"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-800 text-lg mb-3">Time-Bound Delivery</h3>
+                    <p class="text-charcoal-400 text-sm leading-relaxed">Our streamlined production scheduling and logistics management ensure every order is manufactured and dispatched within agreed timelines, without exception.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="card-hover animate-on-scroll delay-6 bg-cream-50 rounded-2xl p-8 border border-cream-400 group">
+                    <div class="w-12 h-12 rounded-xl bg-coir-50 flex items-center justify-center mb-5 group-hover:bg-coir-500 transition-colors duration-300">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:stroke-white transition-colors duration-300"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+                    </div>
+                    <h3 class="font-semibold text-charcoal-800 text-lg mb-3">OEM & Private Label</h3>
+                    <p class="text-charcoal-400 text-sm leading-relaxed">Complete private label and OEM manufacturing capabilities with full confidentiality. Your brand, your specifications, our manufacturing expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ MANUFACTURING EXCELLENCE ============ -->
+    <section id="manufacturing" class="py-24 lg:py-32 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-20 animate-on-scroll">
+                <div class="inline-flex items-center gap-2 bg-coir-50 border border-coir-200 rounded-full px-4 py-1.5 mb-6">
+                    <span class="w-1.5 h-1.5 bg-coir-500 rounded-full"></span>
+                    <span class="text-coir-700 text-xs font-semibold tracking-wider uppercase">Manufacturing</span>
+                </div>
+                <h2 class="font-serif text-3xl lg:text-4xl xl:text-5xl font-600 text-charcoal-800 leading-[1.15] tracking-tight mb-5">
+                    Manufacturing Excellence
+                </h2>
+                <p class="text-charcoal-400 text-base lg:text-lg leading-relaxed">
+                    From raw coir fibre to finished export-ready products — every step is controlled, measured, and quality-assured.
+                </p>
+            </div>
+
+            <!-- Process with alternating images -->
+            <div class="space-y-20 lg:space-y-28">
+                <!-- Step 1: Raw Material -->
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="animate-left order-2 lg:order-1">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-coir-500 font-serif text-4xl font-bold">01</span>
+                            <div class="h-px flex-1 bg-coir-200"></div>
+                        </div>
+                        <h3 class="font-serif text-2xl lg:text-3xl font-600 text-charcoal-800 mb-4">Raw Material Sourcing</h3>
+                        <p class="text-charcoal-400 leading-relaxed mb-6">Premium coconut coir fibres are carefully selected from Kerala's finest plantations. Each batch is tested for fibre length, strength, and moisture content before entering production.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-charcoal-500 border border-cream-400">Fibre Testing</span>
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-charcoal-500 border border-cream-400">Moisture Control</span>
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-charcoal-500 border border-cream-400">Grade Selection</span>
+                        </div>
+                    </div>
+                    <div class="animate-right order-1 lg:order-2 rounded-2xl overflow-hidden">
+                        <img src="https://picsum.photos/seed/raw-coir-fibre/800/500.jpg" alt="Raw Coir Fibre" class="w-full h-[300px] lg:h-[380px] object-cover">
+                    </div>
+                </div>
+
+                <!-- Step 2: Processing & Weaving -->
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="animate-left rounded-2xl overflow-hidden">
+                        <img src="https://picsum.photos/seed/coir-weaving-loom/800/500.jpg" alt="Coir Weaving Process" class="w-full h-[300px] lg:h-[380px] object-cover">
+                    </div>
+                    <div class="animate-right">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-coir-500 font-serif text-4xl font-bold">02</span>
+                            <div class="h-px flex-1 bg-coir-200"></div>
+                        </div>
+                        <h3 class="font-serif text-2xl lg:text-3xl font-600 text-charcoal-800 mb-4">Coir Processing & Weaving</h3>
+                        <p class="text-charcoal-400 leading-relaxed mb-6">Fibres undergo spinning, weaving, and mat formation on precision machinery. Our skilled workforce ensures consistent weave density, pattern accuracy, and dimensional stability across every production run.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-charcoal-500 border border-cream-400">Precision Weaving</span>
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-charcoal-500 border border-cream-400">Pattern Control</span>
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-charcoal-500 border border-cream-400">Skilled Workforce</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 3: Rubber Backing & Embossing -->
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="animate-left order-2 lg:order-1">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-coir-500 font-serif text-4xl font-bold">03</span>
+                            <div class="h-px flex-1 bg-coir-200"></div>
+                        </div>
+                        <h3 class="font-serif text-2xl lg:text-3xl font-600 text-charcoal-800 mb-4">Rubber Backing & Embossing</h3>
+                        <p class="text-charcoal-400 leading-relaxed mb-6">Vulcanized rubber backing is applied using temperature-controlled hydraulic presses. Custom embossing dies create branded patterns and textures with precision, ensuring every mat meets buyer specifications.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-charcoal-500 border border-cream-400">Vulcanized Rubber</span>
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-charcoal-500 border border-cream-400">Custom Embossing</span>
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-charcoal-500 border border-cream-400">Hydraulic Press</span>
+                        </div>
+                    </div>
+                    <div class="animate-right order-1 lg:order-2 rounded-2xl overflow-hidden">
+                        <img src="https://picsum.photos/seed/rubber-press-machine/800/500.jpg" alt="Rubber Backing Process" class="w-full h-[300px] lg:h-[380px] object-cover">
+                    </div>
+                </div>
+
+                <!-- Step 4: Quality & Dispatch -->
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div class="animate-left rounded-2xl overflow-hidden">
+                        <img src="https://picsum.photos/seed/export-packing-warehouse/800/500.jpg" alt="Quality Inspection and Packing" class="w-full h-[300px] lg:h-[380px] object-cover">
+                    </div>
+                    <div class="animate-right">
+                        <div class="flex items-center gap-3 mb-4">
+                            <span class="text-coir-500 font-serif text-4xl font-bold">04</span>
+                            <div class="h-px flex-1 bg-coir-200"></div>
+                        </div>
+                        <h3 class="font-serif text-2xl lg:text-3xl font-600 text-charcoal-800 mb-4">Quality Inspection & Export Dispatch</h3>
+                        <p class="text-charcoal-400 leading-relaxed mb-6">Every batch undergoes thorough quality inspection — checking dimensions, weight, backing adhesion, and visual standards. Products are then carefully packed for international sea freight with full documentation.</p>
+                        <div class="flex flex-wrap gap-3">
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-charcoal-500 border border-cream-400">Final QC Check</span>
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-charcoal-500 border border-cream-400">Export Packing</span>
+                            <span class="px-3 py-1 bg-white rounded-full text-xs font-medium text-charcoal-500 border border-cream-400">Documentation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vertical Timeline Summary -->
+            <div class="mt-20 lg:mt-28 animate-on-scroll">
+                <div class="bg-white rounded-2xl border border-cream-400 p-8 lg:p-12">
+                    <h3 class="font-serif text-xl lg:text-2xl font-600 text-charcoal-800 text-center mb-10">Complete Production Pipeline</h3>
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 md:gap-0 relative">
+                        <!-- Connecting line (desktop) -->
+                        <div class="hidden md:block absolute top-5 left-[8%] right-[8%] h-px bg-coir-200"></div>
+
+                        <div class="timeline-step flex items-center gap-3 relative z-10">
+                            <div class="timeline-dot w-10 h-10 rounded-full bg-coir-100 border-2 border-coir-300 flex items-center justify-center flex-shrink-0">
+                                <span class="text-coir-600 text-xs font-bold">1</span>
+                            </div>
+                            <span class="text-charcoal-600 text-sm font-medium">Raw Material</span>
+                        </div>
+                        <div class="timeline-step flex items-center gap-3 relative z-10">
+                            <div class="timeline-dot w-10 h-10 rounded-full bg-coir-100 border-2 border-coir-300 flex items-center justify-center flex-shrink-0">
+                                <span class="text-coir-600 text-xs font-bold">2</span>
+                            </div>
+                            <span class="text-charcoal-600 text-sm font-medium">Processing</span>
+                        </div>
+                        <div class="timeline-step flex items-center gap-3 relative z-10">
+                            <div class="timeline-dot w-10 h-10 rounded-full bg-coir-100 border-2 border-coir-300 flex items-center justify-center flex-shrink-0">
+                                <span class="text-coir-600 text-xs font-bold">3</span>
+                            </div>
+                            <span class="text-charcoal-600 text-sm font-medium">Weaving</span>
+                        </div>
+                        <div class="timeline-step flex items-center gap-3 relative z-10">
+                            <div class="timeline-dot w-10 h-10 rounded-full bg-coir-100 border-2 border-coir-300 flex items-center justify-center flex-shrink-0">
+                                <span class="text-coir-600 text-xs font-bold">4</span>
+                            </div>
+                            <span class="text-charcoal-600 text-sm font-medium">Rubber Backing</span>
+                        </div>
+                        <div class="timeline-step flex items-center gap-3 relative z-10">
+                            <div class="timeline-dot w-10 h-10 rounded-full bg-coir-100 border-2 border-coir-300 flex items-center justify-center flex-shrink-0">
+                                <span class="text-coir-600 text-xs font-bold">5</span>
+                            </div>
+                            <span class="text-charcoal-600 text-sm font-medium">Embossing</span>
+                        </div>
+                        <div class="timeline-step flex items-center gap-3 relative z-10">
+                            <div class="timeline-dot w-10 h-10 rounded-full bg-coir-100 border-2 border-coir-300 flex items-center justify-center flex-shrink-0">
+                                <span class="text-coir-600 text-xs font-bold">6</span>
+                            </div>
+                            <span class="text-charcoal-600 text-sm font-medium">QC & Packing</span>
+                        </div>
+                        <div class="timeline-step flex items-center gap-3 relative z-10">
+                            <div class="timeline-dot w-10 h-10 rounded-full bg-coir-500 flex items-center justify-center flex-shrink-0">
+                                <span class="text-white text-xs font-bold">7</span>
+                            </div>
+                            <span class="text-charcoal-800 text-sm font-semibold">Export Dispatch</span>
+                        </div>
+                    </div>
+
+                    <!-- Stats row -->
+                    <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 mt-10 pt-10 border-t border-cream-400">
+                        <div class="text-center">
+                            <div class="text-coir-600 font-bold text-2xl font-serif">Modern</div>
+                            <div class="text-charcoal-400 text-xs font-medium mt-1">Production Facility</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-coir-600 font-bold text-2xl font-serif">Skilled</div>
+                            <div class="text-charcoal-400 text-xs font-medium mt-1">Trained Workforce</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-coir-600 font-bold text-2xl font-serif">Controlled</div>
+                            <div class="text-charcoal-400 text-xs font-medium mt-1">Quality Manufacturing</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-coir-600 font-bold text-2xl font-serif">International</div>
+                            <div class="text-charcoal-400 text-xs font-medium mt-1">Export Standards</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ PRODUCT CATEGORIES ============ -->
+    <section id="products" class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+                <div class="inline-flex items-center gap-2 bg-coir-50 border border-coir-200 rounded-full px-4 py-1.5 mb-6">
+                    <span class="w-1.5 h-1.5 bg-coir-500 rounded-full"></span>
+                    <span class="text-coir-700 text-xs font-semibold tracking-wider uppercase">Product Range</span>
+                </div>
+                <h2 class="font-serif text-3xl lg:text-4xl xl:text-5xl font-600 text-charcoal-800 leading-[1.15] tracking-tight mb-5">
+                    Premium Coir Mat Categories
+                </h2>
+                <p class="text-charcoal-400 text-base lg:text-lg leading-relaxed">
+                    Our comprehensive range of coir mats is designed to meet diverse international market requirements, available in custom sizes and specifications.
+                </p>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Product 1 -->
+                <div class="product-card card-hover bg-cream-50 rounded-2xl overflow-hidden border border-cream-400 group">
+                    <div class="overflow-hidden h-[260px]">
+                        <img src="https://picsum.photos/seed/panama-coir-grill/600/400.jpg" alt="Rubber Backed Panama Coir Grill Mat" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-charcoal-800 text-lg mb-2">Rubber Backed Panama Coir Grill Mat</h3>
+                        <p class="text-charcoal-400 text-sm leading-relaxed mb-5">Classic panama weave pattern with durable rubber backing. Ideal for entrance matting in commercial and residential applications.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-coir-600 hover:text-coir-700 text-sm font-semibold group/link transition-colors duration-200">
+                            View Products
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover/link:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Product 2 -->
+                <div class="product-card card-hover bg-cream-50 rounded-2xl overflow-hidden border border-cream-400 group">
+                    <div class="overflow-hidden h-[260px]">
+                        <img src="https://picsum.photos/seed/brush-coir-grill/600/400.jpg" alt="Rubber Backed Brush Coir Grill Mat" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-charcoal-800 text-lg mb-2">Rubber Backed Brush Coir Grill Mat</h3>
+                        <p class="text-charcoal-400 text-sm leading-relaxed mb-5">High-brush coir surface with open grid pattern for effective dirt scraping. Premium rubber backing for stability and durability.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-coir-600 hover:text-coir-700 text-sm font-semibold group/link transition-colors duration-200">
+                            View Products
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover/link:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Product 3 -->
+                <div class="product-card card-hover bg-cream-50 rounded-2xl overflow-hidden border border-cream-400 group">
+                    <div class="overflow-hidden h-[260px]">
+                        <img src="https://picsum.photos/seed/brush-coir-solid/600/400.jpg" alt="Rubber Backed Brush Coir Mat" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-charcoal-800 text-lg mb-2">Rubber Backed Brush Coir Mat</h3>
+                        <p class="text-charcoal-400 text-sm leading-relaxed mb-5">Dense brush coir surface with full rubber backing. Excellent scraping action and moisture absorption for high-traffic entrances.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-coir-600 hover:text-coir-700 text-sm font-semibold group/link transition-colors duration-200">
+                            View Products
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover/link:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Product 4 -->
+                <div class="product-card card-hover bg-cream-50 rounded-2xl overflow-hidden border border-cream-400 group">
+                    <div class="overflow-hidden h-[260px]">
+                        <img src="https://picsum.photos/seed/coir-emboss-mat/600/400.jpg" alt="Coir Embossing Mat" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-charcoal-800 text-lg mb-2">Coir Embossing Mat</h3>
+                        <p class="text-charcoal-400 text-sm leading-relaxed mb-5">Elegantly embossed coir mats with custom designs and logos. Perfect for branded entrance matting and retail display applications.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-coir-600 hover:text-coir-700 text-sm font-semibold group/link transition-colors duration-200">
+                            View Products
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover/link:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Product 5 -->
+                <div class="product-card card-hover bg-cream-50 rounded-2xl overflow-hidden border border-cream-400 group">
+                    <div class="overflow-hidden h-[260px]">
+                        <img src="https://picsum.photos/seed/rubber-grill-mat/600/400.jpg" alt="Rubber Grill Mat" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-charcoal-800 text-lg mb-2">Rubber Grill Mat</h3>
+                        <p class="text-charcoal-400 text-sm leading-relaxed mb-5">Durable rubber grill mats with coir inlay options. Heavy-duty construction suitable for industrial and commercial entrance applications.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-coir-600 hover:text-coir-700 text-sm font-semibold group/link transition-colors duration-200">
+                            View Products
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover/link:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Product 6 -->
+                <div class="product-card card-hover bg-cream-50 rounded-2xl overflow-hidden border border-cream-400 group">
+                    <div class="overflow-hidden h-[260px]">
+                        <img src="https://picsum.photos/seed/led-sensor-mat/600/400.jpg" alt="Motion Sensor LED Light Mat" class="product-img w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-semibold text-charcoal-800 text-lg mb-2">Motion Sensor LED Light Mat</h3>
+                        <p class="text-charcoal-400 text-sm leading-relaxed mb-5">Innovative coir mat with integrated motion-sensor LED lighting. Combines functionality with safety for premium entrance solutions.</p>
+                        <a href="#" class="inline-flex items-center gap-2 text-coir-600 hover:text-coir-700 text-sm font-semibold group/link transition-colors duration-200">
+                            View Products
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover/link:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ QUALITY & CERTIFICATIONS ============ -->
+    <section id="quality" class="py-24 lg:py-32 bg-charcoal-700 relative overflow-hidden">
+        <!-- Subtle pattern overlay -->
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-coir-400 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-coir-400 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+                <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-6">
+                    <span class="w-1.5 h-1.5 bg-coir-400 rounded-full"></span>
+                    <span class="text-coir-300 text-xs font-semibold tracking-wider uppercase">Quality & Certifications</span>
+                </div>
+                <h2 class="font-serif text-3xl lg:text-4xl xl:text-5xl font-600 text-white leading-[1.15] tracking-tight mb-5">
+                    Certified Quality for Global Markets
+                </h2>
+                <p class="text-white/50 text-base lg:text-lg leading-relaxed">
+                    Every product leaving our facility meets international quality standards backed by recognized certifications.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Certification Badges -->
+                <div class="animate-left">
+                    <div class="grid grid-cols-2 gap-6">
+                        <!-- Talite Free -->
+                        <div class="cert-badge bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-coir-500/10 flex items-center justify-center mb-4">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#CCAE7E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                            </div>
+                            <h4 class="text-white font-semibold text-sm mb-2">Talite Free Certified</h4>
+                            <p class="text-white/40 text-xs leading-relaxed">Compliant with EU talite-free import requirements for coir products</p>
+                        </div>
+                        <!-- Rubber Board -->
+                        <div class="cert-badge bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-coir-500/10 flex items-center justify-center mb-4">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#CCAE7E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            </div>
+                            <h4 class="text-white font-semibold text-sm mb-2">Rubber Board Registered</h4>
+                            <p class="text-white/40 text-xs leading-relaxed">Officially registered with the Rubber Board of India for rubber-backed products</p>
+                        </div>
+                        <!-- Quality Control -->
+                        <div class="cert-badge bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-coir-500/10 flex items-center justify-center mb-4">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#CCAE7E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20V10"/><path d="M18 20V4"/><path d="M6 20v-4"/></svg>
+                            </div>
+                            <h4 class="text-white font-semibold text-sm mb-2">Consistent QC</h4>
+                            <p class="text-white/40 text-xs leading-relaxed">Multi-stage quality control ensuring zero-defect shipments</p>
+                        </div>
+                        <!-- Export Standards -->
+                        <div class="cert-badge bg-white/5 border border-white/10 rounded-2xl p-8 text-center backdrop-blur-sm">
+                            <div class="w-16 h-16 mx-auto rounded-full bg-coir-500/10 flex items-center justify-center mb-4">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#CCAE7E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                            </div>
+                            <h4 class="text-white font-semibold text-sm mb-2">Export Standards</h4>
+                            <p class="text-white/40 text-xs leading-relaxed">Products manufactured to meet EU and US import standards</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quality Process Text -->
+                <div class="animate-right">
+                    <h3 class="font-serif text-2xl lg:text-3xl font-600 text-white leading-tight mb-6">
+                        Quality Is Not an Act — It's a Process at Every Stage
+                    </h3>
+                    <div class="space-y-5 text-white/50 text-sm leading-relaxed">
+                        <p>
+                            At SIBCO, quality assurance begins before production starts. Every batch of raw coir fibre is tested for critical parameters including fibre length, tensile strength, moisture content, and cleanliness.
+                        </p>
+                        <p>
+                            During production, in-line quality checks monitor weave density, dimensional accuracy, rubber backing adhesion, and embossing depth. Our quality team conducts random sampling at defined intervals to ensure process consistency.
+                        </p>
+                        <p>
+                            Final inspection covers every aspect — dimensions, weight, visual appearance, backing integrity, and packaging compliance. Only products that pass all checkpoints are approved for export dispatch.
+                        </p>
+                    </div>
+                    <!-- Quality metrics -->
+                    <div class="grid grid-cols-3 gap-6 mt-10 pt-8 border-t border-white/10">
+                        <div>
+                            <div class="text-coir-400 font-bold text-3xl font-serif">100%</div>
+                            <div class="text-white/40 text-xs font-medium mt-1">Inspection Rate</div>
+                        </div>
+                        <div>
+                            <div class="text-coir-400 font-bold text-3xl font-serif">Zero</div>
+                            <div class="text-white/40 text-xs font-medium mt-1">Quality Claims</div>
+                        </div>
+                        <div>
+                            <div class="text-coir-400 font-bold text-3xl font-serif">Multi</div>
+                            <div class="text-white/40 text-xs font-medium mt-1">Stage QC</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ GLOBAL REACH ============ -->
+    <section id="global" class="py-24 lg:py-32 bg-cream-50">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Map -->
+                <div class="animate-left relative">
+                    <div class="bg-white rounded-2xl border border-cream-400 p-8 lg:p-12 relative overflow-hidden">
+                        <!-- Simplified SVG World Map -->
+                        <svg viewBox="0 0 800 400" class="w-full" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Grid lines -->
+                            <line x1="0" y1="100" x2="800" y2="100" stroke="#E5DDD3" stroke-width="0.5" stroke-dasharray="4 4"/>
+                            <line x1="0" y1="200" x2="800" y2="200" stroke="#E5DDD3" stroke-width="0.5" stroke-dasharray="4 4"/>
+                            <line x1="0" y1="300" x2="800" y2="300" stroke="#E5DDD3" stroke-width="0.5" stroke-dasharray="4 4"/>
+                            <line x1="200" y1="0" x2="200" y2="400" stroke="#E5DDD3" stroke-width="0.5" stroke-dasharray="4 4"/>
+                            <line x1="400" y1="0" x2="400" y2="400" stroke="#E5DDD3" stroke-width="0.5" stroke-dasharray="4 4"/>
+                            <line x1="600" y1="0" x2="600" y2="400" stroke="#E5DDD3" stroke-width="0.5" stroke-dasharray="4 4"/>
+
+                            <!-- North America -->
+                            <path d="M80 80 L180 60 L220 80 L240 120 L230 160 L200 180 L180 200 L140 210 L100 190 L70 160 L60 120 Z" fill="#F5F0EB" stroke="#D4C8B8" stroke-width="1"/>
+                            <!-- South America -->
+                            <path d="M180 230 L210 220 L230 250 L240 300 L220 340 L190 360 L170 340 L160 290 L165 250 Z" fill="#F5F0EB" stroke="#D4C8B8" stroke-width="1"/>
+                            <!-- Europe -->
+                            <path d="M360 70 L420 60 L450 80 L440 110 L420 130 L390 140 L360 130 L350 100 Z" fill="#F5F0EB" stroke="#D4C8B8" stroke-width="1"/>
+                            <!-- Africa -->
+                            <path d="M370 160 L420 150 L450 180 L460 240 L440 300 L410 320 L380 310 L360 270 L350 210 Z" fill="#F5F0EB" stroke="#D4C8B8" stroke-width="1"/>
+                            <!-- Asia -->
+                            <path d="M460 60 L560 50 L640 70 L680 110 L670 160 L640 190 L580 200 L520 190 L480 160 L460 120 Z" fill="#F5F0EB" stroke="#D4C8B8" stroke-width="1"/>
+                            <!-- India (highlighted) -->
+                            <path d="M550 140 L580 130 L600 150 L595 190 L575 210 L555 200 L545 170 Z" fill="#E0CFB0" stroke="#A67C2E" stroke-width="1.5"/>
+                            <!-- Australia -->
+                            <path d="M600 280 L660 270 L700 290 L690 320 L650 330 L610 320 L595 300 Z" fill="#F5F0EB" stroke="#D4C8B8" stroke-width="1"/>
+
+                            <!-- Export lines from India -->
+                            <line x1="570" y1="155" x2="400" y2="100" stroke="#A67C2E" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+                            <line x1="570" y1="155" x2="160" y2="130" stroke="#A67C2E" stroke-width="1" stroke-dasharray="4 4" opacity="0.5"/>
+
+                            <!-- India dot -->
+                            <circle cx="570" cy="155" r="6" fill="#A67C2E"/>
+                            <circle cx="570" cy="155" r="12" fill="#A67C2E" opacity="0.2" class="map-dot-ping"/>
+
+                            <!-- Europe dot -->
+                            <circle cx="400" cy="100" r="5" fill="#A67C2E"/>
+                            <circle cx="400" cy="100" r="10" fill="#A67C2E" opacity="0.2" class="map-dot-ping" style="animation-delay: 0.5s"/>
+
+                            <!-- US dot -->
+                            <circle cx="160" cy="130" r="5" fill="#A67C2E"/>
+                            <circle cx="160" cy="130" r="10" fill="#A67C2E" opacity="0.2" class="map-dot-ping" style="animation-delay: 1s"/>
+
+                            <!-- Labels -->
+                            <text x="380" y="88" fill="#A67C2E" font-size="11" font-weight="600" font-family="Plus Jakarta Sans">EUROPE</text>
+                            <text x="120" y="118" fill="#A67C2E" font-size="11" font-weight="600" font-family="Plus Jakarta Sans">USA</text>
+                            <text x="555" y="230" fill="#8B6914" font-size="10" font-weight="600" font-family="Plus Jakarta Sans">INDIA</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="animate-right">
+                    <div class="inline-flex items-center gap-2 bg-coir-50 border border-coir-200 rounded-full px-4 py-1.5 mb-6">
+                        <span class="w-1.5 h-1.5 bg-coir-500 rounded-full"></span>
+                        <span class="text-coir-700 text-xs font-semibold tracking-wider uppercase">Global Reach</span>
+                    </div>
+
+                    <h2 class="font-serif text-3xl lg:text-4xl xl:text-5xl font-600 text-charcoal-800 leading-[1.15] tracking-tight mb-6">
+                        Trusted by Importers Across Europe & North America
+                    </h2>
+
+                    <p class="text-charcoal-400 text-base leading-relaxed mb-8">
+                        Supporting international buyers through reliable export manufacturing while maintaining complete confidentiality of our existing OEM partnerships. Our products reach major markets through established shipping routes and trusted logistics partners.
+                    </p>
+
+                    <!-- Stats -->
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="bg-white rounded-xl border border-cream-400 p-6">
+                            <div class="text-coir-600 font-bold text-3xl font-serif">26</div>
+                            <div class="text-charcoal-400 text-sm font-medium mt-1">Years of Export</div>
+                        </div>
+                        <div class="bg-white rounded-xl border border-cream-400 p-6">
+                            <div class="text-coir-600 font-bold text-3xl font-serif">1000s</div>
+                            <div class="text-charcoal-400 text-sm font-medium mt-1">Shipments Delivered</div>
+                        </div>
+                        <div class="bg-white rounded-xl border border-cream-400 p-6">
+                            <div class="text-coir-600 font-bold text-3xl font-serif">2</div>
+                            <div class="text-charcoal-400 text-sm font-medium mt-1">Major Export Markets</div>
+                        </div>
+                        <div class="bg-white rounded-xl border border-cream-400 p-6">
+                            <div class="text-coir-600 font-bold text-3xl font-serif">100%</div>
+                            <div class="text-charcoal-400 text-sm font-medium mt-1">Reliable Supply Chain</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ SUSTAINABILITY ============ -->
+    <section id="sustainability" class="py-24 lg:py-32 bg-cream-200 relative overflow-hidden">
+        <!-- Organic decorative shapes -->
+        <div class="absolute top-10 right-10 w-64 h-64 bg-coir-300/10 organic-shape"></div>
+        <div class="absolute bottom-10 left-10 w-48 h-48 bg-coir-200/20 organic-shape-2"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <!-- Text -->
+                <div class="animate-left">
+                    <div class="inline-flex items-center gap-2 bg-coir-50 border border-coir-200 rounded-full px-4 py-1.5 mb-6">
+                        <span class="w-1.5 h-1.5 bg-coir-500 rounded-full"></span>
+                        <span class="text-coir-700 text-xs font-semibold tracking-wider uppercase">Sustainability</span>
+                    </div>
+
+                    <h2 class="font-serif text-3xl lg:text-4xl xl:text-5xl font-600 text-charcoal-800 leading-[1.15] tracking-tight mb-6">
+                        Naturally Sustainable. Responsibly Manufactured.
+                    </h2>
+
+                    <p class="text-charcoal-400 text-base leading-relaxed mb-10">
+                        Our commitment to sustainability goes beyond using natural materials. Every aspect of our manufacturing process is designed to minimize environmental impact while delivering premium quality products.
+                    </p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-coir-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M7 10.5c0-1.657 2.239-3 5-3s5 1.343 5 3"/><path d="M7 14c0 1.657 2.239 3 5 3s5-1.343 5-3"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal-800 text-base mb-1">Natural Renewable Coir</h4>
+                                <p class="text-charcoal-400 text-sm leading-relaxed">Coir is a naturally renewable resource extracted from coconut husks, making it one of the most sustainable raw materials available.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-coir-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal-800 text-base mb-1">Eco-Friendly Manufacturing</h4>
+                                <p class="text-charcoal-400 text-sm leading-relaxed">Our production processes minimize waste and energy consumption, adhering to environmentally responsible manufacturing practices.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-coir-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal-800 text-base mb-1">Responsible Production</h4>
+                                <p class="text-charcoal-400 text-sm leading-relaxed">From sourcing to dispatch, we maintain ethical production standards that support local communities and protect the environment.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-coir-100 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-charcoal-800 text-base mb-1">Biodegradable Products</h4>
+                                <p class="text-charcoal-400 text-sm leading-relaxed">100% natural coir products that are fully biodegradable, aligning with circular economy principles and reducing landfill impact.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Image -->
+                <div class="animate-right relative">
+                    <div class="rounded-2xl overflow-hidden">
+                        <img src="https://picsum.photos/seed/natural-coconut-trees/800/700.jpg" alt="Sustainable Coir Sourcing" class="w-full h-[400px] lg:h-[550px] object-cover">
+                    </div>
+                    <!-- Floating eco badge -->
+                    <div class="absolute -bottom-4 -left-4 lg:-left-8 bg-coir-500 text-white rounded-xl p-5 shadow-lg">
+                        <div class="text-2xl font-bold font-serif">100%</div>
+                        <div class="text-white/80 text-xs font-medium mt-0.5">Natural &<br>Biodegradable</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ B2B EXPORT PROCESS ============ -->
+    <section class="py-24 lg:py-32 bg-white">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+                <div class="inline-flex items-center gap-2 bg-coir-50 border border-coir-200 rounded-full px-4 py-1.5 mb-6">
+                    <span class="w-1.5 h-1.5 bg-coir-500 rounded-full"></span>
+                    <span class="text-coir-700 text-xs font-semibold tracking-wider uppercase">How It Works</span>
+                </div>
+                <h2 class="font-serif text-3xl lg:text-4xl xl:text-5xl font-600 text-charcoal-800 leading-[1.15] tracking-tight mb-5">
+                    Simple B2B Export Process
+                </h2>
+                <p class="text-charcoal-400 text-base lg:text-lg leading-relaxed">
+                    From initial enquiry to global delivery — our streamlined process makes international sourcing effortless.
+                </p>
+            </div>
+
+            <!-- 4 Steps -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="animate-on-scroll delay-1 text-center relative">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-coir-50 border border-coir-200 flex items-center justify-center mb-6">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </div>
+                    <div class="text-coir-500 text-xs font-bold tracking-widest uppercase mb-2">Step 01</div>
+                    <h3 class="font-semibold text-charcoal-800 text-lg mb-3">Send Enquiry</h3>
+                    <p class="text-charcoal-400 text-sm leading-relaxed">Contact our export team with your product requirements, specifications, and estimated quantities.</p>
+                    <!-- Arrow (hidden on last) -->
+                    <div class="hidden lg:block absolute top-10 -right-4 w-8">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4C8B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="animate-on-scroll delay-2 text-center relative">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-coir-50 border border-coir-200 flex items-center justify-center mb-6">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <div class="text-coir-500 text-xs font-bold tracking-widest uppercase mb-2">Step 02</div>
+                    <h3 class="font-semibold text-charcoal-800 text-lg mb-3">Product Discussion</h3>
+                    <p class="text-charcoal-400 text-sm leading-relaxed">We discuss technical details, provide samples if needed, and finalize pricing, timelines, and specifications.</p>
+                    <div class="hidden lg:block absolute top-10 -right-4 w-8">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4C8B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="animate-on-scroll delay-3 text-center relative">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-coir-50 border border-coir-200 flex items-center justify-center mb-6">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+                    </div>
+                    <div class="text-coir-500 text-xs font-bold tracking-widest uppercase mb-2">Step 03</div>
+                    <h3 class="font-semibold text-charcoal-800 text-lg mb-3">Manufacturing</h3>
+                    <p class="text-charcoal-400 text-sm leading-relaxed">Your order enters production with quality checkpoints at every stage. Progress updates provided throughout.</p>
+                    <div class="hidden lg:block absolute top-10 -right-4 w-8">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4C8B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="animate-on-scroll delay-4 text-center">
+                    <div class="w-20 h-20 mx-auto rounded-2xl bg-coir-500 flex items-center justify-center mb-6">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                    </div>
+                    <div class="text-coir-500 text-xs font-bold tracking-widest uppercase mb-2">Step 04</div>
+                    <h3 class="font-semibold text-charcoal-800 text-lg mb-3">Global Delivery</h3>
+                    <p class="text-charcoal-400 text-sm leading-relaxed">Finished goods are export-packed and shipped to your destination port with complete documentation and tracking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ TESTIMONIALS ============ -->
+    <section class="py-24 lg:py-32 bg-cream-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16 animate-on-scroll">
+                <div class="inline-flex items-center gap-2 bg-coir-50 border border-coir-200 rounded-full px-4 py-1.5 mb-6">
+                    <span class="w-1.5 h-1.5 bg-coir-500 rounded-full"></span>
+                    <span class="text-coir-700 text-xs font-semibold tracking-wider uppercase">Client Confidence</span>
+                </div>
+                <h2 class="font-serif text-3xl lg:text-4xl xl:text-5xl font-600 text-charcoal-800 leading-[1.15] tracking-tight mb-5">
+                    What Our Partners Say
+                </h2>
+                <p class="text-charcoal-400 text-base lg:text-lg leading-relaxed">
+                    We maintain strict confidentiality for all OEM partners. The following reflect genuine feedback from our international buyers.
+                </p>
+            </div>
+
+            <!-- Testimonial Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Testimonial 1 -->
+                <div class="animate-on-scroll delay-1 bg-white rounded-2xl p-8 border border-cream-400 card-hover">
+                    <div class="flex gap-1 mb-6">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <blockquote class="text-charcoal-600 text-base leading-relaxed mb-6 italic">
+                        "Reliable manufacturing partner with consistently high product quality. Every shipment meets our specifications without exception."
+                    </blockquote>
+                    <div class="flex items-center gap-3 pt-6 border-t border-cream-400">
+                        <div class="w-10 h-10 rounded-full bg-coir-100 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-charcoal-300 text-sm font-medium">Confidential</div>
+                            <div class="text-charcoal-400 text-xs">European Home Products Importer</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="animate-on-scroll delay-2 bg-white rounded-2xl p-8 border border-cream-400 card-hover">
+                    <div class="flex gap-1 mb-6">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <blockquote class="text-charcoal-600 text-base leading-relaxed mb-6 italic">
+                        "Excellent communication and dependable deliveries. SIBCO understands the requirements of the North American market very well."
+                    </blockquote>
+                    <div class="flex items-center gap-3 pt-6 border-t border-cream-400">
+                        <div class="w-10 h-10 rounded-full bg-coir-100 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-charcoal-300 text-sm font-medium">Confidential</div>
+                            <div class="text-charcoal-400 text-xs">North American Distributor</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="animate-on-scroll delay-3 bg-white rounded-2xl p-8 border border-cream-400 card-hover">
+                    <div class="flex gap-1 mb-6">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="#A67C2E" stroke="none"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <blockquote class="text-charcoal-600 text-base leading-relaxed mb-6 italic">
+                        "We've been working with SIBCO for our private label coir mats for years. Their consistency and professionalism are unmatched in the industry."
+                    </blockquote>
+                    <div class="flex items-center gap-3 pt-6 border-t border-cream-400">
+                        <div class="w-10 h-10 rounded-full bg-coir-100 flex items-center justify-center">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-charcoal-300 text-sm font-medium">Confidential</div>
+                            <div class="text-charcoal-400 text-xs">European Retail Chain — Private Label</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ FINAL CTA ============ -->
+    <section id="contact" class="relative py-32 lg:py-40 overflow-hidden">
+        <!-- Background -->
+        <div class="absolute inset-0">
+            <img src="https://picsum.photos/seed/coir-warehouse-export/1920/800.jpg" alt="SIBCO Export Facility" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-charcoal-800/85"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-4xl mx-auto px-6 lg:px-8 text-center animate-on-scroll">
+            <div class="inline-flex items-center gap-2 bg-white/5 border border-white/10 rounded-full px-4 py-1.5 mb-8 backdrop-blur-sm">
+                <span class="w-2 h-2 bg-coir-400 rounded-full" style="animation: subtlePulse 2s ease-in-out infinite;"></span>
+                <span class="text-white/60 text-xs font-medium tracking-wider uppercase">Ready to Partner</span>
+            </div>
+
+            <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-600 text-white leading-[1.1] tracking-tight mb-6">
+                Looking for a Reliable Coir Mat Manufacturing Partner?
+            </h2>
+
+            <p class="text-white/60 text-lg lg:text-xl font-light leading-relaxed max-w-2xl mx-auto mb-12">
+                Partner with SIBCO for high-quality natural coir mats backed by 26 years of manufacturing excellence. Let's discuss your requirements.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="mailto:export@sibco.in" class="btn-primary bg-coir-500 hover:bg-coir-600 text-white font-semibold px-10 py-4 rounded-lg text-base transition-colors duration-200 inline-flex items-center gap-2">
+                    Request Quote
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+                <a href="mailto:export@sibco.in" class="bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/20 text-white font-medium px-10 py-4 rounded-lg text-base transition-all duration-200 inline-flex items-center gap-2">
+                    Contact Export Team
+                </a>
+            </div>
+
+            <!-- Quick contact info -->
+            <div class="flex flex-wrap justify-center gap-8 mt-12 pt-8 border-t border-white/10">
+                <div class="flex items-center gap-3">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    <span class="text-white/50 text-sm">export@sibco.in</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    <span class="text-white/50 text-sm">+91 XXX XXX XXXX</span>
+                </div>
+                <div class="flex items-center gap-3">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                    <span class="text-white/50 text-sm">Kerala, India</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============ FOOTER ============ -->
+    <footer class="bg-charcoal-800 pt-20 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 pb-16 border-b border-white/8">
+                <!-- Brand Column -->
+                <div class="lg:col-span-2">
+                    <div class="text-white font-bold text-2xl tracking-tight mb-4">SIBCO</div>
+                    <p class="text-white/40 text-sm leading-relaxed max-w-sm mb-6">
+                        Premium coir mat manufacturer with 26 years of export excellence. Trusted by importers, distributors, and OEM brands across Europe and North America.
+                    </p>
+                    <!-- Social -->
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center text-white/40 hover:text-coir-400 hover:border-coir-400/30 transition-all duration-200" aria-label="LinkedIn">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center text-white/40 hover:text-coir-400 hover:border-coir-400/30 transition-all duration-200" aria-label="Facebook">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-white/5 border border-white/8 flex items-center justify-center text-white/40 hover:text-coir-400 hover:border-coir-400/30 transition-all duration-200" aria-label="Instagram">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm tracking-wide uppercase mb-5">Company</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#about" class="text-white/40 text-sm hover:text-coir-400 transition-colors duration-200">About SIBCO</a></li>
+                        <li><a href="#manufacturing" class="text-white/40 text-sm hover:text-coir-400 transition-colors duration-200">Manufacturing</a></li>
+                        <li><a href="#sustainability" class="text-white/40 text-sm hover:text-coir-400 transition-colors duration-200">Sustainability</a></li>
+                        <li><a href="#global" class="text-white/40 text-sm hover:text-coir-400 transition-colors duration-200">Global Reach</a></li>
+                        <li><a href="#contact" class="text-white/40 text-sm hover:text-coir-400 transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Products -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm tracking-wide uppercase mb-5">Products</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#products" class="text-white/40 text-sm hover:text-coir-400 transition-colors duration-200">Panama Grill Mats</a></li>
+                        <li><a href="#products" class="text-white/40 text-sm hover:text-coir-400 transition-colors duration-200">Brush Grill Mats</a></li>
+                        <li><a href="#products" class="text-white/40 text-sm hover:text-coir-400 transition-colors duration-200">Brush Coir Mats</a></li>
+                        <li><a href="#products" class="text-white/40 text-sm hover:text-coir-400 transition-colors duration-200">Embossing Mats</a></li>
+                        <li><a href="#products" class="text-white/40 text-sm hover:text-coir-400 transition-colors duration-200">LED Light Mats</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div>
+                    <h4 class="text-white font-semibold text-sm tracking-wide uppercase mb-5">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            <span class="text-white/40 text-sm">export@sibco.in</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                            <span class="text-white/40 text-sm">+91 XXX XXX XXXX</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="mt-0.5 flex-shrink-0"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                            <span class="text-white/40 text-sm">Kerala, India</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="inline-flex items-center gap-2 text-coir-400 hover:text-coir-300 text-sm font-semibold transition-colors duration-200">
+                            Request a Quote
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4 pt-8">
+                <p class="text-white/25 text-xs">© 2024 SIBCO. All rights reserved. Premium Coir Mat Manufacturer.</p>
+                <div class="flex gap-6">
+                    <a href="#" class="text-white/25 text-xs hover:text-white/50 transition-colors duration-200">Privacy Policy</a>
+                    <a href="#" class="text-white/25 text-xs hover:text-white/50 transition-colors duration-200">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ============ JAVASCRIPT ============ -->
+    <script>
+        // ---- Scroll-based animations (IntersectionObserver) ----
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -60px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.animate-on-scroll, .animate-left, .animate-right, .animate-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ---- Navigation scroll effect ----
+        const nav = document.getElementById('mainNav');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+
+            if (scrollY > 80) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+
+            lastScroll = scrollY;
+        }, { passive: true });
+
+        // ---- Mobile menu ----
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileClose = document.getElementById('mobileClose');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        });
+
+        mobileClose.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+            document.body.style.overflow = '';
+        });
+
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // ---- Smooth scroll for anchor links ----
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                const targetEl = document.querySelector(targetId);
+                if (targetEl) {
+                    e.preventDefault();
+                    const offset = 80;
+                    const top = targetEl.getBoundingClientRect().top + window.scrollY - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
+
+        // ---- Hero loaded animation trigger ----
+        window.addEventListener('load', () => {
+            document.getElementById('hero').classList.add('hero-loaded');
+        });
+    </script>
+</body>
+</html>

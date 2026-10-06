@@ -1,0 +1,145 @@
+{
+    "key": "group_sibco_contact_page",
+    "title": "Contact Page Content",
+    "local": "php",
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-contact.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "fields": {
+        "field_contact_info_tab": {
+            "key": "field_contact_info_tab",
+            "name": "",
+            "type": "tab",
+            "parent": "group_sibco_contact_page",
+            "label": "Contact Details",
+            "menu_order": 0
+        },
+        "field_contact_page_badge": {
+            "key": "field_contact_page_badge",
+            "name": "contact_page_badge",
+            "type": "text",
+            "parent": "group_sibco_contact_page",
+            "label": "Contact Badge",
+            "default_value": "Contact Us",
+            "menu_order": 1
+        },
+        "field_contact_page_title": {
+            "key": "field_contact_page_title",
+            "name": "contact_page_title",
+            "type": "text",
+            "parent": "group_sibco_contact_page",
+            "label": "Contact Heading",
+            "default_value": "Get in Touch With Our Export Team",
+            "menu_order": 2
+        },
+        "field_contact_page_description": {
+            "key": "field_contact_page_description",
+            "name": "contact_page_description",
+            "type": "textarea",
+            "parent": "group_sibco_contact_page",
+            "label": "Contact Description",
+            "rows": 3,
+            "default_value": "Discuss custom specifications, request sample swatches, or receive a formal export quotation.",
+            "menu_order": 3
+        },
+        "field_contact_direct_email": {
+            "key": "field_contact_direct_email",
+            "name": "contact_direct_email",
+            "type": "email",
+            "parent": "group_sibco_contact_page",
+            "label": "Export Email",
+            "default_value": "export@sibco.in",
+            "menu_order": 4
+        },
+        "field_contact_direct_phone": {
+            "key": "field_contact_direct_phone",
+            "name": "contact_direct_phone",
+            "type": "text",
+            "parent": "group_sibco_contact_page",
+            "label": "Direct Phone / WhatsApp",
+            "default_value": "+91 XXX XXX XXXX",
+            "menu_order": 5
+        },
+        "field_contact_direct_location": {
+            "key": "field_contact_direct_location",
+            "name": "contact_direct_location",
+            "type": "text",
+            "parent": "group_sibco_contact_page",
+            "label": "Office Location",
+            "default_value": "Kerala, India",
+            "menu_order": 6
+        },
+        "field_contact_direct_address": {
+            "key": "field_contact_direct_address",
+            "name": "contact_direct_address",
+            "type": "textarea",
+            "parent": "group_sibco_contact_page",
+            "label": "Factory / Mailing Address",
+            "rows": 3,
+            "default_value": "SIBCO Coir Exports\nIndustrial Estate, Alappuzha\nKerala, India - 688001",
+            "menu_order": 7
+        },
+        "field_contact_office_hours": {
+            "key": "field_contact_office_hours",
+            "name": "contact_office_hours",
+            "type": "text",
+            "parent": "group_sibco_contact_page",
+            "label": "Office Working Hours",
+            "default_value": "Monday - Saturday: 9:00 AM - 6:00 PM IST (Export desk available 24/7)",
+            "menu_order": 8
+        },
+        "field_contact_map_tab": {
+            "key": "field_contact_map_tab",
+            "name": "",
+            "type": "tab",
+            "parent": "group_sibco_contact_page",
+            "label": "Global Reach Section",
+            "menu_order": 9
+        },
+        "field_map_badge": {
+            "key": "field_map_badge",
+            "name": "map_badge",
+            "type": "text",
+            "parent": "group_sibco_contact_page",
+            "label": "Global Reach Badge",
+            "default_value": "Global Reach",
+            "menu_order": 10
+        },
+        "field_map_title": {
+            "key": "field_map_title",
+            "name": "map_title",
+            "type": "text",
+            "parent": "group_sibco_contact_page",
+            "label": "Global Reach Heading",
+            "default_value": "Trusted by Importers Across Europe & North America",
+            "menu_order": 11
+        },
+        "field_map_description": {
+            "key": "field_map_description",
+            "name": "map_description",
+            "type": "textarea",
+            "parent": "group_sibco_contact_page",
+            "label": "Global Reach Description",
+            "rows": 3,
+            "default_value": "Supporting international buyers through reliable export manufacturing while maintaining complete confidentiality of our existing OEM partnerships. Our products reach major markets through established shipping routes.",
+            "menu_order": 12
+        },
+        "field_map_stats": {
+            "key": "field_map_stats",
+            "name": "map_stats",
+            "type": "repeater",
+            "parent": "group_sibco_contact_page",
+            "label": "Global Reach Stats (4 Cards)",
+            "layout": "table",
+            "button_label": "Add Export Stat",
+            "menu_order": 13
+        }
+    }
+}

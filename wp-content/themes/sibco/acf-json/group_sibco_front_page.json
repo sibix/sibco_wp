@@ -1,0 +1,71 @@
+{
+    "key": "group_sibco_front_page",
+    "title": "Homepage Content & Stats",
+    "local": "php",
+    "location": [
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "fields": {
+        "field_hp_stats_tab": {
+            "key": "field_hp_stats_tab",
+            "name": "",
+            "type": "tab",
+            "parent": "group_sibco_front_page",
+            "label": "Hero Stats (6 Grid Items)",
+            "menu_order": 0
+        },
+        "field_hero_stats": {
+            "key": "field_hero_stats",
+            "name": "hero_stats",
+            "type": "repeater",
+            "parent": "group_sibco_front_page",
+            "label": "Hero Stat Cards",
+            "layout": "table",
+            "button_label": "Add Stat Card",
+            "menu_order": 1
+        },
+        "field_hp_trust_tab": {
+            "key": "field_hp_trust_tab",
+            "name": "",
+            "type": "tab",
+            "parent": "group_sibco_front_page",
+            "label": "Trust Bar (6 Badges)",
+            "menu_order": 2
+        },
+        "field_trust_items": {
+            "key": "field_trust_items",
+            "name": "trust_items",
+            "type": "repeater",
+            "parent": "group_sibco_front_page",
+            "label": "Trust Bar Badges",
+            "layout": "table",
+            "button_label": "Add Trust Badge",
+            "menu_order": 3
+        },
+        "field_hp_testi_tab": {
+            "key": "field_hp_testi_tab",
+            "name": "",
+            "type": "tab",
+            "parent": "group_sibco_front_page",
+            "label": "Testimonials",
+            "menu_order": 4
+        },
+        "field_testimonials": {
+            "key": "field_testimonials",
+            "name": "testimonials",
+            "type": "repeater",
+            "parent": "group_sibco_front_page",
+            "label": "Client Testimonials",
+            "layout": "row",
+            "button_label": "Add Testimonial",
+            "menu_order": 5
+        }
+    }
+}

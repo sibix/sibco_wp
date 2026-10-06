@@ -1,0 +1,57 @@
+# ==============================================================================
+# WordPress Core Files
+# ==============================================================================
+/wp-admin/
+/wp-includes/
+/index.php
+/license.txt
+/readme.html
+/xmlrpc.php
+/wp-activate.php
+/wp-blog-header.php
+/wp-comments-post.php
+/wp-config-sample.php
+/wp-cron.php
+/wp-links-opml.php
+/wp-load.php
+/wp-login.php
+/wp-mail.php
+/wp-settings.php
+/wp-signup.php
+/wp-trackback.php
+
+# WordPress Configuration & Sensitive Credentials
+/wp-config.php
+/.htaccess
+/.htpasswd
+
+# WordPress Content: Core & Dynamic Directories
+/wp-content/index.php
+/wp-content/uploads/
+/wp-content/upgrade/
+/wp-content/languages/
+/wp-content/cache/
+
+# Core Themes (Default Twenty Twenty Series)
+/wp-content/themes/index.php
+/wp-content/themes/twentytwenty*/
+
+# Core Plugins (Shipped with WordPress Core)
+/wp-content/plugins/index.php
+/wp-content/plugins/hello.php
+/wp-content/plugins/akismet/
+
+# Environment, Logs & Database Dumps
+*.log
+*.sql
+*.sqlite
+*.tar.gz
+*.zip
+
+# Operating System & Editor Artifacts
+.DS_Store
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.vscode/
+.idea/

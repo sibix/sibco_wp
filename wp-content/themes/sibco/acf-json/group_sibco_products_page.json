@@ -1,0 +1,81 @@
+{
+    "key": "group_sibco_products_page",
+    "title": "Products Page Content",
+    "local": "php",
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-products.php"
+            }
+        ]
+    ],
+    "menu_order": 10,
+    "fields": {
+        "field_prod_items_tab": {
+            "key": "field_prod_items_tab",
+            "name": "",
+            "type": "tab",
+            "parent": "group_sibco_products_page",
+            "label": "Product Items (Repeater)",
+            "menu_order": 0
+        },
+        "field_product_items": {
+            "key": "field_product_items",
+            "name": "product_items",
+            "type": "repeater",
+            "parent": "group_sibco_products_page",
+            "label": "Product Cards",
+            "layout": "row",
+            "button_label": "Add Product",
+            "menu_order": 1
+        },
+        "field_prod_process_tab": {
+            "key": "field_prod_process_tab",
+            "name": "",
+            "type": "tab",
+            "parent": "group_sibco_products_page",
+            "label": "B2B Export Process",
+            "menu_order": 2
+        },
+        "field_process_badge": {
+            "key": "field_process_badge",
+            "name": "process_badge",
+            "type": "text",
+            "parent": "group_sibco_products_page",
+            "label": "Process Badge",
+            "default_value": "How It Works",
+            "menu_order": 3
+        },
+        "field_process_title": {
+            "key": "field_process_title",
+            "name": "process_title",
+            "type": "text",
+            "parent": "group_sibco_products_page",
+            "label": "Process Heading",
+            "default_value": "Simple B2B Export Process",
+            "menu_order": 4
+        },
+        "field_process_description": {
+            "key": "field_process_description",
+            "name": "process_description",
+            "type": "textarea",
+            "parent": "group_sibco_products_page",
+            "label": "Process Subtitle",
+            "rows": 2,
+            "default_value": "From initial enquiry to global delivery \u2014 our streamlined process makes international sourcing effortless.",
+            "menu_order": 5
+        },
+        "field_process_steps": {
+            "key": "field_process_steps",
+            "name": "process_steps",
+            "type": "repeater",
+            "parent": "group_sibco_products_page",
+            "label": "Process Steps (4 Steps)",
+            "layout": "row",
+            "button_label": "Add Process Step",
+            "menu_order": 6
+        }
+    }
+}
