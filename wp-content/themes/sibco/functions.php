@@ -15,6 +15,7 @@ define( 'SIBCO_URI', get_template_directory_uri() );
 
 // Include Helpers and ACF configuration
 require_once SIBCO_DIR . '/inc/template-tags.php';
+require_once SIBCO_DIR . '/inc/cpt-products.php';
 require_once SIBCO_DIR . '/inc/acf-fields.php';
 
 /**
@@ -155,9 +156,11 @@ function sibco_handle_contact_form() {
 	// Sanitize form inputs
 	$name     = isset( $_POST['name'] ) ? sanitize_text_field( wp_unslash( $_POST['name'] ) ) : '';
 	$email    = isset( $_POST['email'] ) ? sanitize_email( wp_unslash( $_POST['email'] ) ) : '';
+	$phone    = isset( $_POST['phone'] ) ? sanitize_text_field( wp_unslash( $_POST['phone'] ) ) : '';
 	$company  = isset( $_POST['company'] ) ? sanitize_text_field( wp_unslash( $_POST['company'] ) ) : '';
 	$country  = isset( $_POST['country'] ) ? sanitize_text_field( wp_unslash( $_POST['country'] ) ) : '';
-	$product  = isset( $_POST['product'] ) ? sanitize_text_field( wp_unslash( $_POST['product'] ) ) : '';
+	$product  = ! empty( $_POST['product_name'] ) ? sanitize_text_field( wp_unslash( $_POST['product_name'] ) ) : ( isset( $_POST['product'] ) ? sanitize_text_field( wp_unslash( $_POST['product'] ) ) : '' );
+	$category = isset( $_POST['product_category'] ) ? sanitize_text_field( wp_unslash( $_POST['product_category'] ) ) : '';
 	$quantity = isset( $_POST['quantity'] ) ? sanitize_text_field( wp_unslash( $_POST['quantity'] ) ) : '';
 	$message  = isset( $_POST['message'] ) ? sanitize_textarea_field( wp_unslash( $_POST['message'] ) ) : '';
 
@@ -166,12 +169,14 @@ function sibco_handle_contact_form() {
 	}
 
 	$to      = sibco_get_field( 'contact_email', 'export@sibco.in', 'option' );
-	$subject = "SIBCO Export Enquiry from {$name} ({$company})";
+	$subject = "SIBCO Export Enquiry from {$name}" . ( ! empty( $company ) ? " ({$company})" : '' );
 	$body    = "New B2B Coir Mat Export Enquiry:\n\n" .
 				"Full Name: {$name}\n" .
 				"Work Email: {$email}\n" .
-				"Company: {$company}\n" .
+				( ! empty( $phone ) ? "Phone / WhatsApp: {$phone}\n" : '' ) .
+				( ! empty( $company ) ? "Company: {$company}\n" : '' ) .
 				"Destination Country: {$country}\n" .
+				( ! empty( $category ) ? "Category: {$category}\n" : '' ) .
 				"Product of Interest: {$product}\n" .
 				"Estimated Quantity: {$quantity}\n\n" .
 				"Message / Specifications:\n{$message}\n\n" .

@@ -643,53 +643,31 @@ function sibco_register_acf_fields() {
 		'title' => __( 'Products Page Content', 'sibco' ),
 		'fields' => array(
 			array(
-				'key' => 'field_prod_items_tab',
-				'label' => __( 'Product Items (Repeater)', 'sibco' ),
+				'key' => 'field_prod_intro_tab',
+				'label' => __( 'Category Grid Header', 'sibco' ),
 				'type' => 'tab',
 			),
 			array(
-				'key' => 'field_product_items',
-				'label' => __( 'Product Cards', 'sibco' ),
-				'name' => 'product_items',
-				'type' => 'repeater',
-				'layout' => 'row',
-				'button_label' => __( 'Add Product', 'sibco' ),
-				'sub_fields' => array(
-					array(
-						'key' => 'field_prod_name',
-						'label' => __( 'Product Name', 'sibco' ),
-						'name' => 'product_name',
-						'type' => 'text',
-					),
-					array(
-						'key' => 'field_prod_image',
-						'label' => __( 'Product Image', 'sibco' ),
-						'name' => 'product_image',
-						'type' => 'image',
-						'return_format' => 'array',
-					),
-					array(
-						'key' => 'field_prod_desc',
-						'label' => __( 'Description', 'sibco' ),
-						'name' => 'product_description',
-						'type' => 'textarea',
-						'rows' => 3,
-					),
-					array(
-						'key' => 'field_prod_btn_text',
-						'label' => __( 'Button / Link Text', 'sibco' ),
-						'name' => 'product_button_text',
-						'type' => 'text',
-						'default_value' => 'Enquire Now',
-					),
-					array(
-						'key' => 'field_prod_btn_url',
-						'label' => __( 'Button / Link URL', 'sibco' ),
-						'name' => 'product_button_url',
-						'type' => 'text',
-						'default_value' => '/contact/',
-					),
-				),
+				'key' => 'field_products_badge',
+				'label' => __( 'Section Badge', 'sibco' ),
+				'name' => 'products_badge',
+				'type' => 'text',
+				'default_value' => 'Product Range',
+			),
+			array(
+				'key' => 'field_products_title',
+				'label' => __( 'Section Heading', 'sibco' ),
+				'name' => 'products_title',
+				'type' => 'text',
+				'default_value' => 'Premium Coir Mat Categories',
+			),
+			array(
+				'key' => 'field_products_description',
+				'label' => __( 'Section Subtitle', 'sibco' ),
+				'name' => 'products_description',
+				'type' => 'textarea',
+				'rows' => 3,
+				'default_value' => 'Our comprehensive range of coir mats is designed to meet diverse international market requirements, available in custom sizes and specifications.',
 			),
 			array(
 				'key' => 'field_prod_process_tab',
@@ -754,6 +732,114 @@ function sibco_register_acf_fields() {
 					'param' => 'page_template',
 					'operator' => '==',
 					'value' => 'page-products.php',
+				),
+			),
+		),
+		'menu_order' => 10,
+	) );
+
+	// -------------------------------------------------------------
+	// 7B. PRODUCT CATEGORY FIELDS (taxonomy: product_cat)
+	// -------------------------------------------------------------
+	acf_add_local_field_group( array(
+		'key' => 'group_sibco_product_category',
+		'title' => __( 'Product Category Details', 'sibco' ),
+		'fields' => array(
+			array(
+				'key' => 'field_cat_image',
+				'label' => __( 'Category Display Image', 'sibco' ),
+				'name' => 'category_image',
+				'type' => 'image',
+				'return_format' => 'array',
+				'instructions' => __( 'Upload high-resolution category hero image (e.g. 600x400)', 'sibco' ),
+			),
+			array(
+				'key' => 'field_cat_badge',
+				'label' => __( 'Badge / Category Tag', 'sibco' ),
+				'name' => 'category_badge',
+				'type' => 'text',
+				'instructions' => __( 'Optional badge (e.g. "Export Grade", "Top Seller")', 'sibco' ),
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'taxonomy',
+					'operator' => '==',
+					'value' => 'product_cat',
+				),
+			),
+		),
+		'menu_order' => 10,
+	) );
+
+	// -------------------------------------------------------------
+	// 7C. SINGLE PRODUCT SPECIFICATIONS (post_type: sibco_product)
+	// -------------------------------------------------------------
+	acf_add_local_field_group( array(
+		'key' => 'group_sibco_single_product',
+		'title' => __( 'Product Technical Specifications', 'sibco' ),
+		'fields' => array(
+			array(
+				'key' => 'field_prod_spec_tab',
+				'label' => __( 'Product Specifications', 'sibco' ),
+				'type' => 'tab',
+			),
+			array(
+				'key' => 'field_product_material',
+				'label' => __( 'Material Composition', 'sibco' ),
+				'name' => 'product_material',
+				'type' => 'text',
+				'instructions' => __( 'e.g. 100% Natural Coir Fiber with Talite-Free Vulcanized Rubber', 'sibco' ),
+				'default_value' => '100% Natural Coir Fiber',
+			),
+			array(
+				'key' => 'field_product_thickness',
+				'label' => __( 'Standard Thickness', 'sibco' ),
+				'name' => 'product_thickness',
+				'type' => 'text',
+				'instructions' => __( 'e.g. 15mm, 18mm, 22mm (Custom available)', 'sibco' ),
+				'default_value' => '15mm - 22mm',
+			),
+			array(
+				'key' => 'field_product_sizes',
+				'label' => __( 'Standard Sizes / Dimensions', 'sibco' ),
+				'name' => 'product_sizes',
+				'type' => 'text',
+				'instructions' => __( 'e.g. 40x60 cm, 45x75 cm, 60x90 cm, Rolls up to 2m width', 'sibco' ),
+				'default_value' => '40x60cm, 45x75cm, Custom',
+			),
+			array(
+				'key' => 'field_product_backing',
+				'label' => __( 'Backing / Construction', 'sibco' ),
+				'name' => 'product_backing',
+				'type' => 'text',
+				'instructions' => __( 'e.g. Natural Latex / Talite-Free Rubber', 'sibco' ),
+				'default_value' => 'Talite-Free Natural Rubber',
+			),
+			array(
+				'key' => 'field_product_moq',
+				'label' => __( 'Minimum Order Quantity (MOQ)', 'sibco' ),
+				'name' => 'product_moq',
+				'type' => 'text',
+				'instructions' => __( 'e.g. 500 pcs or 1 x 20ft FCL', 'sibco' ),
+				'default_value' => '500 pcs / 1x20ft FCL',
+			),
+			array(
+				'key' => 'field_product_packaging',
+				'label' => __( 'Export Packaging', 'sibco' ),
+				'name' => 'product_packaging',
+				'type' => 'text',
+				'instructions' => __( 'e.g. Palletized / Carton Pack / Bulk Bale', 'sibco' ),
+				'default_value' => 'Palletized Export Pack',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'sibco_product',
 				),
 			),
 		),

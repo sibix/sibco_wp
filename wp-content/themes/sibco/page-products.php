@@ -45,83 +45,110 @@ $prc_desc  = sibco_get_field( 'process_description', 'From initial enquiry to gl
 				<?php endif; ?>
 			</div>
 
-			<!-- Products Grid (ACF Repeater) -->
+			<!-- Product Categories Grid (Native Taxonomy & ACF Free) -->
 			<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 				<?php
-				if ( function_exists( 'have_rows' ) && have_rows( 'product_items', $page_id ) ) :
-					while ( have_rows( 'product_items', $page_id ) ) :
-						the_row();
-						$pname = get_sub_field( 'product_name' );
-						$pimg  = get_sub_field( 'product_image' );
-						$pdesc = get_sub_field( 'product_description' );
-						$pbtn  = get_sub_field( 'product_button_text' );
-						$purl  = get_sub_field( 'product_button_url' );
+				$categories = get_terms( array(
+					'taxonomy'   => 'product_cat',
+					'hide_empty' => false,
+					'orderby'    => 'name',
+					'order'      => 'ASC',
+				) );
 
-						if ( empty( $pname ) ) continue;
-						$img_url = sibco_get_image_url( $pimg, 'https://picsum.photos/seed/coir-product/600/400.jpg' );
-						$btn_text = ! empty( $pbtn ) ? $pbtn : __( 'View Products', 'sibco' );
-						$btn_url  = ! empty( $purl ) ? $purl : home_url( '/contact/' );
+				if ( ! empty( $categories ) && ! is_wp_error( $categories ) ) :
+					foreach ( $categories as $cat ) :
+						$cat_name = $cat->name;
+						$cat_desc = ! empty( $cat->description ) ? $cat->description : '';
+						$cat_link = get_term_link( $cat );
+						$cat_img  = function_exists( 'get_field' ) ? get_field( 'category_image', 'product_cat_' . $cat->term_id ) : null;
+						$img_url  = sibco_get_image_url( $cat_img, 'https://picsum.photos/seed/' . sanitize_title( $cat_name ) . '/600/400.jpg' );
+						$badge    = function_exists( 'get_field' ) ? get_field( 'category_badge', 'product_cat_' . $cat->term_id ) : '';
+						if ( empty( $badge ) && $cat->count > 0 ) {
+							$badge = sprintf( _n( '%d Product', '%d Products', $cat->count, 'sibco' ), $cat->count );
+						}
 						?>
-						<div class="product-card card-hover bg-cream-50 rounded-2xl overflow-hidden border border-cream-400 group">
-							<div class="overflow-hidden h-[260px]">
-								<img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $pname ); ?>" class="product-img w-full h-full object-cover">
+						<div class="product-card card-hover bg-cream-50 rounded-2xl overflow-hidden border border-cream-400 group flex flex-col justify-between">
+							<div>
+								<div class="overflow-hidden h-[260px] relative">
+									<img src="<?php echo esc_url( $img_url ); ?>" alt="<?php echo esc_attr( $cat_name ); ?>" class="product-img w-full h-full object-cover">
+									<?php if ( ! empty( $badge ) ) : ?>
+									<div class="absolute top-4 right-4 bg-charcoal-900/80 backdrop-blur-sm text-cream-100 text-xs font-semibold px-3 py-1 rounded-full border border-cream-200/20">
+										<?php echo esc_html( $badge ); ?>
+									</div>
+									<?php endif; ?>
+								</div>
+								<div class="p-6">
+									<h3 class="font-semibold text-charcoal-800 text-lg mb-2"><?php echo esc_html( $cat_name ); ?></h3>
+									<?php if ( ! empty( $cat_desc ) ) : ?>
+									<p class="text-charcoal-400 text-sm leading-relaxed mb-5"><?php echo esc_html( $cat_desc ); ?></p>
+									<?php endif; ?>
+								</div>
 							</div>
-							<div class="p-6">
-								<h3 class="font-semibold text-charcoal-800 text-lg mb-2"><?php echo esc_html( $pname ); ?></h3>
-								<p class="text-charcoal-400 text-sm leading-relaxed mb-5"><?php echo esc_html( $pdesc ); ?></p>
-								<a href="<?php echo esc_url( $btn_url ); ?>" class="inline-flex items-center gap-2 text-coir-600 hover:text-coir-700 text-sm font-semibold group/link transition-colors duration-200">
-									<?php echo esc_html( $btn_text ); ?>
+							<div class="px-6 pb-6">
+								<a href="<?php echo esc_url( $cat_link ); ?>" class="inline-flex items-center gap-2 text-coir-600 hover:text-coir-700 text-sm font-semibold group/link transition-colors duration-200">
+									<?php esc_html_e( 'View Products', 'sibco' ); ?>
 									<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover/link:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
 								</a>
 							</div>
 						</div>
 						<?php
-					endwhile;
+					endforeach;
 				else :
-					// Fallback to original 6 products
-					$default_products = array(
+					// Fallback to original 6 categories from html-template.html
+					$default_categories = array(
 						array(
 							'name' => 'Rubber Backed Panama Coir Grill Mat',
+							'slug' => 'rubber-backed-panama-coir-grill-mat',
 							'img'  => 'https://picsum.photos/seed/panama-coir-grill/600/400.jpg',
 							'desc' => 'Classic panama weave pattern with durable rubber backing. Ideal for entrance matting in commercial and residential applications.',
 						),
 						array(
 							'name' => 'Rubber Backed Brush Coir Grill Mat',
+							'slug' => 'rubber-backed-brush-coir-grill-mat',
 							'img'  => 'https://picsum.photos/seed/brush-coir-grill/600/400.jpg',
 							'desc' => 'High-brush coir surface with open grid pattern for effective dirt scraping. Premium rubber backing for stability and durability.',
 						),
 						array(
 							'name' => 'Rubber Backed Brush Coir Mat',
+							'slug' => 'rubber-backed-brush-coir-mat',
 							'img'  => 'https://picsum.photos/seed/brush-coir-solid/600/400.jpg',
 							'desc' => 'Dense brush coir surface with full rubber backing. Excellent scraping action and moisture absorption for high-traffic entrances.',
 						),
 						array(
 							'name' => 'Coir Embossing Mat',
+							'slug' => 'coir-embossing-mat',
 							'img'  => 'https://picsum.photos/seed/coir-emboss-mat/600/400.jpg',
 							'desc' => 'Elegantly embossed coir mats with custom designs and logos. Perfect for branded entrance matting and retail display applications.',
 						),
 						array(
 							'name' => 'Rubber Grill Mat',
+							'slug' => 'rubber-grill-mat',
 							'img'  => 'https://picsum.photos/seed/rubber-grill-mat/600/400.jpg',
 							'desc' => 'Durable rubber grill mats with coir inlay options. Heavy-duty construction suitable for industrial and commercial entrance applications.',
 						),
 						array(
 							'name' => 'Motion Sensor LED Light Mat',
+							'slug' => 'motion-sensor-led-light-mat',
 							'img'  => 'https://picsum.photos/seed/led-sensor-mat/600/400.jpg',
 							'desc' => 'Innovative coir mat with integrated motion-sensor LED lighting. Combines functionality with safety for premium entrance solutions.',
 						),
 					);
 
-					foreach ( $default_products as $dp ) :
+					foreach ( $default_categories as $dc ) :
+						$target_link = home_url( '/product-category/' . $dc['slug'] . '/' );
 						?>
-						<div class="product-card card-hover bg-cream-50 rounded-2xl overflow-hidden border border-cream-400 group">
-							<div class="overflow-hidden h-[260px]">
-								<img src="<?php echo esc_url( $dp['img'] ); ?>" alt="<?php echo esc_attr( $dp['name'] ); ?>" class="product-img w-full h-full object-cover">
+						<div class="product-card card-hover bg-cream-50 rounded-2xl overflow-hidden border border-cream-400 group flex flex-col justify-between">
+							<div>
+								<div class="overflow-hidden h-[260px]">
+									<img src="<?php echo esc_url( $dc['img'] ); ?>" alt="<?php echo esc_attr( $dc['name'] ); ?>" class="product-img w-full h-full object-cover">
+								</div>
+								<div class="p-6">
+									<h3 class="font-semibold text-charcoal-800 text-lg mb-2"><?php echo esc_html( $dc['name'] ); ?></h3>
+									<p class="text-charcoal-400 text-sm leading-relaxed mb-5"><?php echo esc_html( $dc['desc'] ); ?></p>
+								</div>
 							</div>
-							<div class="p-6">
-								<h3 class="font-semibold text-charcoal-800 text-lg mb-2"><?php echo esc_html( $dp['name'] ); ?></h3>
-								<p class="text-charcoal-400 text-sm leading-relaxed mb-5"><?php echo esc_html( $dp['desc'] ); ?></p>
-								<a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="inline-flex items-center gap-2 text-coir-600 hover:text-coir-700 text-sm font-semibold group/link transition-colors duration-200">
+							<div class="px-6 pb-6">
+								<a href="<?php echo esc_url( $target_link ); ?>" class="inline-flex items-center gap-2 text-coir-600 hover:text-coir-700 text-sm font-semibold group/link transition-colors duration-200">
 									<?php esc_html_e( 'View Products', 'sibco' ); ?>
 									<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover/link:translate-x-1"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
 								</a>
