@@ -12,14 +12,67 @@ get_template_part( 'template-parts/page-hero' );
 
 $page_id = get_the_ID();
 
-// ACF Fields
+// ACF Fields - Category Grid Header
 $badge = sibco_get_field( 'products_badge', 'Product Range', $page_id );
 $title = sibco_get_field( 'products_title', 'Premium Coir Mat Categories', $page_id );
 $desc  = sibco_get_field( 'products_description', 'Our comprehensive range of coir mats is designed to meet diverse international market requirements, available in custom sizes and specifications.', $page_id );
 
+// ACF Fields - How It Works / B2B Export Process
 $prc_badge = sibco_get_field( 'process_badge', 'How It Works', $page_id );
 $prc_title = sibco_get_field( 'process_title', 'Simple B2B Export Process', $page_id );
 $prc_desc  = sibco_get_field( 'process_description', 'From initial enquiry to global delivery — our streamlined process makes international sourcing effortless.', $page_id );
+
+$process_icons = array(
+	'mail'  => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>',
+	'chat'  => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+	'box'   => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>',
+	'truck' => '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>',
+);
+
+$process_defaults = array(
+	1 => array(
+		'num'   => 'Step 01',
+		'title' => 'Send Enquiry',
+		'desc'  => 'Contact our export team with your product requirements, specifications, and estimated quantities.',
+		'icon'  => 'mail',
+	),
+	2 => array(
+		'num'   => 'Step 02',
+		'title' => 'Product Discussion',
+		'desc'  => 'We discuss technical details, provide samples if needed, and finalize pricing, timelines, and specifications.',
+		'icon'  => 'chat',
+	),
+	3 => array(
+		'num'   => 'Step 03',
+		'title' => 'Manufacturing',
+		'desc'  => 'Your order enters production with quality checkpoints at every stage. Progress updates provided throughout.',
+		'icon'  => 'box',
+	),
+	4 => array(
+		'num'   => 'Step 04',
+		'title' => 'Global Delivery',
+		'desc'  => 'Finished goods are export-packed and shipped to your destination port with complete documentation and tracking.',
+		'icon'  => 'truck',
+	),
+);
+
+$process_steps = array();
+for ( $i = 1; $i <= 4; $i++ ) {
+	$def     = $process_defaults[ $i ];
+	$s_num   = sibco_get_field( "process_step_{$i}_num", $def['num'], $page_id );
+	$s_title = sibco_get_field( "process_step_{$i}_title", $def['title'], $page_id );
+	$s_desc  = sibco_get_field( "process_step_{$i}_desc", $def['desc'], $page_id );
+	$s_icon  = sibco_get_field( "process_step_{$i}_icon", $def['icon'], $page_id );
+
+	if ( ! empty( $s_title ) ) {
+		$process_steps[] = array(
+			'num'   => $s_num,
+			'title' => $s_title,
+			'desc'  => $s_desc,
+			'icon'  => ! empty( $process_icons[ $s_icon ] ) ? $process_icons[ $s_icon ] : $process_icons[ $def['icon'] ],
+		);
+	}
+}
 ?>
 
 	<!-- ============ PRODUCT CATEGORIES ============ -->
@@ -187,54 +240,29 @@ $prc_desc  = sibco_get_field( 'process_description', 'From initial enquiry to gl
 
 			<!-- 4 Steps -->
 			<div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-				<!-- Step 1 -->
-				<div class="animate-on-scroll delay-1 text-center relative">
-					<div class="w-20 h-20 mx-auto rounded-2xl bg-coir-50 border border-coir-200 flex items-center justify-center mb-6">
-						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+				<?php
+				$total_steps = count( $process_steps );
+				foreach ( $process_steps as $idx => $step ) :
+					$step_num_idx = $idx + 1;
+					$is_last      = ( $step_num_idx === $total_steps );
+					$delay_class  = 'delay-' . $step_num_idx;
+					$box_class    = $is_last ? 'bg-coir-500 text-white' : 'bg-coir-50 border border-coir-200 text-coir-600';
+					$parent_class = $is_last ? 'animate-on-scroll ' . $delay_class . ' text-center' : 'animate-on-scroll ' . $delay_class . ' text-center relative';
+					?>
+					<div class="<?php echo esc_attr( $parent_class ); ?>">
+						<div class="w-20 h-20 mx-auto rounded-2xl flex items-center justify-center mb-6 <?php echo esc_attr( $box_class ); ?>">
+							<?php echo $step['icon']; // Pre-sanitized SVG markup ?>
+						</div>
+						<div class="text-coir-500 text-xs font-bold tracking-widest uppercase mb-2"><?php echo esc_html( $step['num'] ); ?></div>
+						<h3 class="font-semibold text-charcoal-800 text-lg mb-3"><?php echo esc_html( $step['title'] ); ?></h3>
+						<p class="text-charcoal-400 text-sm leading-relaxed"><?php echo esc_html( $step['desc'] ); ?></p>
+						<?php if ( ! $is_last ) : ?>
+						<div class="hidden lg:block absolute top-10 -right-4 w-8">
+							<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4C8B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+						</div>
+						<?php endif; ?>
 					</div>
-					<div class="text-coir-500 text-xs font-bold tracking-widest uppercase mb-2"><?php esc_html_e( 'Step 01', 'sibco' ); ?></div>
-					<h3 class="font-semibold text-charcoal-800 text-lg mb-3"><?php esc_html_e( 'Send Enquiry', 'sibco' ); ?></h3>
-					<p class="text-charcoal-400 text-sm leading-relaxed"><?php esc_html_e( 'Contact our export team with your product requirements, specifications, and estimated quantities.', 'sibco' ); ?></p>
-					<div class="hidden lg:block absolute top-10 -right-4 w-8">
-						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4C8B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-					</div>
-				</div>
-
-				<!-- Step 2 -->
-				<div class="animate-on-scroll delay-2 text-center relative">
-					<div class="w-20 h-20 mx-auto rounded-2xl bg-coir-50 border border-coir-200 flex items-center justify-center mb-6">
-						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-					</div>
-					<div class="text-coir-500 text-xs font-bold tracking-widest uppercase mb-2"><?php esc_html_e( 'Step 02', 'sibco' ); ?></div>
-					<h3 class="font-semibold text-charcoal-800 text-lg mb-3"><?php esc_html_e( 'Product Discussion', 'sibco' ); ?></h3>
-					<p class="text-charcoal-400 text-sm leading-relaxed"><?php esc_html_e( 'We discuss technical details, provide samples if needed, and finalize pricing, timelines, and specifications.', 'sibco' ); ?></p>
-					<div class="hidden lg:block absolute top-10 -right-4 w-8">
-						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4C8B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-					</div>
-				</div>
-
-				<!-- Step 3 -->
-				<div class="animate-on-scroll delay-3 text-center relative">
-					<div class="w-20 h-20 mx-auto rounded-2xl bg-coir-50 border border-coir-200 flex items-center justify-center mb-6">
-						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-					</div>
-					<div class="text-coir-500 text-xs font-bold tracking-widest uppercase mb-2"><?php esc_html_e( 'Step 03', 'sibco' ); ?></div>
-					<h3 class="font-semibold text-charcoal-800 text-lg mb-3"><?php esc_html_e( 'Manufacturing', 'sibco' ); ?></h3>
-					<p class="text-charcoal-400 text-sm leading-relaxed"><?php esc_html_e( 'Your order enters production with quality checkpoints at every stage. Progress updates provided throughout.', 'sibco' ); ?></p>
-					<div class="hidden lg:block absolute top-10 -right-4 w-8">
-						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#D4C8B8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-					</div>
-				</div>
-
-				<!-- Step 4 -->
-				<div class="animate-on-scroll delay-4 text-center">
-					<div class="w-20 h-20 mx-auto rounded-2xl bg-coir-500 flex items-center justify-center mb-6">
-						<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-					</div>
-					<div class="text-coir-500 text-xs font-bold tracking-widest uppercase mb-2"><?php esc_html_e( 'Step 04', 'sibco' ); ?></div>
-					<h3 class="font-semibold text-charcoal-800 text-lg mb-3"><?php esc_html_e( 'Global Delivery', 'sibco' ); ?></h3>
-					<p class="text-charcoal-400 text-sm leading-relaxed"><?php esc_html_e( 'Finished goods are export-packed and shipped to your destination port with complete documentation and tracking.', 'sibco' ); ?></p>
-				</div>
+				<?php endforeach; ?>
 			</div>
 		</div>
 	</section>
