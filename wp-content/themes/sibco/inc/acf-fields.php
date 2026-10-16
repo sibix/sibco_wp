@@ -960,12 +960,18 @@ function sibco_register_acf_fields() {
 	) );
 
 	// -------------------------------------------------------------
-	// 5. WHY SIBCO PAGE FIELDS (page-why-sibco.php)
+	// 5. WHY SIBCO PAGE FIELDS (page-why-sibco.php) - NO REPEATERS
 	// -------------------------------------------------------------
 	acf_add_local_field_group( array(
 		'key' => 'group_sibco_why_page',
 		'title' => __( 'Why SIBCO Page Content', 'sibco' ),
 		'fields' => array(
+			// TAB 1: SECTION HEADER
+			array(
+				'key' => 'field_why_header_tab',
+				'label' => __( 'Section Header', 'sibco' ),
+				'type' => 'tab',
+			),
 			array(
 				'key' => 'field_why_badge',
 				'label' => __( 'Section Badge', 'sibco' ),
@@ -988,43 +994,198 @@ function sibco_register_acf_fields() {
 				'rows' => 2,
 				'default_value' => 'Decades of expertise, certified quality, and a manufacturing process built for global export standards.',
 			),
+
+			// TAB 2: 6 FEATURE CARDS (NO REPEATER - ACF FREE COMPATIBLE)
 			array(
-				'key' => 'field_why_cards',
-				'label' => __( 'Why Choose Feature Cards', 'sibco' ),
-				'name' => 'why_cards',
-				'type' => 'repeater',
-				'layout' => 'row',
-				'button_label' => __( 'Add Feature Card', 'sibco' ),
-				'sub_fields' => array(
-					array(
-						'key' => 'field_why_card_title',
-						'label' => __( 'Card Title', 'sibco' ),
-						'name' => 'card_title',
-						'type' => 'text',
-					),
-					array(
-						'key' => 'field_why_card_desc',
-						'label' => __( 'Card Description', 'sibco' ),
-						'name' => 'card_description',
-						'type' => 'textarea',
-						'rows' => 3,
-					),
-					array(
-						'key' => 'field_why_card_icon',
-						'label' => __( 'Icon Style', 'sibco' ),
-						'name' => 'card_icon',
-						'type' => 'select',
-						'choices' => array(
-							'clock'   => 'Clock (26 Years Experience)',
-							'leaf'    => 'Leaf (100% Natural Coir)',
-							'shield'  => 'Shield (Talite Free Certified)',
-							'chart'   => 'Chart (Consistent Quality)',
-							'truck'   => 'Truck / Clock (Time-Bound Delivery)',
-							'tag'     => 'Tag (OEM & Private Label)',
-						),
-						'default_value' => 'clock',
-					),
+				'key' => 'field_why_cards_tab',
+				'label' => __( 'Why Choose Feature Cards (6 Cards)', 'sibco' ),
+				'type' => 'tab',
+			),
+			// Card 1
+			array(
+				'key' => 'field_why_card_1_title',
+				'label' => __( 'Card 1 Title', 'sibco' ),
+				'name' => 'why_card_1_title',
+				'type' => 'text',
+				'default_value' => '26 Years Manufacturing Experience',
+			),
+			array(
+				'key' => 'field_why_card_1_desc',
+				'label' => __( 'Card 1 Description', 'sibco' ),
+				'name' => 'why_card_1_desc',
+				'type' => 'textarea',
+				'rows' => 3,
+				'default_value' => 'Over two and a half decades of refined expertise in coir mat manufacturing, delivering consistent quality to global buyers year after year.',
+			),
+			array(
+				'key' => 'field_why_card_1_icon',
+				'label' => __( 'Card 1 Icon', 'sibco' ),
+				'name' => 'why_card_1_icon',
+				'type' => 'select',
+				'choices' => array(
+					'clock'   => 'Clock (26 Years Experience)',
+					'leaf'    => 'Leaf (100% Natural Coir)',
+					'shield'  => 'Shield (Talite Free Certified)',
+					'chart'   => 'Chart (Consistent Quality)',
+					'truck'   => 'Truck (Time-Bound Delivery)',
+					'tag'     => 'Tag (OEM & Private Label)',
 				),
+				'default_value' => 'clock',
+			),
+			// Card 2
+			array(
+				'key' => 'field_why_card_2_title',
+				'label' => __( 'Card 2 Title', 'sibco' ),
+				'name' => 'why_card_2_title',
+				'type' => 'text',
+				'default_value' => '100% Natural Coir',
+			),
+			array(
+				'key' => 'field_why_card_2_desc',
+				'label' => __( 'Card 2 Description', 'sibco' ),
+				'name' => 'why_card_2_desc',
+				'type' => 'textarea',
+				'rows' => 3,
+				'default_value' => "Sourced from the finest coconut husks, our coir is completely natural, biodegradable, and sustainably harvested from Kerala's coir belt.",
+			),
+			array(
+				'key' => 'field_why_card_2_icon',
+				'label' => __( 'Card 2 Icon', 'sibco' ),
+				'name' => 'why_card_2_icon',
+				'type' => 'select',
+				'choices' => array(
+					'clock'   => 'Clock (26 Years Experience)',
+					'leaf'    => 'Leaf (100% Natural Coir)',
+					'shield'  => 'Shield (Talite Free Certified)',
+					'chart'   => 'Chart (Consistent Quality)',
+					'truck'   => 'Truck (Time-Bound Delivery)',
+					'tag'     => 'Tag (OEM & Private Label)',
+				),
+				'default_value' => 'leaf',
+			),
+			// Card 3
+			array(
+				'key' => 'field_why_card_3_title',
+				'label' => __( 'Card 3 Title', 'sibco' ),
+				'name' => 'why_card_3_title',
+				'type' => 'text',
+				'default_value' => 'Talite Free Certified',
+			),
+			array(
+				'key' => 'field_why_card_3_desc',
+				'label' => __( 'Card 3 Description', 'sibco' ),
+				'name' => 'why_card_3_desc',
+				'type' => 'textarea',
+				'rows' => 3,
+				'default_value' => 'Our products are certified talite-free, meeting stringent European import regulations and ensuring complete compliance for EU market entry.',
+			),
+			array(
+				'key' => 'field_why_card_3_icon',
+				'label' => __( 'Card 3 Icon', 'sibco' ),
+				'name' => 'why_card_3_icon',
+				'type' => 'select',
+				'choices' => array(
+					'clock'   => 'Clock (26 Years Experience)',
+					'leaf'    => 'Leaf (100% Natural Coir)',
+					'shield'  => 'Shield (Talite Free Certified)',
+					'chart'   => 'Chart (Consistent Quality)',
+					'truck'   => 'Truck (Time-Bound Delivery)',
+					'tag'     => 'Tag (OEM & Private Label)',
+				),
+				'default_value' => 'shield',
+			),
+			// Card 4
+			array(
+				'key' => 'field_why_card_4_title',
+				'label' => __( 'Card 4 Title', 'sibco' ),
+				'name' => 'why_card_4_title',
+				'type' => 'text',
+				'default_value' => 'Consistent Product Quality',
+			),
+			array(
+				'key' => 'field_why_card_4_desc',
+				'label' => __( 'Card 4 Description', 'sibco' ),
+				'name' => 'why_card_4_desc',
+				'type' => 'textarea',
+				'rows' => 3,
+				'default_value' => 'Rigorous quality control at every stage of production ensures that every shipment meets the exact specifications and standards expected by international buyers.',
+			),
+			array(
+				'key' => 'field_why_card_4_icon',
+				'label' => __( 'Card 4 Icon', 'sibco' ),
+				'name' => 'why_card_4_icon',
+				'type' => 'select',
+				'choices' => array(
+					'clock'   => 'Clock (26 Years Experience)',
+					'leaf'    => 'Leaf (100% Natural Coir)',
+					'shield'  => 'Shield (Talite Free Certified)',
+					'chart'   => 'Chart (Consistent Quality)',
+					'truck'   => 'Truck (Time-Bound Delivery)',
+					'tag'     => 'Tag (OEM & Private Label)',
+				),
+				'default_value' => 'chart',
+			),
+			// Card 5
+			array(
+				'key' => 'field_why_card_5_title',
+				'label' => __( 'Card 5 Title', 'sibco' ),
+				'name' => 'why_card_5_title',
+				'type' => 'text',
+				'default_value' => 'Time-Bound Delivery',
+			),
+			array(
+				'key' => 'field_why_card_5_desc',
+				'label' => __( 'Card 5 Description', 'sibco' ),
+				'name' => 'why_card_5_desc',
+				'type' => 'textarea',
+				'rows' => 3,
+				'default_value' => 'Our streamlined production scheduling and logistics management ensure every order is manufactured and dispatched within agreed timelines, without exception.',
+			),
+			array(
+				'key' => 'field_why_card_5_icon',
+				'label' => __( 'Card 5 Icon', 'sibco' ),
+				'name' => 'why_card_5_icon',
+				'type' => 'select',
+				'choices' => array(
+					'clock'   => 'Clock (26 Years Experience)',
+					'leaf'    => 'Leaf (100% Natural Coir)',
+					'shield'  => 'Shield (Talite Free Certified)',
+					'chart'   => 'Chart (Consistent Quality)',
+					'truck'   => 'Truck (Time-Bound Delivery)',
+					'tag'     => 'Tag (OEM & Private Label)',
+				),
+				'default_value' => 'truck',
+			),
+			// Card 6
+			array(
+				'key' => 'field_why_card_6_title',
+				'label' => __( 'Card 6 Title', 'sibco' ),
+				'name' => 'why_card_6_title',
+				'type' => 'text',
+				'default_value' => 'OEM & Private Label',
+			),
+			array(
+				'key' => 'field_why_card_6_desc',
+				'label' => __( 'Card 6 Description', 'sibco' ),
+				'name' => 'why_card_6_desc',
+				'type' => 'textarea',
+				'rows' => 3,
+				'default_value' => 'Complete private label and OEM manufacturing capabilities with full confidentiality. Your brand, your specifications, our manufacturing expertise.',
+			),
+			array(
+				'key' => 'field_why_card_6_icon',
+				'label' => __( 'Card 6 Icon', 'sibco' ),
+				'name' => 'why_card_6_icon',
+				'type' => 'select',
+				'choices' => array(
+					'clock'   => 'Clock (26 Years Experience)',
+					'leaf'    => 'Leaf (100% Natural Coir)',
+					'shield'  => 'Shield (Talite Free Certified)',
+					'chart'   => 'Chart (Consistent Quality)',
+					'truck'   => 'Truck (Time-Bound Delivery)',
+					'tag'     => 'Tag (OEM & Private Label)',
+				),
+				'default_value' => 'tag',
 			),
 		),
 		'location' => array(
@@ -1033,6 +1194,13 @@ function sibco_register_acf_fields() {
 					'param' => 'page_template',
 					'operator' => '==',
 					'value' => 'page-why-sibco.php',
+				),
+			),
+			array(
+				array(
+					'param' => 'page',
+					'operator' => '==',
+					'value' => '8',
 				),
 			),
 		),
