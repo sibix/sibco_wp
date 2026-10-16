@@ -12,7 +12,7 @@ get_template_part( 'template-parts/page-hero' );
 
 $page_id = get_the_ID();
 
-// ACF Fields
+// ACF Fields - Header & Feature Media
 $badge     = sibco_get_field( 'sustainability_badge', 'Sustainability', $page_id );
 $title     = sibco_get_field( 'sustainability_title', 'Naturally Sustainable. Responsibly Manufactured.', $page_id );
 $desc      = sibco_get_field( 'sustainability_description', 'Our commitment to sustainability goes beyond using natural materials. Every aspect of our manufacturing process is designed to minimize environmental impact while delivering premium quality products.', $page_id );
@@ -23,6 +23,53 @@ $img_alt   = sibco_get_image_alt( $raw_img, 'Sustainable Coir Sourcing' );
 
 $badge_stat = sibco_get_field( 'sustainability_badge_stat', '100%', $page_id );
 $badge_text = sibco_get_field( 'sustainability_badge_text', "Natural &\nBiodegradable", $page_id );
+
+// 4 Sustainability Pillars
+$pillar_defaults = array(
+	1 => array(
+		'title' => 'Natural Renewable Coir',
+		'desc'  => 'Coir is a naturally renewable resource extracted from coconut husks, making it one of the most sustainable raw materials available.',
+		'icon'  => 'leaf',
+	),
+	2 => array(
+		'title' => 'Eco-Friendly Manufacturing',
+		'desc'  => 'Our production processes minimize waste and energy consumption, adhering to environmentally responsible manufacturing practices.',
+		'icon'  => 'users',
+	),
+	3 => array(
+		'title' => 'Responsible Production',
+		'desc'  => 'From sourcing to dispatch, we maintain ethical production standards that support local communities and protect the environment.',
+		'icon'  => 'shield',
+	),
+	4 => array(
+		'title' => 'Biodegradable Products',
+		'desc'  => '100% natural coir products that are fully biodegradable, aligning with circular economy principles and reducing landfill impact.',
+		'icon'  => 'recycle',
+	),
+);
+
+$pillar_icons = array(
+	'leaf'    => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M7 10.5c0-1.657 2.239-3 5-3s5 1.343 5 3"/><path d="M7 14c0 1.657 2.239 3 5 3s5-1.343 5-3"/></svg>',
+	'users'   => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
+	'shield'  => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+	'recycle' => '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>',
+);
+
+$pillars = array();
+for ( $p = 1; $p <= 4; $p++ ) {
+	$p_def   = $pillar_defaults[ $p ];
+	$p_title = sibco_get_field( "pillar_{$p}_title", $p_def['title'], $page_id );
+	$p_desc  = sibco_get_field( "pillar_{$p}_desc", $p_def['desc'], $page_id );
+	$p_icon  = sibco_get_field( "pillar_{$p}_icon", $p_def['icon'], $page_id );
+
+	if ( ! empty( $p_title ) ) {
+		$pillars[] = array(
+			'title' => $p_title,
+			'desc'  => $p_desc,
+			'icon'  => ! empty( $pillar_icons[ $p_icon ] ) ? $pillar_icons[ $p_icon ] : $pillar_icons[ $p_def['icon'] ],
+		);
+	}
+}
 ?>
 
 	<!-- ============ SUSTAINABILITY ============ -->
@@ -53,64 +100,17 @@ $badge_text = sibco_get_field( 'sustainability_badge_text', "Natural &\nBiodegra
 					<?php endif; ?>
 
 					<div class="space-y-6">
-						<?php
-						if ( function_exists( 'have_rows' ) && have_rows( 'sustainability_pillars', $page_id ) ) :
-							while ( have_rows( 'sustainability_pillars', $page_id ) ) :
-								the_row();
-								$stitle = get_sub_field( 'pillar_title' );
-								$sdesc  = get_sub_field( 'pillar_description' );
-								if ( empty( $stitle ) ) continue;
-								?>
-								<div class="flex items-start gap-4">
-									<div class="w-10 h-10 rounded-full bg-coir-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M7 10.5c0-1.657 2.239-3 5-3s5 1.343 5 3"/><path d="M7 14c0 1.657 2.239 3 5 3s5-1.343 5-3"/></svg>
-									</div>
-									<div>
-										<h4 class="font-semibold text-charcoal-800 text-base mb-1"><?php echo esc_html( $stitle ); ?></h4>
-										<p class="text-charcoal-400 text-sm leading-relaxed"><?php echo esc_html( $sdesc ); ?></p>
-									</div>
-								</div>
-								<?php
-							endwhile;
-						else :
-							?>
+						<?php foreach ( $pillars as $pillar ) : ?>
 							<div class="flex items-start gap-4">
 								<div class="w-10 h-10 rounded-full bg-coir-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M7 10.5c0-1.657 2.239-3 5-3s5 1.343 5 3"/><path d="M7 14c0 1.657 2.239 3 5 3s5-1.343 5-3"/></svg>
+									<?php echo $pillar['icon']; ?>
 								</div>
 								<div>
-									<h4 class="font-semibold text-charcoal-800 text-base mb-1"><?php esc_html_e( 'Natural Renewable Coir', 'sibco' ); ?></h4>
-									<p class="text-charcoal-400 text-sm leading-relaxed"><?php esc_html_e( 'Coir is a naturally renewable resource extracted from coconut husks, making it one of the most sustainable raw materials available.', 'sibco' ); ?></p>
+									<h4 class="font-semibold text-charcoal-800 text-base mb-1"><?php echo esc_html( $pillar['title'] ); ?></h4>
+									<p class="text-charcoal-400 text-sm leading-relaxed"><?php echo esc_html( $pillar['desc'] ); ?></p>
 								</div>
 							</div>
-							<div class="flex items-start gap-4">
-								<div class="w-10 h-10 rounded-full bg-coir-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-								</div>
-								<div>
-									<h4 class="font-semibold text-charcoal-800 text-base mb-1"><?php esc_html_e( 'Eco-Friendly Manufacturing', 'sibco' ); ?></h4>
-									<p class="text-charcoal-400 text-sm leading-relaxed"><?php esc_html_e( 'Our production processes minimize waste and energy consumption, adhering to environmentally responsible manufacturing practices.', 'sibco' ); ?></p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<div class="w-10 h-10 rounded-full bg-coir-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-								</div>
-								<div>
-									<h4 class="font-semibold text-charcoal-800 text-base mb-1"><?php esc_html_e( 'Responsible Production', 'sibco' ); ?></h4>
-									<p class="text-charcoal-400 text-sm leading-relaxed"><?php esc_html_e( 'From sourcing to dispatch, we maintain ethical production standards that support local communities and protect the environment.', 'sibco' ); ?></p>
-								</div>
-							</div>
-							<div class="flex items-start gap-4">
-								<div class="w-10 h-10 rounded-full bg-coir-100 flex items-center justify-center flex-shrink-0 mt-0.5">
-									<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#A67C2E" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-								</div>
-								<div>
-									<h4 class="font-semibold text-charcoal-800 text-base mb-1"><?php esc_html_e( 'Biodegradable Products', 'sibco' ); ?></h4>
-									<p class="text-charcoal-400 text-sm leading-relaxed"><?php esc_html_e( '100% natural coir products that are fully biodegradable, aligning with circular economy principles and reducing landfill impact.', 'sibco' ); ?></p>
-								</div>
-							</div>
-						<?php endif; ?>
+						<?php endforeach; ?>
 					</div>
 				</div>
 

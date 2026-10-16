@@ -1872,12 +1872,18 @@ function sibco_register_acf_fields() {
 	) );
 
 	// -------------------------------------------------------------
-	// 8. QUALITY PAGE FIELDS (page-quality.php)
+	// 8. QUALITY PAGE FIELDS (page-quality.php) - NO REPEATERS
 	// -------------------------------------------------------------
 	acf_add_local_field_group( array(
 		'key' => 'group_sibco_quality_page',
 		'title' => __( 'Quality Page Content', 'sibco' ),
 		'fields' => array(
+			// TAB 1: Header & Narrative
+			array(
+				'key' => 'field_quality_header_tab',
+				'label' => __( 'Quality Header & Process', 'sibco' ),
+				'type' => 'tab',
+			),
 			array(
 				'key' => 'field_quality_badge',
 				'label' => __( 'Section Badge', 'sibco' ),
@@ -1901,42 +1907,6 @@ function sibco_register_acf_fields() {
 				'default_value' => 'Every product leaving our facility meets international quality standards backed by recognized certifications.',
 			),
 			array(
-				'key' => 'field_certifications',
-				'label' => __( 'Certification Badges (4 Badges)', 'sibco' ),
-				'name' => 'certifications',
-				'type' => 'repeater',
-				'layout' => 'row',
-				'button_label' => __( 'Add Certification Badge', 'sibco' ),
-				'sub_fields' => array(
-					array(
-						'key' => 'field_cert_title',
-						'label' => __( 'Certification Title', 'sibco' ),
-						'name' => 'cert_title',
-						'type' => 'text',
-					),
-					array(
-						'key' => 'field_cert_desc',
-						'label' => __( 'Certification Description', 'sibco' ),
-						'name' => 'cert_description',
-						'type' => 'textarea',
-						'rows' => 2,
-					),
-					array(
-						'key' => 'field_cert_icon',
-						'label' => __( 'Icon Type', 'sibco' ),
-						'name' => 'cert_icon',
-						'type' => 'select',
-						'choices' => array(
-							'talite'  => 'Talite Free / Checkmark',
-							'board'   => 'Rubber Board / Document',
-							'qc'      => 'Consistent QC / Bars',
-							'export'  => 'Export Standards / Globe',
-						),
-						'default_value' => 'talite',
-					),
-				),
-			),
-			array(
 				'key' => 'field_quality_process_title',
 				'label' => __( 'Quality Process Heading', 'sibco' ),
 				'name' => 'quality_process_title',
@@ -1947,31 +1917,184 @@ function sibco_register_acf_fields() {
 				'key' => 'field_quality_process_text',
 				'label' => __( 'Quality Process Narrative', 'sibco' ),
 				'name' => 'quality_process_text',
-				'type' => 'wysiwyg',
-				'toolbar' => 'basic',
-				'media_upload' => 0,
+				'type' => 'textarea',
+				'rows' => 6,
+				'default_value' => "At SIBCO, quality assurance begins before production starts. Every batch of raw coir fibre is tested for critical parameters including fibre length, tensile strength, moisture content, and cleanliness.\n\nDuring production, in-line quality checks monitor weave density, dimensional accuracy, rubber backing adhesion, and embossing depth. Our quality team conducts random sampling at defined intervals to ensure process consistency.\n\nFinal inspection covers every aspect — dimensions, weight, visual appearance, backing integrity, and packaging compliance. Only products that pass all checkpoints are approved for export dispatch.",
+			),
+
+			// TAB 2: 4 Certification Badges
+			array(
+				'key' => 'field_quality_badges_tab',
+				'label' => __( '4 Certification Badges', 'sibco' ),
+				'type' => 'tab',
+			),
+			// Badge 1
+			array(
+				'key' => 'field_cert_1_title',
+				'label' => __( 'Badge 1 Title', 'sibco' ),
+				'name' => 'cert_1_title',
+				'type' => 'text',
+				'default_value' => 'Talite Free Certified',
 			),
 			array(
-				'key' => 'field_quality_metrics',
-				'label' => __( 'Quality Metric Counters (3 Stats)', 'sibco' ),
-				'name' => 'quality_metrics',
-				'type' => 'repeater',
-				'layout' => 'table',
-				'button_label' => __( 'Add Metric Counter', 'sibco' ),
-				'sub_fields' => array(
-					array(
-						'key' => 'field_qm_value',
-						'label' => __( 'Value (e.g. 100%, Zero, Multi)', 'sibco' ),
-						'name' => 'metric_value',
-						'type' => 'text',
-					),
-					array(
-						'key' => 'field_qm_label',
-						'label' => __( 'Label (e.g. Inspection Rate)', 'sibco' ),
-						'name' => 'metric_label',
-						'type' => 'text',
-					),
+				'key' => 'field_cert_1_desc',
+				'label' => __( 'Badge 1 Description', 'sibco' ),
+				'name' => 'cert_1_desc',
+				'type' => 'textarea',
+				'rows' => 2,
+				'default_value' => 'Compliant with EU talite-free import requirements for coir products',
+			),
+			array(
+				'key' => 'field_cert_1_icon',
+				'label' => __( 'Badge 1 Icon', 'sibco' ),
+				'name' => 'cert_1_icon',
+				'type' => 'select',
+				'choices' => array(
+					'talite'  => 'Talite Free / Checkmark',
+					'board'   => 'Rubber Board / Document',
+					'qc'      => 'Consistent QC / Bars',
+					'export'  => 'Export Standards / Globe',
 				),
+				'default_value' => 'talite',
+			),
+			// Badge 2
+			array(
+				'key' => 'field_cert_2_title',
+				'label' => __( 'Badge 2 Title', 'sibco' ),
+				'name' => 'cert_2_title',
+				'type' => 'text',
+				'default_value' => 'Rubber Board Registered',
+			),
+			array(
+				'key' => 'field_cert_2_desc',
+				'label' => __( 'Badge 2 Description', 'sibco' ),
+				'name' => 'cert_2_desc',
+				'type' => 'textarea',
+				'rows' => 2,
+				'default_value' => 'Officially registered with the Rubber Board of India for rubber-backed products',
+			),
+			array(
+				'key' => 'field_cert_2_icon',
+				'label' => __( 'Badge 2 Icon', 'sibco' ),
+				'name' => 'cert_2_icon',
+				'type' => 'select',
+				'choices' => array(
+					'talite'  => 'Talite Free / Checkmark',
+					'board'   => 'Rubber Board / Document',
+					'qc'      => 'Consistent QC / Bars',
+					'export'  => 'Export Standards / Globe',
+				),
+				'default_value' => 'board',
+			),
+			// Badge 3
+			array(
+				'key' => 'field_cert_3_title',
+				'label' => __( 'Badge 3 Title', 'sibco' ),
+				'name' => 'cert_3_title',
+				'type' => 'text',
+				'default_value' => 'Consistent QC',
+			),
+			array(
+				'key' => 'field_cert_3_desc',
+				'label' => __( 'Badge 3 Description', 'sibco' ),
+				'name' => 'cert_3_desc',
+				'type' => 'textarea',
+				'rows' => 2,
+				'default_value' => 'Multi-stage quality control ensuring zero-defect shipments',
+			),
+			array(
+				'key' => 'field_cert_3_icon',
+				'label' => __( 'Badge 3 Icon', 'sibco' ),
+				'name' => 'cert_3_icon',
+				'type' => 'select',
+				'choices' => array(
+					'talite'  => 'Talite Free / Checkmark',
+					'board'   => 'Rubber Board / Document',
+					'qc'      => 'Consistent QC / Bars',
+					'export'  => 'Export Standards / Globe',
+				),
+				'default_value' => 'qc',
+			),
+			// Badge 4
+			array(
+				'key' => 'field_cert_4_title',
+				'label' => __( 'Badge 4 Title', 'sibco' ),
+				'name' => 'cert_4_title',
+				'type' => 'text',
+				'default_value' => 'Export Standards',
+			),
+			array(
+				'key' => 'field_cert_4_desc',
+				'label' => __( 'Badge 4 Description', 'sibco' ),
+				'name' => 'cert_4_desc',
+				'type' => 'textarea',
+				'rows' => 2,
+				'default_value' => 'Products manufactured to meet EU and US import standards',
+			),
+			array(
+				'key' => 'field_cert_4_icon',
+				'label' => __( 'Badge 4 Icon', 'sibco' ),
+				'name' => 'cert_4_icon',
+				'type' => 'select',
+				'choices' => array(
+					'talite'  => 'Talite Free / Checkmark',
+					'board'   => 'Rubber Board / Document',
+					'qc'      => 'Consistent QC / Bars',
+					'export'  => 'Export Standards / Globe',
+				),
+				'default_value' => 'export',
+			),
+
+			// TAB 3: 3 Quality Metrics
+			array(
+				'key' => 'field_quality_metrics_tab',
+				'label' => __( '3 Quality Metrics', 'sibco' ),
+				'type' => 'tab',
+			),
+			// Metric 1
+			array(
+				'key' => 'field_qm_1_val',
+				'label' => __( 'Metric 1 Value (e.g. 100%)', 'sibco' ),
+				'name' => 'qm_1_val',
+				'type' => 'text',
+				'default_value' => '100%',
+			),
+			array(
+				'key' => 'field_qm_1_lbl',
+				'label' => __( 'Metric 1 Label (e.g. Inspection Rate)', 'sibco' ),
+				'name' => 'qm_1_lbl',
+				'type' => 'text',
+				'default_value' => 'Inspection Rate',
+			),
+			// Metric 2
+			array(
+				'key' => 'field_qm_2_val',
+				'label' => __( 'Metric 2 Value (e.g. Zero)', 'sibco' ),
+				'name' => 'qm_2_val',
+				'type' => 'text',
+				'default_value' => 'Zero',
+			),
+			array(
+				'key' => 'field_qm_2_lbl',
+				'label' => __( 'Metric 2 Label (e.g. Quality Claims)', 'sibco' ),
+				'name' => 'qm_2_lbl',
+				'type' => 'text',
+				'default_value' => 'Quality Claims',
+			),
+			// Metric 3
+			array(
+				'key' => 'field_qm_3_val',
+				'label' => __( 'Metric 3 Value (e.g. Multi)', 'sibco' ),
+				'name' => 'qm_3_val',
+				'type' => 'text',
+				'default_value' => 'Multi',
+			),
+			array(
+				'key' => 'field_qm_3_lbl',
+				'label' => __( 'Metric 3 Label (e.g. Stage QC)', 'sibco' ),
+				'name' => 'qm_3_lbl',
+				'type' => 'text',
+				'default_value' => 'Stage QC',
 			),
 		),
 		'location' => array(
@@ -1982,17 +2105,30 @@ function sibco_register_acf_fields() {
 					'value' => 'page-quality.php',
 				),
 			),
+			array(
+				array(
+					'param' => 'page',
+					'operator' => '==',
+					'value' => '11',
+				),
+			),
 		),
 		'menu_order' => 10,
 	) );
 
 	// -------------------------------------------------------------
-	// 9. SUSTAINABILITY PAGE FIELDS (page-sustainability.php)
+	// 9. SUSTAINABILITY PAGE FIELDS (page-sustainability.php) - NO REPEATERS
 	// -------------------------------------------------------------
 	acf_add_local_field_group( array(
 		'key' => 'group_sibco_sustainability_page',
 		'title' => __( 'Sustainability Page Content', 'sibco' ),
 		'fields' => array(
+			// TAB 1: Header & Feature Media
+			array(
+				'key' => 'field_sust_header_tab',
+				'label' => __( 'Header & Feature Media', 'sibco' ),
+				'type' => 'tab',
+			),
 			array(
 				'key' => 'field_sustainability_badge',
 				'label' => __( 'Section Badge', 'sibco' ),
@@ -2016,29 +2152,6 @@ function sibco_register_acf_fields() {
 				'default_value' => 'Our commitment to sustainability goes beyond using natural materials. Every aspect of our manufacturing process is designed to minimize environmental impact while delivering premium quality products.',
 			),
 			array(
-				'key' => 'field_sustainability_pillars',
-				'label' => __( 'Sustainability Pillars (4 Points)', 'sibco' ),
-				'name' => 'sustainability_pillars',
-				'type' => 'repeater',
-				'layout' => 'row',
-				'button_label' => __( 'Add Pillar', 'sibco' ),
-				'sub_fields' => array(
-					array(
-						'key' => 'field_sp_title',
-						'label' => __( 'Pillar Title', 'sibco' ),
-						'name' => 'pillar_title',
-						'type' => 'text',
-					),
-					array(
-						'key' => 'field_sp_desc',
-						'label' => __( 'Pillar Description', 'sibco' ),
-						'name' => 'pillar_description',
-						'type' => 'textarea',
-						'rows' => 3,
-					),
-				),
-			),
-			array(
 				'key' => 'field_sustainability_image',
 				'label' => __( 'Sustainability Feature Image', 'sibco' ),
 				'name' => 'sustainability_image',
@@ -2059,6 +2172,129 @@ function sibco_register_acf_fields() {
 				'type' => 'text',
 				'default_value' => "Natural &\nBiodegradable",
 			),
+
+			// TAB 2: 4 Sustainability Pillars
+			array(
+				'key' => 'field_sust_pillars_tab',
+				'label' => __( '4 Sustainability Pillars', 'sibco' ),
+				'type' => 'tab',
+			),
+			// Pillar 1
+			array(
+				'key' => 'field_pillar_1_title',
+				'label' => __( 'Pillar 1 Title', 'sibco' ),
+				'name' => 'pillar_1_title',
+				'type' => 'text',
+				'default_value' => 'Natural Renewable Coir',
+			),
+			array(
+				'key' => 'field_pillar_1_desc',
+				'label' => __( 'Pillar 1 Description', 'sibco' ),
+				'name' => 'pillar_1_desc',
+				'type' => 'textarea',
+				'rows' => 3,
+				'default_value' => 'Coir is a naturally renewable resource extracted from coconut husks, making it one of the most sustainable raw materials available.',
+			),
+			array(
+				'key' => 'field_pillar_1_icon',
+				'label' => __( 'Pillar 1 Icon', 'sibco' ),
+				'name' => 'pillar_1_icon',
+				'type' => 'select',
+				'choices' => array(
+					'leaf'    => 'Leaf / Natural Renewable',
+					'users'   => 'Users / Eco Manufacturing',
+					'shield'  => 'Shield / Responsible Production',
+					'recycle' => 'Recycle / Biodegradable',
+				),
+				'default_value' => 'leaf',
+			),
+			// Pillar 2
+			array(
+				'key' => 'field_pillar_2_title',
+				'label' => __( 'Pillar 2 Title', 'sibco' ),
+				'name' => 'pillar_2_title',
+				'type' => 'text',
+				'default_value' => 'Eco-Friendly Manufacturing',
+			),
+			array(
+				'key' => 'field_pillar_2_desc',
+				'label' => __( 'Pillar 2 Description', 'sibco' ),
+				'name' => 'pillar_2_desc',
+				'type' => 'textarea',
+				'rows' => 3,
+				'default_value' => 'Our production processes minimize waste and energy consumption, adhering to environmentally responsible manufacturing practices.',
+			),
+			array(
+				'key' => 'field_pillar_2_icon',
+				'label' => __( 'Pillar 2 Icon', 'sibco' ),
+				'name' => 'pillar_2_icon',
+				'type' => 'select',
+				'choices' => array(
+					'leaf'    => 'Leaf / Natural Renewable',
+					'users'   => 'Users / Eco Manufacturing',
+					'shield'  => 'Shield / Responsible Production',
+					'recycle' => 'Recycle / Biodegradable',
+				),
+				'default_value' => 'users',
+			),
+			// Pillar 3
+			array(
+				'key' => 'field_pillar_3_title',
+				'label' => __( 'Pillar 3 Title', 'sibco' ),
+				'name' => 'pillar_3_title',
+				'type' => 'text',
+				'default_value' => 'Responsible Production',
+			),
+			array(
+				'key' => 'field_pillar_3_desc',
+				'label' => __( 'Pillar 3 Description', 'sibco' ),
+				'name' => 'pillar_3_desc',
+				'type' => 'textarea',
+				'rows' => 3,
+				'default_value' => 'From sourcing to dispatch, we maintain ethical production standards that support local communities and protect the environment.',
+			),
+			array(
+				'key' => 'field_pillar_3_icon',
+				'label' => __( 'Pillar 3 Icon', 'sibco' ),
+				'name' => 'pillar_3_icon',
+				'type' => 'select',
+				'choices' => array(
+					'leaf'    => 'Leaf / Natural Renewable',
+					'users'   => 'Users / Eco Manufacturing',
+					'shield'  => 'Shield / Responsible Production',
+					'recycle' => 'Recycle / Biodegradable',
+				),
+				'default_value' => 'shield',
+			),
+			// Pillar 4
+			array(
+				'key' => 'field_pillar_4_title',
+				'label' => __( 'Pillar 4 Title', 'sibco' ),
+				'name' => 'pillar_4_title',
+				'type' => 'text',
+				'default_value' => 'Biodegradable Products',
+			),
+			array(
+				'key' => 'field_pillar_4_desc',
+				'label' => __( 'Pillar 4 Description', 'sibco' ),
+				'name' => 'pillar_4_desc',
+				'type' => 'textarea',
+				'rows' => 3,
+				'default_value' => '100% natural coir products that are fully biodegradable, aligning with circular economy principles and reducing landfill impact.',
+			),
+			array(
+				'key' => 'field_pillar_4_icon',
+				'label' => __( 'Pillar 4 Icon', 'sibco' ),
+				'name' => 'pillar_4_icon',
+				'type' => 'select',
+				'choices' => array(
+					'leaf'    => 'Leaf / Natural Renewable',
+					'users'   => 'Users / Eco Manufacturing',
+					'shield'  => 'Shield / Responsible Production',
+					'recycle' => 'Recycle / Biodegradable',
+				),
+				'default_value' => 'recycle',
+			),
 		),
 		'location' => array(
 			array(
@@ -2066,6 +2302,13 @@ function sibco_register_acf_fields() {
 					'param' => 'page_template',
 					'operator' => '==',
 					'value' => 'page-sustainability.php',
+				),
+			),
+			array(
+				array(
+					'param' => 'page',
+					'operator' => '==',
+					'value' => '12',
 				),
 			),
 		),
