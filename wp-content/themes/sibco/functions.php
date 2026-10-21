@@ -111,19 +111,21 @@ function sibco_enqueue_scripts() {
 	wp_add_inline_script( 'sibco-tailwindcss', $tailwind_config );
 
 	// Theme Stylesheet
+	$style_ver = file_exists( SIBCO_DIR . '/style.css' ) ? filemtime( SIBCO_DIR . '/style.css' ) : SIBCO_VERSION;
 	wp_enqueue_style(
 		'sibco-main-style',
 		get_stylesheet_uri(),
 		array(),
-		SIBCO_VERSION
+		$style_ver
 	);
 
 	// Main JavaScript
+	$js_ver = file_exists( SIBCO_DIR . '/assets/js/main.js' ) ? filemtime( SIBCO_DIR . '/assets/js/main.js' ) : SIBCO_VERSION;
 	wp_enqueue_script(
 		'sibco-main-js',
 		SIBCO_URI . '/assets/js/main.js',
 		array(),
-		SIBCO_VERSION,
+		$js_ver,
 		true
 	);
 

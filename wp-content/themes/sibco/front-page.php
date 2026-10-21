@@ -226,12 +226,12 @@ $testimonials = array(
 ?>
 
 	<!-- ============ HERO SLIDER SECTION (4 SLIDES - ACF FREE) ============ -->
-	<section id="hero" class="relative min-h-[92vh] lg:min-h-screen flex items-center overflow-hidden bg-charcoal-900" aria-label="<?php esc_attr_e( 'Hero Showcase Slider', 'sibco' ); ?>">
+	<section id="hero" class="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden bg-charcoal-900" aria-label="<?php esc_attr_e( 'Hero Showcase Slider', 'sibco' ); ?>">
 		
 		<!-- 1. Background Slides Layer -->
-		<div class="hero-bg-slider absolute inset-0 pointer-events-none overflow-hidden">
+		<div class="hero-slider-bg-wrap absolute inset-0 pointer-events-none overflow-hidden">
 			<?php foreach ( $hero_slides as $k => $slide ) : ?>
-			<div class="hero-bg-slide absolute inset-0 transition-opacity duration-1000 ease-in-out <?php echo 0 === $k ? 'is-active opacity-100' : 'opacity-0'; ?>" data-slide="<?php echo esc_attr( $k ); ?>">
+			<div class="hero-bg-slide <?php echo 0 === $k ? 'active' : ''; ?>" data-slide="<?php echo esc_attr( $k ); ?>">
 				<img src="<?php echo esc_url( $slide['image'] ); ?>" alt="<?php echo esc_attr( $slide['title'] ); ?>" class="w-full h-full object-cover">
 				<!-- Multi-stop Dark Contrast Gradients for Maximum Legibility -->
 				<div class="absolute inset-0 bg-gradient-to-r from-charcoal-900/95 via-charcoal-900/80 to-charcoal-900/50"></div>
@@ -240,16 +240,41 @@ $testimonials = array(
 			<?php endforeach; ?>
 		</div>
 
-		<!-- 2. Hero Interactive Content Layer -->
-		<div class="hero-loaded relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-32 pb-14 flex flex-col justify-between min-h-[92vh] lg:min-h-screen">
+		<!-- 2. Vertically Centered Right-Side Navigation Arrows -->
+		<div class="absolute right-4 sm:right-6 lg:right-10 top-1/2 -translate-y-1/2 z-30 flex flex-col items-center gap-2">
+			<button 
+				type="button" 
+				id="hero-slider-prev" 
+				class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-coir-600 border border-white/20 text-white flex items-center justify-center transition-all duration-200 backdrop-blur-md shadow-xl hover:scale-110 active:scale-95 group focus:outline-none cursor-pointer" 
+				aria-label="<?php esc_attr_e( 'Previous Slide', 'sibco' ); ?>"
+			>
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:-translate-x-0.5 transition-transform"><polyline points="15 18 9 12 15 6"/></svg>
+			</button>
+
+			<span id="hero-slider-counter" class="text-white/80 font-mono text-xs font-bold tracking-widest select-none py-1">
+				01<span class="text-white/40">/</span>04
+			</span>
+
+			<button 
+				type="button" 
+				id="hero-slider-next" 
+				class="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-coir-600 border border-white/20 text-white flex items-center justify-center transition-all duration-200 backdrop-blur-md shadow-xl hover:scale-110 active:scale-95 group focus:outline-none cursor-pointer" 
+				aria-label="<?php esc_attr_e( 'Next Slide', 'sibco' ); ?>"
+			>
+				<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-0.5 transition-transform"><polyline points="9 18 15 12 9 6"/></svg>
+			</button>
+		</div>
+
+		<!-- 3. Hero Interactive Content Layer -->
+		<div class="hero-loaded relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-28 pb-12 flex flex-col justify-between min-h-[90vh] lg:min-h-screen">
 			
 			<!-- Spacer to offset sticky header -->
-			<div class="hidden lg:block h-4"></div>
+			<div class="hidden lg:block h-2"></div>
 
 			<!-- Main Slide Content Container -->
-			<div class="relative w-full max-w-4xl py-4 min-h-[360px] sm:min-h-[400px] flex items-center">
+			<div class="relative w-full max-w-3xl lg:max-w-4xl py-4 min-h-[360px] sm:min-h-[400px] flex items-center">
 				<?php foreach ( $hero_slides as $k => $slide ) : ?>
-				<div class="hero-text-slide transition-all duration-700 ease-out <?php echo 0 === $k ? 'is-active relative opacity-100 translate-y-0 pointer-events-auto z-20' : 'absolute top-0 left-0 w-full opacity-0 translate-y-6 pointer-events-none z-10'; ?>" data-slide="<?php echo esc_attr( $k ); ?>">
+				<div class="hero-text-slide <?php echo 0 === $k ? 'active' : ''; ?>" data-slide="<?php echo esc_attr( $k ); ?>">
 					
 					<!-- Badge -->
 					<?php if ( ! empty( $slide['badge'] ) ) : ?>
@@ -290,54 +315,8 @@ $testimonials = array(
 				<?php endforeach; ?>
 			</div>
 
-			<!-- Bottom Area: Slider Controls & 6 Trust Stats -->
+			<!-- Bottom Area: 6 Trust Stats Grid (Does NOT increase section height) -->
 			<div class="mt-6 pt-6 border-t border-white/15">
-				
-				<!-- Slider Navigation Controls Bar -->
-				<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
-					
-					<!-- Slide Indicators (Numbered Tabs with Animated Progress Indicator) -->
-					<div class="flex items-center gap-2 sm:gap-3" role="tablist" aria-label="<?php esc_attr_e( 'Hero Slides', 'sibco' ); ?>">
-						<?php foreach ( $hero_slides as $k => $slide ) : ?>
-						<button 
-							type="button" 
-							class="hero-slider-dot group flex items-center gap-2.5 px-3.5 py-2 rounded-full border transition-all duration-300 <?php echo 0 === $k ? 'bg-white/20 border-white/40 text-white' : 'bg-white/5 border-white/10 text-white/60 hover:bg-white/10 hover:text-white'; ?>" 
-							data-slide-index="<?php echo esc_attr( $k ); ?>"
-							role="tab"
-							aria-selected="<?php echo 0 === $k ? 'true' : 'false'; ?>"
-							aria-label="<?php echo esc_attr( sprintf( __( 'Slide %d: %s', 'sibco' ), $k + 1, $slide['badge'] ) ); ?>"
-						>
-							<span class="font-mono text-xs font-bold">0<?php echo esc_html( $k + 1 ); ?></span>
-							<span class="dot-bar hidden sm:inline-block w-8 md:w-12 h-1 bg-white/20 rounded-full overflow-hidden">
-								<span class="dot-fill block h-full bg-coir-400 transition-all duration-100 w-0"></span>
-							</span>
-						</button>
-						<?php endforeach; ?>
-					</div>
-
-					<!-- Prev / Next Arrow Controls -->
-					<div class="flex items-center gap-2">
-						<button 
-							type="button" 
-							id="hero-slider-prev" 
-							class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-coir-600 border border-white/15 text-white flex items-center justify-center transition-all duration-200 backdrop-blur-md hover:scale-105 active:scale-95" 
-							aria-label="<?php esc_attr_e( 'Previous Slide', 'sibco' ); ?>"
-						>
-							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
-						</button>
-						<button 
-							type="button" 
-							id="hero-slider-next" 
-							class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-coir-600 border border-white/15 text-white flex items-center justify-center transition-all duration-200 backdrop-blur-md hover:scale-105 active:scale-95" 
-							aria-label="<?php esc_attr_e( 'Next Slide', 'sibco' ); ?>"
-						>
-							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-						</button>
-					</div>
-
-				</div>
-
-				<!-- Trust Stats Grid (6 Individual Cards - 100% ACF Editable) -->
 				<div class="hero-stats grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
 					<?php foreach ( $hero_stats as $stat ) : ?>
 					<div class="bg-white/8 backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 text-center hover:bg-white/12 transition-colors">
@@ -346,11 +325,121 @@ $testimonials = array(
 					</div>
 					<?php endforeach; ?>
 				</div>
-
 			</div>
 
 		</div>
 	</section>
+
+	<script>
+	(function() {
+		function initHeroSlider() {
+			const hero = document.getElementById('hero');
+			if (!hero) return;
+			const bgSlides = hero.querySelectorAll('.hero-bg-slide');
+			const textSlides = hero.querySelectorAll('.hero-text-slide');
+			const prevBtn = document.getElementById('hero-slider-prev');
+			const nextBtn = document.getElementById('hero-slider-next');
+			const counter = document.getElementById('hero-slider-counter');
+
+			if (textSlides.length < 2) return;
+
+			let currentIndex = 0;
+			const total = textSlides.length;
+			let timer = null;
+
+			function updateSlide(newIndex) {
+				if (bgSlides[currentIndex]) bgSlides[currentIndex].classList.remove('active');
+				if (textSlides[currentIndex]) textSlides[currentIndex].classList.remove('active');
+
+				currentIndex = (newIndex + total) % total;
+
+				if (bgSlides[currentIndex]) bgSlides[currentIndex].classList.add('active');
+				if (textSlides[currentIndex]) textSlides[currentIndex].classList.add('active');
+
+				if (counter) {
+					counter.innerHTML = '0' + (currentIndex + 1) + '<span class="text-white/40">/</span>0' + total;
+				}
+			}
+
+			function next() {
+				updateSlide(currentIndex + 1);
+			}
+
+			function prev() {
+				updateSlide(currentIndex - 1);
+			}
+
+			function startAuto() {
+				stopAuto();
+				timer = setInterval(next, 5000);
+			}
+
+			function stopAuto() {
+				if (timer) {
+					clearInterval(timer);
+					timer = null;
+				}
+			}
+
+			if (nextBtn) {
+				nextBtn.addEventListener('click', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					next();
+					startAuto();
+				});
+			}
+
+			if (prevBtn) {
+				prevBtn.addEventListener('click', function(e) {
+					e.preventDefault();
+					e.stopPropagation();
+					prev();
+					startAuto();
+				});
+			}
+
+			hero.addEventListener('mouseenter', stopAuto);
+			hero.addEventListener('mouseleave', startAuto);
+
+			// Touch swipe gestures
+			let startX = 0;
+			hero.addEventListener('touchstart', function(e) {
+				if (e.changedTouches && e.changedTouches[0]) {
+					startX = e.changedTouches[0].clientX;
+				}
+			}, { passive: true });
+
+			hero.addEventListener('touchend', function(e) {
+				if (e.changedTouches && e.changedTouches[0]) {
+					const diffX = e.changedTouches[0].clientX - startX;
+					if (Math.abs(diffX) > 40) {
+						if (diffX < 0) next();
+						else prev();
+						startAuto();
+					}
+				}
+			}, { passive: true });
+
+			// Keyboard arrows
+			document.addEventListener('keydown', function(e) {
+				const rect = hero.getBoundingClientRect();
+				if (rect.top <= window.innerHeight && rect.bottom >= 0) {
+					if (e.key === 'ArrowRight') { next(); startAuto(); }
+					else if (e.key === 'ArrowLeft') { prev(); startAuto(); }
+				}
+			});
+
+			startAuto();
+		}
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', initHeroSlider);
+		} else {
+			initHeroSlider();
+		}
+	})();
+	</script>
 
 	<!-- ============ TRUST BAR ============ -->
 	<?php get_template_part( 'template-parts/trust-bar' ); ?>

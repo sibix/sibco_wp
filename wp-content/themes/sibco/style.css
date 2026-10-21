@@ -132,26 +132,69 @@ Text Domain: sibco
 
 /* Hero Slider Styles */
 .hero-bg-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1;
     will-change: opacity;
 }
-.hero-bg-slide img {
-    transform: scale(1.08);
-    transition: transform 7s cubic-bezier(0.25, 1, 0.5, 1);
+.hero-bg-slide.active,
+.hero-bg-slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
 }
+.hero-bg-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.06);
+    transition: transform 6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.hero-bg-slide.active img,
 .hero-bg-slide.is-active img {
     transform: scale(1);
 }
+
+.hero-text-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(16px);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1), transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 10;
+}
+.hero-text-slide.active,
+.hero-text-slide.is-active {
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+    z-index: 20;
+}
+.hero-text-slide.active .slide-badge,
 .hero-text-slide.is-active .slide-badge {
-    animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+    animation: fadeSlideUp 0.5s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
 }
+.hero-text-slide.active .slide-title,
 .hero-text-slide.is-active .slide-title {
-    animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+    animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
 }
+.hero-text-slide.active .slide-desc,
 .hero-text-slide.is-active .slide-desc {
-    animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+    animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.25s both;
 }
+.hero-text-slide.active .slide-ctas,
 .hero-text-slide.is-active .slide-ctas {
-    animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+    animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
 }
 
 /* Card hover effect */
