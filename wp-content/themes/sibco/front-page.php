@@ -12,18 +12,90 @@ get_header();
 $page_id = get_the_ID();
 
 // -------------------------------------------------------------
-// 1. HERO FIELDS
+// 1. HERO SLIDER (4 SLIDES - ACF FREE NON-REPEATER)
 // -------------------------------------------------------------
-$hero_badge    = sibco_get_field( 'hero_badge', 'Established 1998 · India', $page_id );
-$hero_title    = sibco_get_field( 'hero_title', '26 Years of Manufacturing Premium Coir Mats for Global Markets', $page_id );
-$hero_desc     = sibco_get_field( 'hero_description', 'Trusted manufacturing partner supplying high-quality natural coir mats to importers, distributors and private label brands across Europe and North America.', $page_id );
-$btn1_text     = sibco_get_field( 'hero_button_text', __( 'Request a Quote', 'sibco' ), $page_id );
-$btn1_url      = sibco_get_field( 'hero_button_url', home_url( '/contact/' ), $page_id );
-$btn2_text     = sibco_get_field( 'hero_button_secondary_text', __( 'View Product Range', 'sibco' ), $page_id );
-$btn2_url      = sibco_get_field( 'hero_button_secondary_url', home_url( '/products/' ), $page_id );
+$slider_defaults = array(
+	1 => array(
+		'badge'     => 'Established 1998 · India',
+		'title'     => '26 Years of Manufacturing Premium Coir Mats for Global Markets',
+		'desc'      => 'Trusted manufacturing partner supplying high-quality natural coir mats to importers, distributors and private label brands across Europe and North America.',
+		'btn1_text' => __( 'Request a Quote', 'sibco' ),
+		'btn1_url'  => home_url( '/contact/' ),
+		'btn2_text' => __( 'View Product Range', 'sibco' ),
+		'btn2_url'  => home_url( '/products/' ),
+		'image'     => 'https://picsum.photos/seed/coir-factory-floor/1920/1080.jpg',
+	),
+	2 => array(
+		'badge'     => '100% Eco-Friendly & Natural',
+		'title'     => 'Engineered Panama & Brush Coir Mats Built for Extreme Durability',
+		'desc'      => 'Precision-tufted natural coconut fibers with vulcanized heavy-duty rubber backing, delivering maximum dirt scraping, moisture control, and long-lasting entrance performance.',
+		'btn1_text' => __( 'View Product Range', 'sibco' ),
+		'btn1_url'  => home_url( '/products/' ),
+		'btn2_text' => __( 'Request a Custom Quote', 'sibco' ),
+		'btn2_url'  => home_url( '/contact/' ),
+		'image'     => 'https://picsum.photos/seed/coir-mats-collection/1920/1080.jpg',
+	),
+	3 => array(
+		'badge'     => 'End-to-End In-House Production',
+		'title'     => 'Custom OEM & Private Label Solutions for Volume Importers',
+		'desc'      => 'From raw fibre processing and automated backing to custom embossing and barcode packaging — our facility produces over 50,000 units monthly with zero quality claims.',
+		'btn1_text' => __( 'Explore Manufacturing', 'sibco' ),
+		'btn1_url'  => home_url( '/manufacturing/' ),
+		'btn2_text' => __( 'Request Material Samples', 'sibco' ),
+		'btn2_url'  => home_url( '/contact/' ),
+		'image'     => 'https://picsum.photos/seed/coir-factory-machinery/1920/1080.jpg',
+	),
+	4 => array(
+		'badge'     => 'EU Certified & Talite Free',
+		'title'     => 'Sustainable Coir Products Meeting Stringent European Standards',
+		'desc'      => '100% biodegradable coconut husk fibers, REACH-compliant rubber backing, and certified non-hazardous processing for environmentally conscious international retailers.',
+		'btn1_text' => __( 'Our Sustainability Mission', 'sibco' ),
+		'btn1_url'  => home_url( '/sustainability/' ),
+		'btn2_text' => __( 'Quality Certifications', 'sibco' ),
+		'btn2_url'  => home_url( '/quality/' ),
+		'image'     => 'https://picsum.photos/seed/coir-sustainability-green/1920/1080.jpg',
+	),
+);
 
-$raw_img       = sibco_get_field( 'hero_image', '', $page_id );
-$bg_url        = sibco_get_image_url( $raw_img, 'https://picsum.photos/seed/coir-factory-floor/1920/1080.jpg' );
+$hero_slides = array();
+for ( $i = 1; $i <= 4; $i++ ) {
+	$def = $slider_defaults[ $i ];
+
+	// Backward compatibility fallback for slide 1 to preserve legacy hero fields if set
+	$b_badge = ( 1 === $i ) ? sibco_get_field( 'hero_badge', $def['badge'], $page_id ) : $def['badge'];
+	$b_title = ( 1 === $i ) ? sibco_get_field( 'hero_title', $def['title'], $page_id ) : $def['title'];
+	$b_desc  = ( 1 === $i ) ? sibco_get_field( 'hero_description', $def['desc'], $page_id ) : $def['desc'];
+	$b_b1t   = ( 1 === $i ) ? sibco_get_field( 'hero_button_text', $def['btn1_text'], $page_id ) : $def['btn1_text'];
+	$b_b1u   = ( 1 === $i ) ? sibco_get_field( 'hero_button_url', $def['btn1_url'], $page_id ) : $def['btn1_url'];
+	$b_b2t   = ( 1 === $i ) ? sibco_get_field( 'hero_button_secondary_text', $def['btn2_text'], $page_id ) : $def['btn2_text'];
+	$b_b2u   = ( 1 === $i ) ? sibco_get_field( 'hero_button_secondary_url', $def['btn2_url'], $page_id ) : $def['btn2_url'];
+
+	$badge    = sibco_get_field( "hero_slide_{$i}_badge", $b_badge, $page_id );
+	$title    = sibco_get_field( "hero_slide_{$i}_title", $b_title, $page_id );
+	$desc     = sibco_get_field( "hero_slide_{$i}_desc", $b_desc, $page_id );
+	$btn1_txt = sibco_get_field( "hero_slide_{$i}_btn1_text", $b_b1t, $page_id );
+	$btn1_url = sibco_get_field( "hero_slide_{$i}_btn1_url", $b_b1u, $page_id );
+	$btn2_txt = sibco_get_field( "hero_slide_{$i}_btn2_text", $b_b2t, $page_id );
+	$btn2_url = sibco_get_field( "hero_slide_{$i}_btn2_url", $b_b2u, $page_id );
+
+	$raw_img = sibco_get_field( "hero_slide_{$i}_image", '', $page_id );
+	if ( empty( $raw_img ) && 1 === $i ) {
+		$raw_img = sibco_get_field( 'hero_image', '', $page_id );
+	}
+	$img_url = sibco_get_image_url( $raw_img, $def['image'] );
+
+	$hero_slides[] = array(
+		'index'     => $i,
+		'badge'     => $badge,
+		'title'     => $title,
+		'desc'      => $desc,
+		'btn1_text' => $btn1_txt,
+		'btn1_url'  => $btn1_url,
+		'btn2_text' => $btn2_txt,
+		'btn2_url'  => $btn2_url,
+		'image'     => $img_url,
+	);
+}
 
 // Hero Stats (6 Individual Cards - No Repeater)
 $hero_stats = array(
@@ -153,70 +225,130 @@ $testimonials = array(
 );
 ?>
 
-	<!-- ============ HERO SECTION ============ -->
-	<section id="hero" class="relative min-h-screen flex items-center overflow-hidden">
-		<!-- Background Image -->
-		<div class="absolute inset-0">
-			<img src="<?php echo esc_url( $bg_url ); ?>" alt="<?php bloginfo( 'name' ); ?>" class="w-full h-full object-cover">
-			<div class="absolute inset-0 bg-gradient-to-r from-charcoal-800/90 via-charcoal-800/75 to-charcoal-800/50"></div>
-			<div class="absolute inset-0 bg-gradient-to-t from-charcoal-800/60 via-transparent to-charcoal-800/30"></div>
+	<!-- ============ HERO SLIDER SECTION (4 SLIDES - ACF FREE) ============ -->
+	<section id="hero" class="relative min-h-[92vh] lg:min-h-screen flex items-center overflow-hidden bg-charcoal-900" aria-label="<?php esc_attr_e( 'Hero Showcase Slider', 'sibco' ); ?>">
+		
+		<!-- 1. Background Slides Layer -->
+		<div class="hero-bg-slider absolute inset-0 pointer-events-none overflow-hidden">
+			<?php foreach ( $hero_slides as $k => $slide ) : ?>
+			<div class="hero-bg-slide absolute inset-0 transition-opacity duration-1000 ease-in-out <?php echo 0 === $k ? 'is-active opacity-100' : 'opacity-0'; ?>" data-slide="<?php echo esc_attr( $k ); ?>">
+				<img src="<?php echo esc_url( $slide['image'] ); ?>" alt="<?php echo esc_attr( $slide['title'] ); ?>" class="w-full h-full object-cover">
+				<!-- Multi-stop Dark Contrast Gradients for Maximum Legibility -->
+				<div class="absolute inset-0 bg-gradient-to-r from-charcoal-900/95 via-charcoal-900/80 to-charcoal-900/50"></div>
+				<div class="absolute inset-0 bg-gradient-to-t from-charcoal-900/85 via-transparent to-charcoal-900/40"></div>
+			</div>
+			<?php endforeach; ?>
 		</div>
 
-		<!-- Content -->
-		<div class="hero-loaded relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-32 pb-20">
-			<div class="max-w-3xl">
-				<!-- Badge -->
-				<?php if ( ! empty( $hero_badge ) ) : ?>
-				<div class="hero-title inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-8">
-					<span class="w-2 h-2 bg-coir-400 rounded-full"></span>
-					<span class="text-white/80 text-xs font-medium tracking-wider uppercase"><?php echo esc_html( $hero_badge ); ?></span>
-				</div>
-				<?php endif; ?>
+		<!-- 2. Hero Interactive Content Layer -->
+		<div class="hero-loaded relative z-10 max-w-7xl mx-auto px-6 lg:px-8 w-full pt-32 pb-14 flex flex-col justify-between min-h-[92vh] lg:min-h-screen">
+			
+			<!-- Spacer to offset sticky header -->
+			<div class="hidden lg:block h-4"></div>
 
-				<!-- Headline -->
-				<h1 class="hero-title font-serif text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-600 text-white leading-[1.1] tracking-tight mb-6">
-					<?php echo esc_html( $hero_title ); ?>
-				</h1>
-
-				<!-- Subheadline -->
-				<?php if ( ! empty( $hero_desc ) ) : ?>
-				<p class="hero-sub text-lg lg:text-xl text-white/70 font-light leading-relaxed max-w-2xl mb-10">
-					<?php echo esc_html( $hero_desc ); ?>
-				</p>
-				<?php endif; ?>
-
-				<!-- CTAs -->
-				<div class="hero-ctas flex flex-wrap gap-4 mb-16">
-					<?php if ( ! empty( $btn1_text ) ) : ?>
-					<a href="<?php echo esc_url( $btn1_url ); ?>" class="btn-primary bg-coir-500 hover:bg-coir-600 text-white font-semibold px-8 py-4 rounded-lg text-base transition-colors duration-200 inline-flex items-center gap-2">
-						<?php echo esc_html( $btn1_text ); ?>
-						<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-					</a>
+			<!-- Main Slide Content Container -->
+			<div class="relative w-full max-w-4xl py-4 min-h-[360px] sm:min-h-[400px] flex items-center">
+				<?php foreach ( $hero_slides as $k => $slide ) : ?>
+				<div class="hero-text-slide transition-all duration-700 ease-out <?php echo 0 === $k ? 'is-active relative opacity-100 translate-y-0 pointer-events-auto z-20' : 'absolute top-0 left-0 w-full opacity-0 translate-y-6 pointer-events-none z-10'; ?>" data-slide="<?php echo esc_attr( $k ); ?>">
+					
+					<!-- Badge -->
+					<?php if ( ! empty( $slide['badge'] ) ) : ?>
+					<div class="slide-badge inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/15 rounded-full px-4 py-1.5 mb-6 shadow-sm">
+						<span class="w-2 h-2 bg-coir-400 rounded-full animate-pulse"></span>
+						<span class="text-white/90 text-xs font-semibold tracking-wider uppercase"><?php echo esc_html( $slide['badge'] ); ?></span>
+					</div>
 					<?php endif; ?>
 
-					<?php if ( ! empty( $btn2_text ) ) : ?>
-					<a href="<?php echo esc_url( $btn2_url ); ?>" class="bg-white/10 hover:bg-white/15 backdrop-blur-sm border border-white/20 text-white font-medium px-8 py-4 rounded-lg text-base transition-all duration-200 inline-flex items-center gap-2">
-						<?php echo esc_html( $btn2_text ); ?>
-					</a>
-					<?php endif; ?>
-				</div>
-			</div>
+					<!-- Headline -->
+					<h1 class="slide-title font-serif text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-[1.12] tracking-tight mb-6">
+						<?php echo esc_html( $slide['title'] ); ?>
+					</h1>
 
-			<!-- Trust Stats Grid (ACF Free Non-Repeater) -->
-			<div class="hero-stats grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-				<?php foreach ( $hero_stats as $stat ) : ?>
-				<div class="bg-white/8 backdrop-blur-md border border-white/10 rounded-xl p-4 text-center">
-					<div class="text-coir-400 font-bold text-2xl mb-1"><?php echo esc_html( $stat['val'] ); ?></div>
-					<div class="text-white/60 text-xs font-medium tracking-wide"><?php echo esc_html( $stat['lbl'] ); ?></div>
+					<!-- Subheadline -->
+					<?php if ( ! empty( $slide['desc'] ) ) : ?>
+					<p class="slide-desc text-base sm:text-lg lg:text-xl text-white/80 font-light leading-relaxed max-w-2xl mb-8">
+						<?php echo esc_html( $slide['desc'] ); ?>
+					</p>
+					<?php endif; ?>
+
+					<!-- CTAs -->
+					<div class="slide-ctas flex flex-wrap items-center gap-4">
+						<?php if ( ! empty( $slide['btn1_text'] ) ) : ?>
+						<a href="<?php echo esc_url( $slide['btn1_url'] ); ?>" class="btn-primary bg-coir-500 hover:bg-coir-600 text-white font-semibold px-8 py-4 rounded-xl text-sm sm:text-base transition-all duration-200 inline-flex items-center gap-2 shadow-lg shadow-coir-600/30 hover:shadow-coir-600/50 hover:-translate-y-0.5">
+							<span><?php echo esc_html( $slide['btn1_text'] ); ?></span>
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+						</a>
+						<?php endif; ?>
+
+						<?php if ( ! empty( $slide['btn2_text'] ) ) : ?>
+						<a href="<?php echo esc_url( $slide['btn2_url'] ); ?>" class="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-medium px-8 py-4 rounded-xl text-sm sm:text-base transition-all duration-200 inline-flex items-center gap-2 hover:-translate-y-0.5">
+							<span><?php echo esc_html( $slide['btn2_text'] ); ?></span>
+						</a>
+						<?php endif; ?>
+					</div>
 				</div>
 				<?php endforeach; ?>
 			</div>
-		</div>
 
-		<!-- Scroll indicator -->
-		<div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-60">
-			<span class="text-white text-[10px] tracking-[0.2em] uppercase font-medium"><?php esc_html_e( 'Scroll', 'sibco' ); ?></span>
-			<div class="w-px h-8 bg-gradient-to-b from-white/60 to-transparent"></div>
+			<!-- Bottom Area: Slider Controls & 6 Trust Stats -->
+			<div class="mt-6 pt-6 border-t border-white/15">
+				
+				<!-- Slider Navigation Controls Bar -->
+				<div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+					
+					<!-- Slide Indicators (Numbered Tabs with Animated Progress Indicator) -->
+					<div class="flex items-center gap-2 sm:gap-3" role="tablist" aria-label="<?php esc_attr_e( 'Hero Slides', 'sibco' ); ?>">
+						<?php foreach ( $hero_slides as $k => $slide ) : ?>
+						<button 
+							type="button" 
+							class="hero-slider-dot group flex items-center gap-2.5 px-3.5 py-2 rounded-full border transition-all duration-300 <?php echo 0 === $k ? 'bg-white/20 border-white/40 text-white' : 'bg-white/5 border-white/10 text-white/60 hover:bg-white/10 hover:text-white'; ?>" 
+							data-slide-index="<?php echo esc_attr( $k ); ?>"
+							role="tab"
+							aria-selected="<?php echo 0 === $k ? 'true' : 'false'; ?>"
+							aria-label="<?php echo esc_attr( sprintf( __( 'Slide %d: %s', 'sibco' ), $k + 1, $slide['badge'] ) ); ?>"
+						>
+							<span class="font-mono text-xs font-bold">0<?php echo esc_html( $k + 1 ); ?></span>
+							<span class="dot-bar hidden sm:inline-block w-8 md:w-12 h-1 bg-white/20 rounded-full overflow-hidden">
+								<span class="dot-fill block h-full bg-coir-400 transition-all duration-100 w-0"></span>
+							</span>
+						</button>
+						<?php endforeach; ?>
+					</div>
+
+					<!-- Prev / Next Arrow Controls -->
+					<div class="flex items-center gap-2">
+						<button 
+							type="button" 
+							id="hero-slider-prev" 
+							class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-coir-600 border border-white/15 text-white flex items-center justify-center transition-all duration-200 backdrop-blur-md hover:scale-105 active:scale-95" 
+							aria-label="<?php esc_attr_e( 'Previous Slide', 'sibco' ); ?>"
+						>
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+						</button>
+						<button 
+							type="button" 
+							id="hero-slider-next" 
+							class="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-white/10 hover:bg-coir-600 border border-white/15 text-white flex items-center justify-center transition-all duration-200 backdrop-blur-md hover:scale-105 active:scale-95" 
+							aria-label="<?php esc_attr_e( 'Next Slide', 'sibco' ); ?>"
+						>
+							<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+						</button>
+					</div>
+
+				</div>
+
+				<!-- Trust Stats Grid (6 Individual Cards - 100% ACF Editable) -->
+				<div class="hero-stats grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+					<?php foreach ( $hero_stats as $stat ) : ?>
+					<div class="bg-white/8 backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 text-center hover:bg-white/12 transition-colors">
+						<div class="text-coir-400 font-bold text-xl sm:text-2xl mb-0.5"><?php echo esc_html( $stat['val'] ); ?></div>
+						<div class="text-white/70 text-[11px] sm:text-xs font-medium tracking-wide"><?php echo esc_html( $stat['lbl'] ); ?></div>
+					</div>
+					<?php endforeach; ?>
+				</div>
+
+			</div>
+
 		</div>
 	</section>
 

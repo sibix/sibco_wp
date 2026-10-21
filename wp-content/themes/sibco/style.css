@@ -130,6 +130,30 @@ Text Domain: sibco
     animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.9s both;
 }
 
+/* Hero Slider Styles */
+.hero-bg-slide {
+    will-change: opacity;
+}
+.hero-bg-slide img {
+    transform: scale(1.08);
+    transition: transform 7s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.hero-bg-slide.is-active img {
+    transform: scale(1);
+}
+.hero-text-slide.is-active .slide-badge {
+    animation: fadeSlideUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.1s both;
+}
+.hero-text-slide.is-active .slide-title {
+    animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both;
+}
+.hero-text-slide.is-active .slide-desc {
+    animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both;
+}
+.hero-text-slide.is-active .slide-ctas {
+    animation: fadeSlideUp 0.7s cubic-bezier(0.22, 1, 0.36, 1) 0.5s both;
+}
+
 /* Card hover effect */
 .card-hover {
     transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
