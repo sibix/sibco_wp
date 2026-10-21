@@ -111,7 +111,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const formData = new FormData(contactForm);
-            formData.append('action', 'sibco_contact_form');
+            if (!formData.has('action')) {
+                formData.append('action', 'sibco_contact_form');
+            }
+            if (!formData.has('nonce') && typeof sibco_vars !== 'undefined' && sibco_vars.nonce) {
+                formData.append('nonce', sibco_vars.nonce);
+            }
 
             try {
                 const response = await fetch(sibco_vars.ajax_url || '/wp-admin/admin-ajax.php', {

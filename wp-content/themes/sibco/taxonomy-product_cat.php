@@ -280,18 +280,24 @@ $all_categories = get_terms( array(
 
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 					<div>
+						<label class="block text-xs font-bold text-charcoal-700 uppercase tracking-wider mb-1.5" for="quote_company"><?php esc_html_e( 'Company Name', 'sibco' ); ?></label>
+						<input type="text" id="quote_company" name="company" class="w-full px-4 py-2.5 rounded-xl border border-cream-400 bg-cream-50 focus:bg-white focus:border-coir-600 focus:outline-none text-charcoal-800 text-sm transition-colors" placeholder="Global Imports Ltd.">
+					</div>
+					<div>
 						<label class="block text-xs font-bold text-charcoal-700 uppercase tracking-wider mb-1.5" for="quote_phone"><?php esc_html_e( 'Phone / WhatsApp', 'sibco' ); ?></label>
 						<input type="text" id="quote_phone" name="phone" class="w-full px-4 py-2.5 rounded-xl border border-cream-400 bg-cream-50 focus:bg-white focus:border-coir-600 focus:outline-none text-charcoal-800 text-sm transition-colors" placeholder="+1 234 567 890">
 					</div>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
 					<div>
 						<label class="block text-xs font-bold text-charcoal-700 uppercase tracking-wider mb-1.5" for="quote_country"><?php esc_html_e( 'Destination Country / Port', 'sibco' ); ?></label>
 						<input type="text" id="quote_country" name="country" class="w-full px-4 py-2.5 rounded-xl border border-cream-400 bg-cream-50 focus:bg-white focus:border-coir-600 focus:outline-none text-charcoal-800 text-sm transition-colors" placeholder="e.g. Hamburg, Germany">
 					</div>
-				</div>
-
-				<div>
-					<label class="block text-xs font-bold text-charcoal-700 uppercase tracking-wider mb-1.5" for="quote_quantity"><?php esc_html_e( 'Quantity / Estimated Container Volume', 'sibco' ); ?></label>
-					<input type="text" id="quote_quantity" name="quantity" class="w-full px-4 py-2.5 rounded-xl border border-cream-400 bg-cream-50 focus:bg-white focus:border-coir-600 focus:outline-none text-charcoal-800 text-sm transition-colors" placeholder="e.g. 1 x 20ft FCL or 1,000 pieces">
+					<div>
+						<label class="block text-xs font-bold text-charcoal-700 uppercase tracking-wider mb-1.5" for="quote_quantity"><?php esc_html_e( 'Quantity / Estimated Volume', 'sibco' ); ?></label>
+						<input type="text" id="quote_quantity" name="quantity" class="w-full px-4 py-2.5 rounded-xl border border-cream-400 bg-cream-50 focus:bg-white focus:border-coir-600 focus:outline-none text-charcoal-800 text-sm transition-colors" placeholder="e.g. 1 x 20ft FCL or 1,000 pcs">
+					</div>
 				</div>
 
 				<div>

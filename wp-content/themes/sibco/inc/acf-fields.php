@@ -68,6 +68,111 @@ function sibco_register_acf_fields() {
 				'default_value' => 'export@sibco.in',
 			),
 			array(
+				'key' => 'field_quote_notification_email',
+				'label' => __( 'Quote Notification Recipient(s)', 'sibco' ),
+				'name' => 'quote_notification_email',
+				'type' => 'text',
+				'instructions' => __( 'Email addresses to receive Product Quote Requests (separate multiple with commas). Leave blank to send to Primary Contact Email and Site Admin.', 'sibco' ),
+				'default_value' => '',
+			),
+			array(
+				'key' => 'field_opt_smtp_tab',
+				'label' => __( 'SMTP Mail Settings', 'sibco' ),
+				'type' => 'tab',
+			),
+			array(
+				'key' => 'field_enable_custom_smtp',
+				'label' => __( 'Enable Custom SMTP', 'sibco' ),
+				'name' => 'enable_custom_smtp',
+				'type' => 'true_false',
+				'instructions' => __( 'Enable this to route all quote emails through an external SMTP server (e.g. Gmail, SendGrid, Zoho, cPanel).', 'sibco' ),
+				'default_value' => 0,
+				'ui' => 1,
+			),
+			array(
+				'key' => 'field_smtp_host',
+				'label' => __( 'SMTP Host', 'sibco' ),
+				'name' => 'smtp_host',
+				'type' => 'text',
+				'instructions' => __( 'e.g. smtp.gmail.com or mail.yourdomain.com', 'sibco' ),
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_enable_custom_smtp',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+				),
+			),
+			array(
+				'key' => 'field_smtp_port',
+				'label' => __( 'SMTP Port', 'sibco' ),
+				'name' => 'smtp_port',
+				'type' => 'number',
+				'default_value' => 587,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_enable_custom_smtp',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+				),
+			),
+			array(
+				'key' => 'field_smtp_user',
+				'label' => __( 'SMTP Username / Email', 'sibco' ),
+				'name' => 'smtp_user',
+				'type' => 'text',
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_enable_custom_smtp',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+				),
+			),
+			array(
+				'key' => 'field_smtp_pass',
+				'label' => __( 'SMTP Password / App Password', 'sibco' ),
+				'name' => 'smtp_pass',
+				'type' => 'password',
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_enable_custom_smtp',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+				),
+			),
+			array(
+				'key' => 'field_smtp_encryption',
+				'label' => __( 'SMTP Encryption', 'sibco' ),
+				'name' => 'smtp_encryption',
+				'type' => 'select',
+				'choices' => array(
+					'tls'  => 'TLS (Port 587 - Recommended)',
+					'ssl'  => 'SSL (Port 465)',
+					'none' => 'None',
+				),
+				'default_value' => 'tls',
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_enable_custom_smtp',
+							'operator' => '==',
+							'value' => '1',
+						),
+					),
+				),
+			),
+			array(
 				'key' => 'field_contact_phone',
 				'label' => __( 'Primary Contact Phone', 'sibco' ),
 				'name' => 'contact_phone',

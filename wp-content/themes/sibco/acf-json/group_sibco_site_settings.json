@@ -55,6 +55,16 @@
             "default_value": "export@sibco.in",
             "menu_order": 4
         },
+        "field_quote_notification_email": {
+            "key": "field_quote_notification_email",
+            "name": "quote_notification_email",
+            "type": "text",
+            "parent": "group_sibco_site_settings",
+            "label": "Quote Notification Recipient(s)",
+            "instructions": "Email addresses to receive Product Quote Requests (separate multiple with commas). Leave blank to send to Primary Contact Email and Site Admin.",
+            "default_value": "",
+            "menu_order": 5
+        },
         "field_contact_phone": {
             "key": "field_contact_phone",
             "name": "contact_phone",

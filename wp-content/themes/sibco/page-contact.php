@@ -107,6 +107,8 @@ $map_desc  = sibco_get_field( 'map_description', 'Supporting international buyer
 						<div id="formStatus" class="hidden"></div>
 
 						<form id="sibcoContactForm" class="space-y-5">
+							<input type="hidden" name="action" value="sibco_contact_form">
+							<input type="hidden" name="nonce" value="<?php echo esc_attr( wp_create_nonce( 'sibco_contact_nonce' ) ); ?>">
 							<div class="grid sm:grid-cols-2 gap-5">
 								<div>
 									<label for="contact_name" class="block text-xs font-semibold uppercase tracking-wider text-charcoal-600 mb-2"><?php esc_html_e( 'Full Name *', 'sibco' ); ?></label>

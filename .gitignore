@@ -41,6 +41,10 @@
 /wp-content/plugins/hello.php
 /wp-content/plugins/akismet/
 
+# Backup & plugin directories
+/wp-content/updraft/
+/wp-content/plugins/updraftplus/
+
 # Environment, Logs & Database Dumps
 *.log
 *.sql
