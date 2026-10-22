@@ -139,6 +139,47 @@ $about_stat_num = sibco_get_field( 'hp_about_stat_number', '26+', $page_id );
 $about_stat_lbl = sibco_get_field( 'hp_about_stat_label', "Years of\nManufacturing", $page_id );
 
 // -------------------------------------------------------------
+// 2.5. PRODUCTION PROCESS VIDEO FIELDS
+// -------------------------------------------------------------
+$video_badge      = sibco_get_field( 'hp_video_badge', __( 'Manufacturing Tour', 'sibco' ), $page_id );
+$video_title      = sibco_get_field( 'hp_video_title', __( 'Witness the Craft & Precision Behind Every Coir Mat', 'sibco' ), $page_id );
+$video_desc       = sibco_get_field( 'hp_video_description', __( 'Take an inside look at our Kerala manufacturing facility. Experience how raw natural coconut fibre is processed, precision-tufted, vulcanized, and inspected for international export.', 'sibco' ), $page_id );
+$video_raw_file   = sibco_get_field( 'hp_video_url', home_url( '/wp-content/uploads/2026/10/sibco.mp4' ), $page_id );
+$video_url        = is_array( $video_raw_file ) && isset( $video_raw_file['url'] ) ? $video_raw_file['url'] : ( is_numeric( $video_raw_file ) ? wp_get_attachment_url( $video_raw_file ) : $video_raw_file );
+if ( empty( $video_url ) ) {
+	$video_url = home_url( '/wp-content/uploads/2026/10/sibco.mp4' );
+}
+$video_poster_raw = sibco_get_field( 'hp_video_poster', '', $page_id );
+$video_poster_url = sibco_get_image_url( $video_poster_raw, '' );
+$video_btn_text   = sibco_get_field( 'hp_video_btn_text', __( 'Explore Full Manufacturing Process', 'sibco' ), $page_id );
+$video_btn_url    = sibco_get_field( 'hp_video_btn_url', home_url( '/manufacturing/' ), $page_id );
+$video_btn2_text  = sibco_get_field( 'hp_video_btn2_text', __( 'Request Product Samples', 'sibco' ), $page_id );
+$video_btn2_url   = sibco_get_field( 'hp_video_btn2_url', home_url( '/contact/' ), $page_id );
+
+$video_highlights = array(
+	array(
+		'num'   => '01',
+		'title' => sibco_get_field( 'hp_video_feat_1_title', __( 'Raw Fibre Sourcing', 'sibco' ), $page_id ),
+		'desc'  => sibco_get_field( 'hp_video_feat_1_desc', __( '100% natural, biodegradable Kerala coconut husk fibres', 'sibco' ), $page_id ),
+	),
+	array(
+		'num'   => '02',
+		'title' => sibco_get_field( 'hp_video_feat_2_title', __( 'Precision Weaving & Tufting', 'sibco' ), $page_id ),
+		'desc'  => sibco_get_field( 'hp_video_feat_2_desc', __( 'Automated machinery for uniform pile density and scrape power', 'sibco' ), $page_id ),
+	),
+	array(
+		'num'   => '03',
+		'title' => sibco_get_field( 'hp_video_feat_3_title', __( 'Vulcanized Rubber Backing', 'sibco' ), $page_id ),
+		'desc'  => sibco_get_field( 'hp_video_feat_3_desc', __( 'Hydraulic bonding, Phthalate-free & REACH compliant', 'sibco' ), $page_id ),
+	),
+	array(
+		'num'   => '04',
+		'title' => sibco_get_field( 'hp_video_feat_4_title', __( 'Quality Inspection & Dispatch', 'sibco' ), $page_id ),
+		'desc'  => sibco_get_field( 'hp_video_feat_4_desc', __( '100% pre-dispatch check with zero-claim export packing', 'sibco' ), $page_id ),
+	),
+);
+
+// -------------------------------------------------------------
 // 3. CORE CAPABILITIES (PILLARS) FIELDS
 // -------------------------------------------------------------
 $pillars_badge = sibco_get_field( 'hp_pillars_badge', __( 'Core Capabilities', 'sibco' ), $page_id );
@@ -481,6 +522,94 @@ $testimonials = array(
 					</a>
 					<?php endif; ?>
 				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- ============ PRODUCTION PROCESS VIDEO SHOWCASE ============ -->
+	<section id="process-video" class="py-24 lg:py-32 bg-charcoal-900 text-white relative overflow-hidden">
+		<!-- Subtle ambient backdrop glow -->
+		<div class="absolute -top-40 -left-40 w-96 h-96 bg-coir-600/10 rounded-full blur-3xl pointer-events-none"></div>
+		<div class="absolute -bottom-40 -right-40 w-96 h-96 bg-coir-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+		<div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+			<!-- Header -->
+			<div class="text-center max-w-3xl mx-auto mb-12 lg:mb-16 animate-on-scroll">
+				<?php if ( ! empty( $video_badge ) ) : ?>
+				<div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/10 rounded-full px-4 py-1.5 mb-6">
+					<span class="w-2 h-2 bg-coir-400 rounded-full animate-pulse"></span>
+					<span class="text-white/80 text-xs font-medium tracking-wider uppercase"><?php echo esc_html( $video_badge ); ?></span>
+				</div>
+				<?php endif; ?>
+
+				<h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-600 text-white leading-[1.18] tracking-tight mb-5">
+					<?php echo esc_html( $video_title ); ?>
+				</h2>
+
+				<?php if ( ! empty( $video_desc ) ) : ?>
+				<p class="text-white/60 text-base lg:text-lg leading-relaxed">
+					<?php echo esc_html( $video_desc ); ?>
+				</p>
+				<?php endif; ?>
+			</div>
+
+			<!-- Video Player Showcase Container -->
+			<div class="max-w-5xl mx-auto animate-scale">
+				<div class="process-video-wrap relative rounded-2xl lg:rounded-3xl overflow-hidden shadow-2xl border border-white/10 bg-black aspect-video group">
+					<video
+						id="sibcoProcessVideo"
+						class="w-full h-full object-cover"
+						preload="metadata"
+						playsinline
+						controls
+						<?php if ( ! empty( $video_poster_url ) ) : ?>
+						poster="<?php echo esc_url( $video_poster_url ); ?>"
+						<?php endif; ?>
+					>
+						<source src="<?php echo esc_url( $video_url ); ?>" type="video/mp4">
+						<?php esc_html_e( 'Your browser does not support the video tag.', 'sibco' ); ?>
+					</video>
+
+					<!-- Custom Play Button Overlay -->
+					<div id="videoPlayOverlay" class="absolute inset-0 flex flex-col items-center justify-center bg-charcoal-950/45 backdrop-blur-[2px] cursor-pointer transition-all duration-300 hover:bg-charcoal-950/35">
+						<button type="button" class="video-play-btn w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-coir-500 hover:bg-coir-600 text-white flex items-center justify-center shadow-2xl transition-transform duration-300 group-hover:scale-110 focus:outline-none" aria-label="<?php esc_attr_e( 'Play Production Video', 'sibco' ); ?>">
+							<svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="ml-1 sm:w-9 sm:h-9">
+								<polygon points="5 3 19 12 5 21 5 3"/>
+							</svg>
+						</button>
+						<span class="mt-4 text-xs sm:text-sm font-semibold tracking-wider uppercase text-white/90 drop-shadow flex items-center gap-2">
+							<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+							<?php esc_html_e( 'Watch Production Process (1:03)', 'sibco' ); ?>
+						</span>
+					</div>
+				</div>
+			</div>
+
+			<!-- Production Process Highlights Bar -->
+			<div class="max-w-5xl mx-auto mt-10 lg:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-on-scroll">
+				<?php foreach ( $video_highlights as $step ) : ?>
+				<div class="bg-white/5 border border-white/10 rounded-xl p-5 hover:bg-white/8 hover:border-coir-400/30 transition-all duration-300">
+					<div class="text-coir-400 font-serif font-bold text-lg mb-1"><?php echo esc_html( $step['num'] ); ?></div>
+					<div class="text-white font-semibold text-sm mb-1"><?php echo esc_html( $step['title'] ); ?></div>
+					<div class="text-white/50 text-xs leading-relaxed"><?php echo esc_html( $step['desc'] ); ?></div>
+				</div>
+				<?php endforeach; ?>
+			</div>
+
+			<!-- Action Buttons -->
+			<div class="flex flex-wrap items-center justify-center gap-4 mt-12 animate-on-scroll">
+				<?php if ( ! empty( $video_btn_text ) ) : ?>
+				<a href="<?php echo esc_url( $video_btn_url ); ?>" class="btn-primary bg-coir-500 hover:bg-coir-600 text-white text-sm font-semibold px-7 py-3.5 rounded-lg shadow-sm transition-all duration-200 inline-flex items-center gap-2">
+					<?php echo esc_html( $video_btn_text ); ?>
+					<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+				</a>
+				<?php endif; ?>
+
+				<?php if ( ! empty( $video_btn2_text ) ) : ?>
+				<a href="<?php echo esc_url( $video_btn2_url ); ?>" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 text-sm font-semibold px-7 py-3.5 rounded-lg transition-all duration-200">
+					<?php echo esc_html( $video_btn2_text ); ?>
+				</a>
+				<?php endif; ?>
 			</div>
 		</div>
 	</section>

@@ -807,6 +807,79 @@ function sibco_register_acf_fields() {
 				'default_value' => "Years of\nManufacturing",
 			),
 
+			// TAB: PRODUCTION PROCESS VIDEO SHOWCASE
+			array(
+				'key'   => 'field_hp_video_tab',
+				'label' => __( 'Process Video Showcase', 'sibco' ),
+				'type'  => 'tab',
+			),
+			array(
+				'key'           => 'field_hp_video_badge',
+				'label'         => __( 'Video Section Badge', 'sibco' ),
+				'name'          => 'hp_video_badge',
+				'type'          => 'text',
+				'default_value' => 'Manufacturing Tour',
+			),
+			array(
+				'key'           => 'field_hp_video_title',
+				'label'         => __( 'Video Section Heading', 'sibco' ),
+				'name'          => 'hp_video_title',
+				'type'          => 'textarea',
+				'rows'          => 2,
+				'default_value' => 'Witness the Craft & Precision Behind Every Coir Mat',
+			),
+			array(
+				'key'           => 'field_hp_video_description',
+				'label'         => __( 'Video Section Description', 'sibco' ),
+				'name'          => 'hp_video_description',
+				'type'          => 'textarea',
+				'rows'          => 3,
+				'default_value' => "Take an inside look at our Kerala manufacturing facility. Experience how raw natural coconut fibre is processed, precision-tufted, vulcanized, and inspected for international export.",
+			),
+			array(
+				'key'           => 'field_hp_video_url',
+				'label'         => __( 'Video URL or Upload', 'sibco' ),
+				'name'          => 'hp_video_url',
+				'type'          => 'text',
+				'instructions'  => __( 'Direct URL to MP4 video (defaults to /wp-content/uploads/2026/10/sibco.mp4)', 'sibco' ),
+				'default_value' => '/wp-content/uploads/2026/10/sibco.mp4',
+			),
+			array(
+				'key'           => 'field_hp_video_poster',
+				'label'         => __( 'Video Poster Thumbnail (Optional)', 'sibco' ),
+				'name'          => 'hp_video_poster',
+				'type'          => 'image',
+				'return_format' => 'array',
+			),
+			array(
+				'key'           => 'field_hp_video_btn_text',
+				'label'         => __( 'Primary Button Text', 'sibco' ),
+				'name'          => 'hp_video_btn_text',
+				'type'          => 'text',
+				'default_value' => 'Explore Full Manufacturing Process',
+			),
+			array(
+				'key'           => 'field_hp_video_btn_url',
+				'label'         => __( 'Primary Button URL', 'sibco' ),
+				'name'          => 'hp_video_btn_url',
+				'type'          => 'text',
+				'default_value' => '/manufacturing/',
+			),
+			array(
+				'key'           => 'field_hp_video_btn2_text',
+				'label'         => __( 'Secondary Button Text', 'sibco' ),
+				'name'          => 'hp_video_btn2_text',
+				'type'          => 'text',
+				'default_value' => 'Request Product Samples',
+			),
+			array(
+				'key'           => 'field_hp_video_btn2_url',
+				'label'         => __( 'Secondary Button URL', 'sibco' ),
+				'name'          => 'hp_video_btn2_url',
+				'type'          => 'text',
+				'default_value' => '/contact/',
+			),
+
 			// TAB 4: CORE CAPABILITIES (6 PILLAR CARDS)
 			array(
 				'key' => 'field_hp_pillars_tab',

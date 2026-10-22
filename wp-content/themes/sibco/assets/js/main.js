@@ -154,4 +154,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ---- Process Video Player Overlay ----
+    const playOverlay = document.getElementById('videoPlayOverlay');
+    const processVideo = document.getElementById('sibcoProcessVideo');
+    if (playOverlay && processVideo) {
+        playOverlay.addEventListener('click', () => {
+            playOverlay.classList.add('opacity-0', 'pointer-events-none');
+            processVideo.play();
+        });
+
+        processVideo.addEventListener('pause', () => {
+            if (processVideo.currentTime < processVideo.duration) {
+                playOverlay.classList.remove('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        processVideo.addEventListener('ended', () => {
+            playOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        });
+
+        processVideo.addEventListener('play', () => {
+            playOverlay.classList.add('opacity-0', 'pointer-events-none');
+        });
+    }
+
 });
