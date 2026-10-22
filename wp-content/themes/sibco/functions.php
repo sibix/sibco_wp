@@ -19,6 +19,7 @@ require_once SIBCO_DIR . '/inc/cpt-products.php';
 require_once SIBCO_DIR . '/inc/cpt-quotes.php';
 require_once SIBCO_DIR . '/inc/smtp.php';
 require_once SIBCO_DIR . '/inc/acf-fields.php';
+require_once SIBCO_DIR . '/inc/customizer.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

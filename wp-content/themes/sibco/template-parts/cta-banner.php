@@ -33,7 +33,7 @@ $loc   = sibco_get_field( 'contact_location', 'Kerala, India', 'option' );
 	<!-- Background Image & Overlay -->
 	<div class="absolute inset-0">
 		<img src="<?php echo esc_url( $bg_url ); ?>" alt="SIBCO Export Facility" class="w-full h-full object-cover">
-		<div class="absolute inset-0 bg-charcoal-800/85"></div>
+		<div class="contact-cta-overlay absolute inset-0 bg-charcoal-800 transition-opacity duration-300"></div>
 	</div>
 
 	<!-- Content -->

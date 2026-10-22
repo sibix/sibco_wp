@@ -267,7 +267,7 @@ $testimonials = array(
 ?>
 
 	<!-- ============ HERO SLIDER SECTION (4 SLIDES - ACF FREE) ============ -->
-	<section id="hero" class="relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden bg-charcoal-900" aria-label="<?php esc_attr_e( 'Hero Showcase Slider', 'sibco' ); ?>">
+	<section id="hero" class="hero-section relative min-h-[90vh] lg:min-h-screen flex items-center overflow-hidden bg-charcoal-900" aria-label="<?php esc_attr_e( 'Hero Showcase Slider', 'sibco' ); ?>">
 		
 		<!-- 1. Background Slides Layer -->
 		<div class="hero-slider-bg-wrap absolute inset-0 pointer-events-none overflow-hidden">
@@ -275,8 +275,10 @@ $testimonials = array(
 			<div class="hero-bg-slide <?php echo 0 === $k ? 'active' : ''; ?>" data-slide="<?php echo esc_attr( $k ); ?>">
 				<img src="<?php echo esc_url( $slide['image'] ); ?>" alt="<?php echo esc_attr( $slide['title'] ); ?>" class="w-full h-full object-cover">
 				<!-- Multi-stop Dark Contrast Gradients for Maximum Legibility -->
-				<div class="absolute inset-0 bg-gradient-to-r from-charcoal-900/95 via-charcoal-900/80 to-charcoal-900/50"></div>
-				<div class="absolute inset-0 bg-gradient-to-t from-charcoal-900/85 via-transparent to-charcoal-900/40"></div>
+				<div class="hero-overlay absolute inset-0 pointer-events-none transition-opacity duration-300">
+					<div class="absolute inset-0 bg-gradient-to-r from-charcoal-900/95 via-charcoal-900/80 to-charcoal-900/50"></div>
+					<div class="absolute inset-0 bg-gradient-to-t from-charcoal-900/85 via-transparent to-charcoal-900/40"></div>
+				</div>
 			</div>
 			<?php endforeach; ?>
 		</div>

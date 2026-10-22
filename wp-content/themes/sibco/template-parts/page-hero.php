@@ -29,8 +29,10 @@ $bg_url  = sibco_get_image_url( $raw_img, 'https://picsum.photos/seed/coir-facto
 	<!-- Background Image & Overlays -->
 	<div class="absolute inset-0">
 		<img src="<?php echo esc_url( $bg_url ); ?>" alt="<?php echo esc_attr( $title ); ?>" class="w-full h-full object-cover">
-		<div class="absolute inset-0 bg-gradient-to-r from-charcoal-800/95 via-charcoal-800/85 to-charcoal-800/60"></div>
-		<div class="absolute inset-0 bg-gradient-to-t from-charcoal-800/70 via-transparent to-charcoal-800/40"></div>
+		<div class="hero-overlay absolute inset-0 pointer-events-none transition-opacity duration-300">
+			<div class="absolute inset-0 bg-gradient-to-r from-charcoal-800/95 via-charcoal-800/85 to-charcoal-800/60"></div>
+			<div class="absolute inset-0 bg-gradient-to-t from-charcoal-800/70 via-transparent to-charcoal-800/40"></div>
+		</div>
 	</div>
 
 	<!-- Content -->
