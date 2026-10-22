@@ -369,3 +369,18 @@ function sibco_nav_menu_link_attributes( $atts, $item, $args ) {
 	return $atts;
 }
 add_filter( 'nav_menu_link_attributes', 'sibco_nav_menu_link_attributes', 10, 3 );
+
+/**
+ * Filter primary menu list items to strip bullet dots and ensure inline flex layout
+ */
+function sibco_nav_menu_css_class( $classes, $item, $args ) {
+	if ( isset( $args->theme_location ) && 'primary' === $args->theme_location ) {
+		$classes[] = 'list-none';
+		$classes[] = 'inline-flex';
+		$classes[] = 'items-center';
+		$classes[] = 'm-0';
+		$classes[] = 'p-0';
+	}
+	return $classes;
+}
+add_filter( 'nav_menu_css_class', 'sibco_nav_menu_css_class', 10, 3 );

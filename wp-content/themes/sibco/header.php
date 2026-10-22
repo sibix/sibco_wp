@@ -31,20 +31,23 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</div>
 
 				<!-- Desktop Nav -->
-				<div class="hidden lg:flex items-center gap-8">
+				<div class="hidden lg:flex items-center">
 					<?php
 					if ( has_nav_menu( 'primary' ) ) :
 						wp_nav_menu(
 							array(
 								'theme_location' => 'primary',
 								'container'      => false,
-								'items_wrap'     => '%3$s',
+								'items_wrap'     => '<ul class="flex items-center gap-8 list-none m-0 p-0">%3$s</ul>',
 								'fallback_cb'    => false,
 								'depth'          => 1,
 							)
 						);
 					else :
 						// Dynamic fallback links to the 7 required pages
+						?>
+						<div class="flex items-center gap-8">
+						<?php
 						$nav_items = array(
 							'about'          => __( 'About', 'sibco' ),
 							'why-sibco'      => __( 'Why SIBCO', 'sibco' ),
@@ -65,6 +68,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 							</a>
 							<?php
 						endforeach;
+						?>
+						</div>
+						<?php
 					endif;
 					?>
 				</div>

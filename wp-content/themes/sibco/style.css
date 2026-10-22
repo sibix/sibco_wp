@@ -248,6 +248,40 @@ Text Domain: sibco
     color: #2C2825 !important;
 }
 
+/* Header Navigation - Remove all bullet dots and list styling */
+#mainNav ul,
+#mainNav ol,
+#mainNav li,
+#mainNav .menu-item,
+#mainNav .nav-link {
+    list-style: none !important;
+    list-style-type: none !important;
+    list-style-image: none !important;
+}
+
+#mainNav li {
+    display: inline-flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+#mainNav li::marker {
+    display: none !important;
+    content: '' !important;
+    font-size: 0 !important;
+    color: transparent !important;
+}
+
+#mainNav li::before,
+#mainNav li::after,
+#mainNav a::before,
+#mainNav a::after {
+    display: none !important;
+    content: none !important;
+}
+
 /* Trust bar icons */
 .trust-icon-wrap {
     transition: all 0.3s ease;
