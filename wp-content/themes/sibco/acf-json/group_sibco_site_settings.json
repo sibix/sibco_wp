@@ -52,7 +52,7 @@
             "type": "email",
             "parent": "group_sibco_site_settings",
             "label": "Primary Contact Email",
-            "default_value": "export@sibco.in",
+            "default_value": "sales@sibcocoir.com",
             "menu_order": 4
         },
         "field_quote_notification_email": {
@@ -108,7 +108,7 @@
             "parent": "group_sibco_site_settings",
             "label": "Footer About Description",
             "rows": 3,
-            "default_value": "Premium coir mat manufacturer with 26 years of export excellence. Trusted by importers, distributors, and OEM brands across Europe and North America.",
+            "default_value": "Premium coir mat manufacturer with 26 years of export excellence. Trusted by importers, distributors, and OEM brands.",
             "menu_order": 9
         },
         "field_social_linkedin": {

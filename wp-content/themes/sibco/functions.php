@@ -192,7 +192,7 @@ function sibco_handle_contact_form() {
 		$subject       = "[Export Enquiry] " . ( ! empty( $company ) ? "{$company} ({$name})" : $name );
 	}
 
-	// Resolve Recipients (ACF Quote Email -> ACF Contact Email -> WP Admin Email -> Fallback export@sibco.in)
+	// Resolve Recipients (ACF Quote Email -> ACF Contact Email -> WP Admin Email -> Fallback sales@sibcocoir.com)
 	$recipients_raw = array();
 	$opt_quote_email = function_exists( 'sibco_get_field' ) ? sibco_get_field( 'quote_notification_email', '', 'option' ) : '';
 	if ( ! empty( $opt_quote_email ) ) {
@@ -210,7 +210,7 @@ function sibco_handle_contact_form() {
 	}
 
 	// Default business export address
-	$recipients_raw[] = 'export@sibco.in';
+	$recipients_raw[] = 'sales@sibcocoir.com';
 
 	// Clean, validate and deduplicate recipient list
 	$recipients = array();
@@ -239,7 +239,7 @@ function sibco_handle_contact_form() {
 	);
 
 	// Safe From email (must be valid RFC email)
-	$from_email = ! empty( $admin_email ) && is_email( $admin_email ) && false === strpos( $admin_email, '@localhost' ) ? $admin_email : 'export@sibco.in';
+	$from_email = ! empty( $admin_email ) && is_email( $admin_email ) && false === strpos( $admin_email, '@localhost' ) ? $admin_email : 'sales@sibcocoir.com';
 
 	// Construct HTML Email Template
 	$html_content = '<!DOCTYPE html>' . "\n";

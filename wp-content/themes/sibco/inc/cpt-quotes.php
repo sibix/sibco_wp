@@ -391,7 +391,7 @@ function sibco_quote_render_diagnostics_page() {
 						</tr>
 						<tr>
 							<td><strong><?php esc_html_e( 'Primary Contact Email (ACF)', 'sibco' ); ?></strong></td>
-							<td><?php echo ! empty( $opt_contact_email ) ? esc_html( $opt_contact_email ) : 'export@sibco.in'; ?></td>
+							<td><?php echo ! empty( $opt_contact_email ) ? esc_html( $opt_contact_email ) : 'sales@sibcocoir.com'; ?></td>
 						</tr>
 						<tr>
 							<td><strong><?php esc_html_e( 'Site Administrator Email (WP)', 'sibco' ); ?></strong></td>

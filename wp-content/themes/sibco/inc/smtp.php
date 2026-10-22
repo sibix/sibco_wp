@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 function sibco_configure_phpmailer( $phpmailer ) {
 	// 1. Ensure From Email is valid and RFC compliant (avoids 'wordpress@localhost' failure)
 	$admin_email = get_option( 'admin_email' );
-	$from_email  = ! empty( $admin_email ) && is_email( $admin_email ) ? $admin_email : 'export@sibco.in';
+	$from_email  = ! empty( $admin_email ) && is_email( $admin_email ) ? $admin_email : 'sales@sibcocoir.com';
 
 	// If From is invalid or contains localhost, replace with valid email
 	if ( empty( $phpmailer->From ) || ! filter_var( $phpmailer->From, FILTER_VALIDATE_EMAIL ) || false !== strpos( $phpmailer->From, '@localhost' ) ) {
@@ -73,7 +73,7 @@ function sibco_fix_wp_mail_from( $from_email ) {
 		if ( ! empty( $admin ) && filter_var( $admin, FILTER_VALIDATE_EMAIL ) && false === strpos( $admin, '@localhost' ) ) {
 			return $admin;
 		}
-		return 'export@sibco.in';
+		return 'sales@sibcocoir.com';
 	}
 	return $from_email;
 }

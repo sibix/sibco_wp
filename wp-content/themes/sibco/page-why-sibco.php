@@ -57,8 +57,8 @@ $desc  = sibco_get_field( 'why_description', 'Decades of expertise, certified qu
 						'icon'  => sibco_get_field( 'why_card_2_icon', 'leaf', $page_id ),
 					),
 					array(
-						'title' => sibco_get_field( 'why_card_3_title', 'Talite Free Certified', $page_id ),
-						'desc'  => sibco_get_field( 'why_card_3_desc', 'Our products are certified talite-free, meeting stringent European import regulations and ensuring complete compliance for EU market entry.', $page_id ),
+						'title' => sibco_get_field( 'why_card_3_title', 'Phthalate Free Certified', $page_id ),
+						'desc'  => sibco_get_field( 'why_card_3_desc', 'Our products are certified Phthalate-free, meeting stringent European import regulations and ensuring complete compliance for EU market entry.', $page_id ),
 						'icon'  => sibco_get_field( 'why_card_3_icon', 'shield', $page_id ),
 					),
 					array(

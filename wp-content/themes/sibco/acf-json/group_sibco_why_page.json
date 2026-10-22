@@ -226,7 +226,7 @@
             "choices": {
                 "clock": "Clock (26 Years Experience)",
                 "leaf": "Leaf (100% Natural Coir)",
-                "shield": "Shield (Talite Free Certified)",
+                "shield": "Shield (Phthalate Free Certified)",
                 "chart": "Chart (Consistent Quality)",
                 "truck": "Truck (Time-Bound Delivery)",
                 "tag": "Tag (OEM & Private Label)"
@@ -325,7 +325,7 @@
             "choices": {
                 "clock": "Clock (26 Years Experience)",
                 "leaf": "Leaf (100% Natural Coir)",
-                "shield": "Shield (Talite Free Certified)",
+                "shield": "Shield (Phthalate Free Certified)",
                 "chart": "Chart (Consistent Quality)",
                 "truck": "Truck (Time-Bound Delivery)",
                 "tag": "Tag (OEM & Private Label)"
@@ -363,7 +363,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Talite Free Certified",
+            "default_value": "Phthalate Free Certified",
             "_name": "why_card_3_title",
             "_valid": 1,
             "maxlength": "",
@@ -393,7 +393,7 @@
                 "id": ""
             },
             "rows": 3,
-            "default_value": "Our products are certified talite-free, meeting stringent European import regulations and ensuring complete compliance for EU market entry.",
+            "default_value": "Our products are certified Phthalate-free, meeting stringent European import regulations and ensuring complete compliance for EU market entry.",
             "_name": "why_card_3_desc",
             "_valid": 1,
             "new_lines": "",
@@ -424,7 +424,7 @@
             "choices": {
                 "clock": "Clock (26 Years Experience)",
                 "leaf": "Leaf (100% Natural Coir)",
-                "shield": "Shield (Talite Free Certified)",
+                "shield": "Shield (Phthalate Free Certified)",
                 "chart": "Chart (Consistent Quality)",
                 "truck": "Truck (Time-Bound Delivery)",
                 "tag": "Tag (OEM & Private Label)"
@@ -523,7 +523,7 @@
             "choices": {
                 "clock": "Clock (26 Years Experience)",
                 "leaf": "Leaf (100% Natural Coir)",
-                "shield": "Shield (Talite Free Certified)",
+                "shield": "Shield (Phthalate Free Certified)",
                 "chart": "Chart (Consistent Quality)",
                 "truck": "Truck (Time-Bound Delivery)",
                 "tag": "Tag (OEM & Private Label)"
@@ -622,7 +622,7 @@
             "choices": {
                 "clock": "Clock (26 Years Experience)",
                 "leaf": "Leaf (100% Natural Coir)",
-                "shield": "Shield (Talite Free Certified)",
+                "shield": "Shield (Phthalate Free Certified)",
                 "chart": "Chart (Consistent Quality)",
                 "truck": "Truck (Time-Bound Delivery)",
                 "tag": "Tag (OEM & Private Label)"
@@ -721,7 +721,7 @@
             "choices": {
                 "clock": "Clock (26 Years Experience)",
                 "leaf": "Leaf (100% Natural Coir)",
-                "shield": "Shield (Talite Free Certified)",
+                "shield": "Shield (Phthalate Free Certified)",
                 "chart": "Chart (Consistent Quality)",
                 "truck": "Truck (Time-Bound Delivery)",
                 "tag": "Tag (OEM & Private Label)"

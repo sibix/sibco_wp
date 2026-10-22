@@ -46,7 +46,7 @@ $slider_defaults = array(
 		'image'     => 'https://picsum.photos/seed/coir-factory-machinery/1920/1080.jpg',
 	),
 	4 => array(
-		'badge'     => 'EU Certified & Talite Free',
+		'badge'     => 'EU Certified & Phthalate Free',
 		'title'     => 'Sustainable Coir Products Meeting Stringent European Standards',
 		'desc'      => '100% biodegradable coconut husk fibers, REACH-compliant rubber backing, and certified non-hazardous processing for environmentally conscious international retailers.',
 		'btn1_text' => __( 'Our Sustainability Mission', 'sibco' ),
@@ -112,7 +112,7 @@ $hero_stats = array(
 		'lbl' => sibco_get_field( 'hero_stat_3_lbl', __( 'Natural Coir', 'sibco' ), $page_id ),
 	),
 	array(
-		'val' => sibco_get_field( 'hero_stat_4_val', 'Talite Free', $page_id ),
+		'val' => sibco_get_field( 'hero_stat_4_val', 'Phthalate Free', $page_id ),
 		'lbl' => sibco_get_field( 'hero_stat_4_lbl', __( 'Certified Non-Hazardous', 'sibco' ), $page_id ),
 	),
 	array(
@@ -148,7 +148,7 @@ $pillars_desc  = sibco_get_field( 'hp_pillars_description', __( 'Explore the cor
 $pillar_cards = array(
 	array(
 		'title'    => sibco_get_field( 'hp_pillar_1_title', __( 'Why SIBCO', 'sibco' ), $page_id ),
-		'desc'     => sibco_get_field( 'hp_pillar_1_desc', __( '26 years of refined export experience, certified talite-free compliance, and OEM private label expertise.', 'sibco' ), $page_id ),
+		'desc'     => sibco_get_field( 'hp_pillar_1_desc', __( '26 years of refined export experience, certified Phthalate-free compliance, and OEM private label expertise.', 'sibco' ), $page_id ),
 		'btn_text' => sibco_get_field( 'hp_pillar_1_btn_text', __( 'Learn Why Buyers Choose Us', 'sibco' ), $page_id ),
 		'btn_url'  => sibco_get_field( 'hp_pillar_1_btn_url', home_url( '/why-sibco/' ), $page_id ),
 		'icon'     => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>',
@@ -172,7 +172,7 @@ $pillar_cards = array(
 	),
 	array(
 		'title'    => sibco_get_field( 'hp_pillar_4_title', __( 'Quality & Certifications', 'sibco' ), $page_id ),
-		'desc'     => sibco_get_field( 'hp_pillar_4_desc', __( 'Rubber Board registered, EU Talite Free certified, with a 100% pre-dispatch inspection rate and zero quality claims.', 'sibco' ), $page_id ),
+		'desc'     => sibco_get_field( 'hp_pillar_4_desc', __( 'Rubber Board registered, EU Phthalate Free certified, with a 100% pre-dispatch inspection rate and zero quality claims.', 'sibco' ), $page_id ),
 		'btn_text' => sibco_get_field( 'hp_pillar_4_btn_text', __( 'See Quality Standards', 'sibco' ), $page_id ),
 		'btn_url'  => sibco_get_field( 'hp_pillar_4_btn_url', home_url( '/quality/' ), $page_id ),
 		'icon'     => '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',

@@ -55,7 +55,7 @@
             "type": "email",
             "parent": "group_sibco_contact_page",
             "label": "Export Email",
-            "default_value": "export@sibco.in",
+            "default_value": "sales@sibcocoir.com",
             "menu_order": 4
         },
         "field_contact_direct_phone": {

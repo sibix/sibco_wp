@@ -23,7 +23,7 @@ $btn2_url = $override ? sibco_get_field( 'cta_btn2_url', home_url( '/contact/' )
 $raw_img = $override ? sibco_get_field( 'cta_background_image', '', $page_id ) : '';
 $bg_url  = sibco_get_image_url( $raw_img, 'https://picsum.photos/seed/coir-warehouse-export/1920/800.jpg' );
 
-$email = sibco_get_field( 'contact_email', 'export@sibco.in', 'option' );
+$email = sibco_get_field( 'contact_email', 'sales@sibcocoir.com', 'option' );
 $phone = sibco_get_field( 'contact_phone', '+91 XXX XXX XXXX', 'option' );
 $loc   = sibco_get_field( 'contact_location', 'Kerala, India', 'option' );
 ?>

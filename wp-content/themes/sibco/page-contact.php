@@ -17,11 +17,11 @@ $badge     = sibco_get_field( 'contact_page_badge', 'Contact Us', $page_id );
 $title     = sibco_get_field( 'contact_page_title', 'Get in Touch With Our Export Team', $page_id );
 $desc      = sibco_get_field( 'contact_page_description', 'Discuss custom specifications, request sample swatches, or receive a formal export quotation.', $page_id );
 
-$email     = sibco_get_field( 'contact_direct_email', sibco_get_field( 'contact_email', 'export@sibco.in', 'option' ), $page_id );
+$email     = sibco_get_field( 'contact_direct_email', sibco_get_field( 'contact_email', 'sales@sibcocoir.com', 'option' ), $page_id );
 $phone     = sibco_get_field( 'contact_direct_phone', sibco_get_field( 'contact_phone', '+91 XXX XXX XXXX', 'option' ), $page_id );
 $location  = sibco_get_field( 'contact_direct_location', sibco_get_field( 'contact_location', 'Kerala, India', 'option' ), $page_id );
 $address   = sibco_get_field( 'contact_direct_address', sibco_get_field( 'contact_address', "SIBCO Coir Exports\nIndustrial Estate, Alappuzha\nKerala, India - 688001", 'option' ), $page_id );
-$hours     = sibco_get_field( 'contact_office_hours', 'Monday - Saturday: 9:00 AM - 6:00 PM IST (Export desk available 24/7)', $page_id );
+$hours     = sibco_get_field( 'contact_office_hours', 'Monday - Saturday: 9:00 AM - 6:00 PM IST', $page_id );
 
 // Map Section
 $map_badge = sibco_get_field( 'map_badge', 'Global Reach', $page_id );
@@ -61,7 +61,7 @@ $map_desc  = sibco_get_field( 'map_description', 'Supporting international buyer
 							<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
 						</div>
 						<div>
-							<div class="text-charcoal-400 text-xs uppercase tracking-wider font-semibold mb-1"><?php esc_html_e( 'Direct Export Email', 'sibco' ); ?></div>
+							<div class="text-charcoal-400 text-xs uppercase tracking-wider font-semibold mb-1"><?php esc_html_e( 'Direct Email', 'sibco' ); ?></div>
 							<a href="mailto:<?php echo esc_attr( $email ); ?>" class="text-charcoal-800 font-semibold text-lg hover:text-coir-600 transition-colors"><?php echo esc_html( $email ); ?></a>
 							<div class="text-charcoal-400 text-xs mt-1"><?php esc_html_e( 'Guaranteed response within 24 hours', 'sibco' ); ?></div>
 						</div>
@@ -75,7 +75,7 @@ $map_desc  = sibco_get_field( 'map_description', 'Supporting international buyer
 						<div>
 							<div class="text-charcoal-400 text-xs uppercase tracking-wider font-semibold mb-1"><?php esc_html_e( 'Phone / WhatsApp', 'sibco' ); ?></div>
 							<div class="text-charcoal-800 font-semibold text-lg"><?php echo esc_html( $phone ); ?></div>
-							<div class="text-charcoal-400 text-xs mt-1"><?php esc_html_e( 'International calling desk available', 'sibco' ); ?></div>
+							<div class="text-charcoal-400 text-xs mt-1"><?php esc_html_e( '', 'sibco' ); ?></div>
 						</div>
 					</div>
 
@@ -101,7 +101,7 @@ $map_desc  = sibco_get_field( 'map_description', 'Supporting international buyer
 				<!-- Interactive Quote Form (7 cols) -->
 				<div class="lg:col-span-7 animate-right">
 					<div class="bg-white rounded-3xl p-8 lg:p-10 border border-cream-400 shadow-lg shadow-charcoal-700/5">
-						<h3 class="font-serif text-2xl font-600 text-charcoal-800 mb-2"><?php esc_html_e( 'Request a Custom Export Quote', 'sibco' ); ?></h3>
+						<h3 class="font-serif text-2xl font-600 text-charcoal-800 mb-2"><?php esc_html_e( 'Request a Custom  Quote', 'sibco' ); ?></h3>
 						<p class="text-charcoal-400 text-sm mb-8"><?php esc_html_e( 'Submit your specifications, dimensions, and estimated volumes for a formal quotation.', 'sibco' ); ?></p>
 
 						<div id="formStatus" class="hidden"></div>

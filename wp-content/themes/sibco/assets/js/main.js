@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (formStatus) {
                     formStatus.classList.remove('hidden');
                     formStatus.className = 'p-4 rounded-xl text-sm font-medium bg-red-50 text-red-800 border border-red-200 mb-6';
-                    formStatus.innerHTML = 'Thank you! For immediate export assistance, please email us directly at export@sibco.in.';
+                    formStatus.innerHTML = 'Thank you! For immediate export assistance, please email us directly at sales@sibcocoir.com.';
                 }
             } finally {
                 if (submitBtn) {

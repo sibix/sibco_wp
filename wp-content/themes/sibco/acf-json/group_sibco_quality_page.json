@@ -223,7 +223,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Talite Free Certified",
+            "default_value": "Phthalate Free Certified",
             "_name": "cert_1_title",
             "_valid": 1,
             "maxlength": "",
@@ -253,7 +253,7 @@
                 "id": ""
             },
             "rows": 2,
-            "default_value": "Compliant with EU talite-free import requirements for coir products",
+            "default_value": "Compliant with EU Phthalate-free import requirements for coir products",
             "_name": "cert_1_desc",
             "_valid": 1,
             "new_lines": "",
@@ -282,12 +282,12 @@
                 "id": ""
             },
             "choices": {
-                "talite": "Talite Free / Checkmark",
+                "Phthalate": "Phthalate Free / Checkmark",
                 "board": "Rubber Board / Document",
                 "qc": "Consistent QC / Bars",
                 "export": "Export Standards / Globe"
             },
-            "default_value": "talite",
+            "default_value": "Phthalate",
             "_name": "cert_1_icon",
             "_valid": 1,
             "multiple": 0,
@@ -379,7 +379,7 @@
                 "id": ""
             },
             "choices": {
-                "talite": "Talite Free / Checkmark",
+                "Phthalate": "Phthalate Free / Checkmark",
                 "board": "Rubber Board / Document",
                 "qc": "Consistent QC / Bars",
                 "export": "Export Standards / Globe"
@@ -476,7 +476,7 @@
                 "id": ""
             },
             "choices": {
-                "talite": "Talite Free / Checkmark",
+                "Phthalate": "Phthalate Free / Checkmark",
                 "board": "Rubber Board / Document",
                 "qc": "Consistent QC / Bars",
                 "export": "Export Standards / Globe"
@@ -573,7 +573,7 @@
                 "id": ""
             },
             "choices": {
-                "talite": "Talite Free / Checkmark",
+                "Phthalate": "Phthalate Free / Checkmark",
                 "board": "Rubber Board / Document",
                 "qc": "Consistent QC / Bars",
                 "export": "Export Standards / Globe"

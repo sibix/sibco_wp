@@ -101,9 +101,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<!-- Mobile Menu Drawer -->
 	<div id="mobileMenu" class="mobile-menu fixed inset-0 z-[60] bg-cream-50 overflow-y-auto">
 		<div class="flex items-center justify-between px-6 h-20 border-b border-cream-400">
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="text-charcoal-700 font-bold text-2xl tracking-tight">
-				<?php bloginfo( 'name' ); ?>
-			</a>
+			<div class="flex items-center">
+				<?php sibco_custom_logo(); ?>
+			</div>
 			<button id="mobileClose" class="p-2 text-charcoal-700 hover:text-coir-600 transition-colors" aria-label="<?php esc_attr_e( 'Close', 'sibco' ); ?>">
 				<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
 					<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>

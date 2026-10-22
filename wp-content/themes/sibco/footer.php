@@ -9,8 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$footer_desc = sibco_get_field( 'footer_description', 'Premium coir mat manufacturer with 26 years of export excellence. Trusted by importers, distributors, and OEM brands across Europe and North America.', 'option' );
-$contact_email = sibco_get_field( 'contact_email', 'export@sibco.in', 'option' );
+$footer_desc = sibco_get_field( 'footer_description', 'Premium coir mat manufacturer with 26 years of export excellence. Trusted by importers, distributors, and OEM brands.', 'option' );
+$contact_email = sibco_get_field( 'contact_email', 'sales@sibcocoir.com', 'option' );
 $contact_phone = sibco_get_field( 'contact_phone', '+91 XXX XXX XXXX', 'option' );
 $contact_location = sibco_get_field( 'contact_location', 'Kerala, India', 'option' );
 $copyright = sibco_get_field( 'footer_copyright', '© 2024 SIBCO. All rights reserved. Premium Coir Mat Manufacturer.', 'option' );

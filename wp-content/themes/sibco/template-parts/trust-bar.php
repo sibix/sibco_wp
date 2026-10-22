@@ -15,7 +15,7 @@ $page_id = get_the_ID();
 
 $t1 = sibco_get_field( 'trust_item_1_title', __( '26 Years Experience', 'sibco' ), $page_id );
 $t2 = sibco_get_field( 'trust_item_2_title', __( 'Rubber Board Registered', 'sibco' ), $page_id );
-$t3 = sibco_get_field( 'trust_item_3_title', __( 'Talite Free Certified', 'sibco' ), $page_id );
+$t3 = sibco_get_field( 'trust_item_3_title', __( 'Phthalate Free Certified', 'sibco' ), $page_id );
 $t4 = sibco_get_field( 'trust_item_4_title', __( 'Export Manufacturing', 'sibco' ), $page_id );
 $t5 = sibco_get_field( 'trust_item_5_title', __( 'OEM & Private Label', 'sibco' ), $page_id );
 $t6 = sibco_get_field( 'trust_item_6_title', __( 'Time Bound Delivery', 'sibco' ), $page_id );

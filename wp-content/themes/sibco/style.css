@@ -1,8 +1,8 @@
 /*
 Theme Name: SIBCO Coir
-Theme URI: https://sibco.in
+Theme URI: https://sibcocoir.com
 Author: SIBCO Team
-Author URI: https://sibco.in
+Author URI: https://sibcocoir.com
 Description: Premium WordPress theme for SIBCO - Premium Coir Mat Manufacturer with 26 Years of Export Excellence.
 Version: 1.0.0
 Requires at least: 6.0
@@ -246,6 +246,49 @@ Text Domain: sibco
 }
 .nav-scrolled #mobileToggle {
     color: #2C2825 !important;
+}
+
+/* Custom Logo Styling */
+.custom-logo-link {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.custom-logo {
+    display: block;
+    height: 44px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+}
+
+/* When header is transparent over dark hero banner */
+#mainNav:not(.nav-scrolled) .custom-logo-link {
+    background: #ffffff;
+    padding: 6px 14px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* When navbar is scrolled over content */
+#mainNav.nav-scrolled .custom-logo-link {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+
+/* Inside mobile menu drawer */
+#mobileMenu .custom-logo-link {
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+}
+#mobileMenu .custom-logo {
+    height: 40px;
 }
 
 /* Header Navigation - Remove all bullet dots and list styling */

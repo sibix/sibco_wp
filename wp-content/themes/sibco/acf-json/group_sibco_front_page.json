@@ -270,7 +270,7 @@
             "label": "Slide 4 Badge",
             "name": "hero_slide_4_badge",
             "type": "text",
-            "default_value": "EU Certified & Talite Free",
+            "default_value": "EU Certified & Phthalate Free",
             "menu_order": 29,
             "parent": "group_sibco_front_page"
         },
@@ -561,7 +561,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Talite Free",
+            "default_value": "Phthalate Free",
             "_name": "hero_stat_4_val",
             "_valid": 1,
             "maxlength": "",
@@ -820,7 +820,7 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "Talite Free Certified",
+            "default_value": "Phthalate Free Certified",
             "_name": "trust_item_3_title",
             "_valid": 1,
             "maxlength": "",
@@ -1344,7 +1344,7 @@
                 "id": ""
             },
             "rows": 2,
-            "default_value": "26 years of refined export experience, certified talite-free compliance, and OEM private label expertise.",
+            "default_value": "26 years of refined export experience, certified Phthalate-free compliance, and OEM private label expertise.",
             "_name": "hp_pillar_1_desc",
             "_valid": 1,
             "new_lines": "",
@@ -1692,7 +1692,7 @@
                 "id": ""
             },
             "rows": 2,
-            "default_value": "Rubber Board registered, EU Talite Free certified, with a 100% pre-dispatch inspection rate and zero quality claims.",
+            "default_value": "Rubber Board registered, EU Phthalate Free certified, with a 100% pre-dispatch inspection rate and zero quality claims.",
             "_name": "hp_pillar_4_desc",
             "_valid": 1,
             "new_lines": "",

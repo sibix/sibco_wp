@@ -104,10 +104,18 @@ function sibco_custom_logo() {
 		the_custom_logo();
 	} else {
 		$home_url = esc_url( home_url( '/' ) );
-		$site_title = esc_html( get_bloginfo( 'name' ) );
+		$site_title = esc_attr( get_bloginfo( 'name' ) );
 		if ( empty( $site_title ) || 'WordPress' === $site_title ) {
-			$site_title = 'SIBCO';
+			$site_title = 'SIBCO Coir Mats & Rubbers';
 		}
-		echo '<a href="' . $home_url . '" class="nav-logo text-white font-bold text-2xl tracking-tight transition-colors duration-300">' . $site_title . '</a>';
+		$logo_path = get_template_directory() . '/assets/images/logo.png';
+		if ( file_exists( $logo_path ) ) {
+			$logo_url = get_template_directory_uri() . '/assets/images/logo.png';
+			echo '<a href="' . $home_url . '" class="custom-logo-link" rel="home">';
+			echo '<img src="' . esc_url( $logo_url ) . '" alt="' . $site_title . '" class="custom-logo" width="126" height="50" decoding="async" />';
+			echo '</a>';
+		} else {
+			echo '<a href="' . $home_url . '" class="nav-logo text-white font-bold text-2xl tracking-tight transition-colors duration-300">' . esc_html( $site_title ) . '</a>';
+		}
 	}
 }

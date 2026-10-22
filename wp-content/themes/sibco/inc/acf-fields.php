@@ -65,7 +65,7 @@ function sibco_register_acf_fields() {
 				'label' => __( 'Primary Contact Email', 'sibco' ),
 				'name' => 'contact_email',
 				'type' => 'email',
-				'default_value' => 'export@sibco.in',
+				'default_value' => 'sales@sibcocoir.com',
 			),
 			array(
 				'key' => 'field_quote_notification_email',
@@ -205,7 +205,7 @@ function sibco_register_acf_fields() {
 				'name' => 'footer_description',
 				'type' => 'textarea',
 				'rows' => 3,
-				'default_value' => 'Premium coir mat manufacturer with 26 years of export excellence. Trusted by importers, distributors, and OEM brands across Europe and North America.',
+				'default_value' => 'Premium coir mat manufacturer with 26 years of export excellence. Trusted by importers, distributors, and OEM brands.',
 			),
 			array(
 				'key' => 'field_social_linkedin',
@@ -547,7 +547,7 @@ function sibco_register_acf_fields() {
 				'label' => __( 'Slide 4 Badge', 'sibco' ),
 				'name' => 'hero_slide_4_badge',
 				'type' => 'text',
-				'default_value' => 'EU Certified & Talite Free',
+				'default_value' => 'EU Certified & Phthalate Free',
 			),
 			array(
 				'key' => 'field_hero_slide_4_title',
@@ -654,7 +654,7 @@ function sibco_register_acf_fields() {
 				'label' => __( 'Stat 4 Value', 'sibco' ),
 				'name' => 'hero_stat_4_val',
 				'type' => 'text',
-				'default_value' => 'Talite Free',
+				'default_value' => 'Phthalate Free',
 			),
 			array(
 				'key' => 'field_hero_stat_4_lbl',
@@ -717,7 +717,7 @@ function sibco_register_acf_fields() {
 				'label' => __( 'Badge 3 Text', 'sibco' ),
 				'name' => 'trust_item_3_title',
 				'type' => 'text',
-				'default_value' => 'Talite Free Certified',
+				'default_value' => 'Phthalate Free Certified',
 			),
 			array(
 				'key' => 'field_trust_item_4_title',
@@ -849,7 +849,7 @@ function sibco_register_acf_fields() {
 				'name' => 'hp_pillar_1_desc',
 				'type' => 'textarea',
 				'rows' => 2,
-				'default_value' => '26 years of refined export experience, certified talite-free compliance, and OEM private label expertise.',
+				'default_value' => '26 years of refined export experience, certified Phthalate-free compliance, and OEM private label expertise.',
 			),
 			array(
 				'key' => 'field_hp_pillar_1_btn_text',
@@ -939,7 +939,7 @@ function sibco_register_acf_fields() {
 				'name' => 'hp_pillar_4_desc',
 				'type' => 'textarea',
 				'rows' => 2,
-				'default_value' => 'Rubber Board registered, EU Talite Free certified, with a 100% pre-dispatch inspection rate and zero quality claims.',
+				'default_value' => 'Rubber Board registered, EU Phthalate Free certified, with a 100% pre-dispatch inspection rate and zero quality claims.',
 			),
 			array(
 				'key' => 'field_hp_pillar_4_btn_text',
@@ -1400,7 +1400,7 @@ function sibco_register_acf_fields() {
 				'choices' => array(
 					'clock'   => 'Clock (26 Years Experience)',
 					'leaf'    => 'Leaf (100% Natural Coir)',
-					'shield'  => 'Shield (Talite Free Certified)',
+					'shield'  => 'Shield (Phthalate Free Certified)',
 					'chart'   => 'Chart (Consistent Quality)',
 					'truck'   => 'Truck (Time-Bound Delivery)',
 					'tag'     => 'Tag (OEM & Private Label)',
@@ -1431,7 +1431,7 @@ function sibco_register_acf_fields() {
 				'choices' => array(
 					'clock'   => 'Clock (26 Years Experience)',
 					'leaf'    => 'Leaf (100% Natural Coir)',
-					'shield'  => 'Shield (Talite Free Certified)',
+					'shield'  => 'Shield (Phthalate Free Certified)',
 					'chart'   => 'Chart (Consistent Quality)',
 					'truck'   => 'Truck (Time-Bound Delivery)',
 					'tag'     => 'Tag (OEM & Private Label)',
@@ -1444,7 +1444,7 @@ function sibco_register_acf_fields() {
 				'label' => __( 'Card 3 Title', 'sibco' ),
 				'name' => 'why_card_3_title',
 				'type' => 'text',
-				'default_value' => 'Talite Free Certified',
+				'default_value' => 'Phthalate Free Certified',
 			),
 			array(
 				'key' => 'field_why_card_3_desc',
@@ -1452,7 +1452,7 @@ function sibco_register_acf_fields() {
 				'name' => 'why_card_3_desc',
 				'type' => 'textarea',
 				'rows' => 3,
-				'default_value' => 'Our products are certified talite-free, meeting stringent European import regulations and ensuring complete compliance for EU market entry.',
+				'default_value' => 'Our products are certified Phthalate-free, meeting stringent European import regulations and ensuring complete compliance for EU market entry.',
 			),
 			array(
 				'key' => 'field_why_card_3_icon',
@@ -1462,7 +1462,7 @@ function sibco_register_acf_fields() {
 				'choices' => array(
 					'clock'   => 'Clock (26 Years Experience)',
 					'leaf'    => 'Leaf (100% Natural Coir)',
-					'shield'  => 'Shield (Talite Free Certified)',
+					'shield'  => 'Shield (Phthalate Free Certified)',
 					'chart'   => 'Chart (Consistent Quality)',
 					'truck'   => 'Truck (Time-Bound Delivery)',
 					'tag'     => 'Tag (OEM & Private Label)',
@@ -1493,7 +1493,7 @@ function sibco_register_acf_fields() {
 				'choices' => array(
 					'clock'   => 'Clock (26 Years Experience)',
 					'leaf'    => 'Leaf (100% Natural Coir)',
-					'shield'  => 'Shield (Talite Free Certified)',
+					'shield'  => 'Shield (Phthalate Free Certified)',
 					'chart'   => 'Chart (Consistent Quality)',
 					'truck'   => 'Truck (Time-Bound Delivery)',
 					'tag'     => 'Tag (OEM & Private Label)',
@@ -1524,7 +1524,7 @@ function sibco_register_acf_fields() {
 				'choices' => array(
 					'clock'   => 'Clock (26 Years Experience)',
 					'leaf'    => 'Leaf (100% Natural Coir)',
-					'shield'  => 'Shield (Talite Free Certified)',
+					'shield'  => 'Shield (Phthalate Free Certified)',
 					'chart'   => 'Chart (Consistent Quality)',
 					'truck'   => 'Truck (Time-Bound Delivery)',
 					'tag'     => 'Tag (OEM & Private Label)',
@@ -1555,7 +1555,7 @@ function sibco_register_acf_fields() {
 				'choices' => array(
 					'clock'   => 'Clock (26 Years Experience)',
 					'leaf'    => 'Leaf (100% Natural Coir)',
-					'shield'  => 'Shield (Talite Free Certified)',
+					'shield'  => 'Shield (Phthalate Free Certified)',
 					'chart'   => 'Chart (Consistent Quality)',
 					'truck'   => 'Truck (Time-Bound Delivery)',
 					'tag'     => 'Tag (OEM & Private Label)',
@@ -2190,7 +2190,7 @@ function sibco_register_acf_fields() {
 				'label' => __( 'Material Composition', 'sibco' ),
 				'name' => 'product_material',
 				'type' => 'text',
-				'instructions' => __( 'e.g. 100% Natural Coir Fiber with Talite-Free Vulcanized Rubber', 'sibco' ),
+				'instructions' => __( 'e.g. 100% Natural Coir Fiber with Phthalate-Free Vulcanized Rubber', 'sibco' ),
 				'default_value' => '100% Natural Coir Fiber',
 			),
 			array(
@@ -2214,8 +2214,8 @@ function sibco_register_acf_fields() {
 				'label' => __( 'Backing / Construction', 'sibco' ),
 				'name' => 'product_backing',
 				'type' => 'text',
-				'instructions' => __( 'e.g. Natural Latex / Talite-Free Rubber', 'sibco' ),
-				'default_value' => 'Talite-Free Natural Rubber',
+				'instructions' => __( 'e.g. Natural Latex / Phthalate-Free Rubber', 'sibco' ),
+				'default_value' => 'Phthalate-Free Natural Rubber',
 			),
 			array(
 				'key' => 'field_product_moq',
@@ -2309,7 +2309,7 @@ function sibco_register_acf_fields() {
 				'label' => __( 'Badge 1 Title', 'sibco' ),
 				'name' => 'cert_1_title',
 				'type' => 'text',
-				'default_value' => 'Talite Free Certified',
+				'default_value' => 'Phthalate Free Certified',
 			),
 			array(
 				'key' => 'field_cert_1_desc',
@@ -2317,7 +2317,7 @@ function sibco_register_acf_fields() {
 				'name' => 'cert_1_desc',
 				'type' => 'textarea',
 				'rows' => 2,
-				'default_value' => 'Compliant with EU talite-free import requirements for coir products',
+				'default_value' => 'Compliant with EU Phthalate-free import requirements for coir products',
 			),
 			array(
 				'key' => 'field_cert_1_icon',
@@ -2325,12 +2325,12 @@ function sibco_register_acf_fields() {
 				'name' => 'cert_1_icon',
 				'type' => 'select',
 				'choices' => array(
-					'talite'  => 'Talite Free / Checkmark',
+					'Phthalate'  => 'Phthalate Free / Checkmark',
 					'board'   => 'Rubber Board / Document',
 					'qc'      => 'Consistent QC / Bars',
 					'export'  => 'Export Standards / Globe',
 				),
-				'default_value' => 'talite',
+				'default_value' => 'Phthalate',
 			),
 			// Badge 2
 			array(
@@ -2354,7 +2354,7 @@ function sibco_register_acf_fields() {
 				'name' => 'cert_2_icon',
 				'type' => 'select',
 				'choices' => array(
-					'talite'  => 'Talite Free / Checkmark',
+					'Phthalate'  => 'Phthalate Free / Checkmark',
 					'board'   => 'Rubber Board / Document',
 					'qc'      => 'Consistent QC / Bars',
 					'export'  => 'Export Standards / Globe',
@@ -2383,7 +2383,7 @@ function sibco_register_acf_fields() {
 				'name' => 'cert_3_icon',
 				'type' => 'select',
 				'choices' => array(
-					'talite'  => 'Talite Free / Checkmark',
+					'Phthalate'  => 'Phthalate Free / Checkmark',
 					'board'   => 'Rubber Board / Document',
 					'qc'      => 'Consistent QC / Bars',
 					'export'  => 'Export Standards / Globe',
@@ -2412,7 +2412,7 @@ function sibco_register_acf_fields() {
 				'name' => 'cert_4_icon',
 				'type' => 'select',
 				'choices' => array(
-					'talite'  => 'Talite Free / Checkmark',
+					'Phthalate'  => 'Phthalate Free / Checkmark',
 					'board'   => 'Rubber Board / Document',
 					'qc'      => 'Consistent QC / Bars',
 					'export'  => 'Export Standards / Globe',
@@ -2729,7 +2729,7 @@ function sibco_register_acf_fields() {
 				'label' => __( 'Export Email', 'sibco' ),
 				'name' => 'contact_direct_email',
 				'type' => 'email',
-				'default_value' => 'export@sibco.in',
+				'default_value' => 'sales@sibcocoir.com',
 			),
 			array(
 				'key' => 'field_contact_direct_phone',
