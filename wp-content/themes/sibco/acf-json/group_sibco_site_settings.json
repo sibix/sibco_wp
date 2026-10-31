@@ -52,7 +52,7 @@
             "type": "email",
             "parent": "group_sibco_site_settings",
             "label": "Primary Contact Email",
-            "default_value": "sales@sibcocoir.com",
+            "default_value": "sibco.coir@gmail.com",
             "menu_order": 4
         },
         "field_quote_notification_email": {
@@ -71,8 +71,17 @@
             "type": "text",
             "parent": "group_sibco_site_settings",
             "label": "Primary Contact Phone",
-            "default_value": "+91 XXX XXX XXXX",
-            "menu_order": 5
+            "default_value": "+91 91885 92052",
+            "menu_order": 6
+        },
+        "field_contact_phone_2": {
+            "key": "field_contact_phone_2",
+            "name": "contact_phone_2",
+            "type": "text",
+            "parent": "group_sibco_site_settings",
+            "label": "Secondary Contact Phone",
+            "default_value": "+91 83300 65483",
+            "menu_order": 7
         },
         "field_contact_location": {
             "key": "field_contact_location",
@@ -81,7 +90,7 @@
             "parent": "group_sibco_site_settings",
             "label": "Location / Region",
             "default_value": "Kerala, India",
-            "menu_order": 6
+            "menu_order": 8
         },
         "field_contact_address": {
             "key": "field_contact_address",
@@ -91,7 +100,7 @@
             "label": "Full Office / Factory Address",
             "rows": 3,
             "default_value": "SIBCO Coir Exports\nIndustrial Estate, Alappuzha\nKerala, India - 688001",
-            "menu_order": 7
+            "menu_order": 9
         },
         "field_opt_footer_tab": {
             "key": "field_opt_footer_tab",
@@ -99,7 +108,7 @@
             "type": "tab",
             "parent": "group_sibco_site_settings",
             "label": "Footer & Social",
-            "menu_order": 8
+            "menu_order": 10
         },
         "field_footer_desc": {
             "key": "field_footer_desc",
@@ -109,24 +118,6 @@
             "label": "Footer About Description",
             "rows": 3,
             "default_value": "Premium coir mat manufacturer with 26 years of export excellence. Trusted by importers, distributors, and OEM brands.",
-            "menu_order": 9
-        },
-        "field_social_linkedin": {
-            "key": "field_social_linkedin",
-            "name": "social_linkedin",
-            "type": "url",
-            "parent": "group_sibco_site_settings",
-            "label": "LinkedIn URL",
-            "default_value": "#",
-            "menu_order": 10
-        },
-        "field_social_facebook": {
-            "key": "field_social_facebook",
-            "name": "social_facebook",
-            "type": "url",
-            "parent": "group_sibco_site_settings",
-            "label": "Facebook URL",
-            "default_value": "#",
             "menu_order": 11
         },
         "field_social_instagram": {
@@ -135,7 +126,7 @@
             "type": "url",
             "parent": "group_sibco_site_settings",
             "label": "Instagram URL",
-            "default_value": "#",
+            "default_value": "https://www.instagram.com/_sibco_?utm_source=qr&cplk=MTEzZ2k3MzI3MnZjdQ==",
             "menu_order": 12
         },
         "field_footer_copyright": {
@@ -146,6 +137,88 @@
             "label": "Copyright Text",
             "default_value": "\u00a9 2024 SIBCO. All rights reserved. Premium Coir Mat Manufacturer.",
             "menu_order": 13
+        },
+        "field_opt_sister_concerns_tab": {
+            "key": "field_opt_sister_concerns_tab",
+            "name": "",
+            "type": "tab",
+            "parent": "group_sibco_site_settings",
+            "label": "Sister Concerns",
+            "menu_order": 14
+        },
+        "field_sister_concerns_title": {
+            "key": "field_sister_concerns_title",
+            "name": "footer_sister_concerns_title",
+            "type": "text",
+            "parent": "group_sibco_site_settings",
+            "label": "Sister Concerns Section Title",
+            "default_value": "Our Sister Concerns",
+            "menu_order": 15
+        },
+        "field_sister_concerns_subtitle": {
+            "key": "field_sister_concerns_subtitle",
+            "name": "footer_sister_concerns_subtitle",
+            "type": "text",
+            "parent": "group_sibco_site_settings",
+            "label": "Sister Concerns Subtitle",
+            "default_value": "Group Companies & Strategic Partners",
+            "menu_order": 16
+        },
+        "field_sister_concern_1_name": {
+            "key": "field_sister_concern_1_name",
+            "name": "sister_concern_1_name",
+            "type": "text",
+            "parent": "group_sibco_site_settings",
+            "label": "Sister Concern 1 Name",
+            "default_value": "SIBCO Coir Tech",
+            "menu_order": 17
+        },
+        "field_sister_concern_1_logo": {
+            "key": "field_sister_concern_1_logo",
+            "name": "sister_concern_1_logo",
+            "type": "image",
+            "parent": "group_sibco_site_settings",
+            "label": "Sister Concern 1 Custom Logo",
+            "return_format": "url",
+            "instructions": "Leave blank to use default SIBCO Coir Tech logo.",
+            "menu_order": 18
+        },
+        "field_sister_concern_1_url": {
+            "key": "field_sister_concern_1_url",
+            "name": "sister_concern_1_url",
+            "type": "url",
+            "parent": "group_sibco_site_settings",
+            "label": "Sister Concern 1 URL (Optional)",
+            "default_value": "",
+            "menu_order": 19
+        },
+        "field_sister_concern_2_name": {
+            "key": "field_sister_concern_2_name",
+            "name": "sister_concern_2_name",
+            "type": "text",
+            "parent": "group_sibco_site_settings",
+            "label": "Sister Concern 2 Name",
+            "default_value": "Mattrends",
+            "menu_order": 20
+        },
+        "field_sister_concern_2_logo": {
+            "key": "field_sister_concern_2_logo",
+            "name": "sister_concern_2_logo",
+            "type": "image",
+            "parent": "group_sibco_site_settings",
+            "label": "Sister Concern 2 Custom Logo",
+            "return_format": "url",
+            "instructions": "Leave blank to use default Mattrends logo.",
+            "menu_order": 21
+        },
+        "field_sister_concern_2_url": {
+            "key": "field_sister_concern_2_url",
+            "name": "sister_concern_2_url",
+            "type": "url",
+            "parent": "group_sibco_site_settings",
+            "label": "Sister Concern 2 URL (Optional)",
+            "default_value": "",
+            "menu_order": 22
         }
     }
 }

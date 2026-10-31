@@ -211,7 +211,7 @@ function sibco_handle_contact_form() {
 	}
 
 	// Default business export address
-	$recipients_raw[] = 'sales@sibcocoir.com';
+	$recipients_raw[] = 'sibco.coir@gmail.com';
 
 	// Clean, validate and deduplicate recipient list
 	$recipients = array();
@@ -240,7 +240,7 @@ function sibco_handle_contact_form() {
 	);
 
 	// Safe From email (must be valid RFC email)
-	$from_email = ! empty( $admin_email ) && is_email( $admin_email ) && false === strpos( $admin_email, '@localhost' ) ? $admin_email : 'sales@sibcocoir.com';
+	$from_email = ! empty( $admin_email ) && is_email( $admin_email ) && false === strpos( $admin_email, '@localhost' ) ? $admin_email : 'sibco.coir@gmail.com';
 
 	// Construct HTML Email Template
 	$html_content = '<!DOCTYPE html>' . "\n";

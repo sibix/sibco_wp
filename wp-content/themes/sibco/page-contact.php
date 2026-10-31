@@ -17,8 +17,9 @@ $badge     = sibco_get_field( 'contact_page_badge', 'Contact Us', $page_id );
 $title     = sibco_get_field( 'contact_page_title', 'Get in Touch With Our Export Team', $page_id );
 $desc      = sibco_get_field( 'contact_page_description', 'Discuss custom specifications, request sample swatches, or receive a formal export quotation.', $page_id );
 
-$email     = sibco_get_field( 'contact_direct_email', sibco_get_field( 'contact_email', 'sales@sibcocoir.com', 'option' ), $page_id );
-$phone     = sibco_get_field( 'contact_direct_phone', sibco_get_field( 'contact_phone', '+91 XXX XXX XXXX', 'option' ), $page_id );
+$email     = sibco_get_field( 'contact_direct_email', sibco_get_field( 'contact_email', 'sibco.coir@gmail.com', 'option' ), $page_id );
+$phone     = sibco_get_field( 'contact_direct_phone', sibco_get_field( 'contact_phone', '+91 91885 92052', 'option' ), $page_id );
+$phone_2   = sibco_get_field( 'contact_direct_phone_2', sibco_get_field( 'contact_phone_2', '+91 83300 65483', 'option' ), $page_id );
 $location  = sibco_get_field( 'contact_direct_location', sibco_get_field( 'contact_location', 'Kerala, India', 'option' ), $page_id );
 $address   = sibco_get_field( 'contact_direct_address', sibco_get_field( 'contact_address', "SIBCO Coir Exports\nIndustrial Estate, Alappuzha\nKerala, India - 688001", 'option' ), $page_id );
 $hours     = sibco_get_field( 'contact_office_hours', 'Monday - Saturday: 9:00 AM - 6:00 PM IST', $page_id );
@@ -74,8 +75,15 @@ $map_desc  = sibco_get_field( 'map_description', 'Supporting international buyer
 						</div>
 						<div>
 							<div class="text-charcoal-400 text-xs uppercase tracking-wider font-semibold mb-1"><?php esc_html_e( 'Phone / WhatsApp', 'sibco' ); ?></div>
-							<div class="text-charcoal-800 font-semibold text-lg"><?php echo esc_html( $phone ); ?></div>
-							<div class="text-charcoal-400 text-xs mt-1"><?php esc_html_e( '', 'sibco' ); ?></div>
+							<div class="flex flex-col space-y-1">
+								<?php if ( ! empty( $phone ) ) : ?>
+								<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $phone ) ); ?>" class="text-charcoal-800 font-semibold text-lg hover:text-coir-600 transition-colors"><?php echo esc_html( $phone ); ?></a>
+								<?php endif; ?>
+								<?php if ( ! empty( $phone_2 ) ) : ?>
+								<a href="tel:<?php echo esc_attr( preg_replace( '/[^0-9+]/', '', $phone_2 ) ); ?>" class="text-charcoal-800 font-semibold text-base hover:text-coir-600 transition-colors"><?php echo esc_html( $phone_2 ); ?></a>
+								<?php endif; ?>
+							</div>
+							<div class="text-charcoal-400 text-xs mt-1"><?php esc_html_e( 'Direct Export & Sales Desk', 'sibco' ); ?></div>
 						</div>
 					</div>
 
